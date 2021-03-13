@@ -236,6 +236,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Background
       objectReference: {fileID: 0}
+    - target: {fileID: 826693867670182275, guid: 07edc39832269f44297a75c0d5309068,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 826693867670182275, guid: 07edc39832269f44297a75c0d5309068,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_RootOrder

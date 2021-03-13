@@ -24,7 +24,6 @@ public class MapScript : MonoBehaviour
     {
         SpriteRenderer sRenderer = GetComponent<SpriteRenderer>();
         float spriteWidth = sRenderer.sprite.bounds.size.x * transform.lossyScale.x;
-
         
         return new Vector2(transform.position.x + (spriteWidth / 2), transform.position.y);
 
@@ -33,10 +32,9 @@ public class MapScript : MonoBehaviour
     private Vector2 GetVerticalEdge()
     {
         SpriteRenderer sRenderer = GetComponent<SpriteRenderer>();
-        float spriteWidth = sRenderer.sprite.bounds.size.y * transform.lossyScale.y;
+        float spriteHeight = sRenderer.sprite.bounds.size.y * transform.lossyScale.y;
 
-
-        return new Vector2(transform.position.x, transform.position.y + (spriteWidth / 2));
+        return new Vector2(transform.position.x, transform.position.y + (spriteHeight / 2));
 
     }
 

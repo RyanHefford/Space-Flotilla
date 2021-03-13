@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 movementVector;
     private Vector2 mousePos;
     private float hitBoxRadius = 2f;
+    private MapScript map;
 
     //float positions for each edge of the map
     private float northEdge;
@@ -24,16 +25,19 @@ public class PlayerMovement : MonoBehaviour
         rigidbody = GetComponent<Rigidbody2D>();
 
         //get edges of map
-        MapScript map = GameObject.FindGameObjectsWithTag("Background")[0].GetComponent<MapScript>();
-        eastEdge = map.getEastEdge();
-        westEdge = map.getWestEdge();
-        northEdge = map.getNorthEdge();
-        southEdge = map.getSouthEdge();
+        map = GameObject.FindGameObjectsWithTag("Background")[0].GetComponent<MapScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (northEdge == 0)
+        {
+            eastEdge = map.getEastEdge();
+            westEdge = map.getWestEdge();
+            northEdge = map.getNorthEdge();
+            southEdge = map.getSouthEdge();
+        }
         CalculateMovement();
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -57,17 +61,35 @@ public class PlayerMovement : MonoBehaviour
         rigidbody.AddForce(new Vector2(movementVector.x * moveSpeed, movementVector.y * moveSpeed));
         //counter current force so that ship automaticly slows
         rigidbody.AddForce(new Vector2(-rigidbody.velocity.x, -rigidbody.velocity.y));
-
         //check if on edge of map
-        if (transform.position.x + hitBoxRadius >= eastEdge || transform.position.x - hitBoxRadius <= westEdge)
+
+        //east edge
+        if (transform.position.x + hitBoxRadius >= eastEdge)
         {
+            transform.position = new Vector3(eastEdge - hitBoxRadius, transform.position.y, 0);
             rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
             rigidbody.angularVelocity = 0;
 
         }
-        else if(transform.position.y + hitBoxRadius >= northEdge || transform.position.y - hitBoxRadius <= southEdge)
+        //north edge
+        if(transform.position.y + hitBoxRadius >= northEdge)
         {
+            transform.position = new Vector3(transform.position.x, northEdge - hitBoxRadius, 0);
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
+            rigidbody.angularVelocity = 0;
+        }
+        //south edge
+        if(transform.position.y - hitBoxRadius <= southEdge)
+        {
+            transform.position = new Vector3(transform.position.x, southEdge + hitBoxRadius, 0);
+            rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
+            rigidbody.angularVelocity = 0;
+        }
+        //west edge
+        if (transform.position.x - hitBoxRadius <= westEdge)
+        {
+            transform.position = new Vector3(westEdge + hitBoxRadius, transform.position.y, 0);
+            rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
             rigidbody.angularVelocity = 0;
         }
     }
