@@ -1,6 +1,7 @@
-﻿using System.Collections;
+﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Diagnostics;
 
 public class Pathfinding : MonoBehaviour
 {
@@ -18,17 +19,30 @@ public class Pathfinding : MonoBehaviour
 
     private void Update()
     {
-        findPath(seeker.position, target.position);
+        if (Input.GetButtonDown("Jump"))
+        {
+            findPath(seeker.position, target.position);
+        }
+        
     }
 
     //Doing A* here
-    void findPath(Vector2 startPosition, Vector2 targetPosition)
+    public Vector2[] findPath(Vector2 startPosition, Vector2 targetPosition)
     {
+
+        Stopwatch sw = new Stopwatch();
+
+        sw.Start();
+
+
+        Vector2[] finalPath = null;
+
         Node startNode = grid.getNodeFromWorldPoint(startPosition);
         Node targetNode = grid.getNodeFromWorldPoint(targetPosition);
 
 
-        List<Node> openSet = new List<Node>();
+        //List<Node> openSet = new List<Node>();
+        Heap<Node> openSet = new Heap<Node>(grid.MaxSize);
         HashSet<Node> closedSet = new HashSet<Node>();
 
 
@@ -38,23 +52,29 @@ public class Pathfinding : MonoBehaviour
         {
             //finding the node with the lowest fCost.
 
-            Node currentNode = openSet[0];
-            for(int i = 1; i < openSet.Count; i++)
-            {
-                if(openSet[i].fCost < currentNode.fCost || openSet[i].fCost == currentNode.fCost && openSet[i].hCost < currentNode.hCost)
-                {
-                    currentNode = openSet[i];
-                }
-            }
+            //Node currentNode = openSet[0];
+            //for(int i = 1; i < openSet.Count; i++)
+            //{
+            //    if(openSet[i].fCost < currentNode.fCost || openSet[i].fCost == currentNode.fCost && openSet[i].hCost < currentNode.hCost)
+            //    {
+            //        currentNode = openSet[i];
+            //    }
+            //}
 
-            openSet.Remove(currentNode);
+            //openSet.Remove(currentNode);
+            Node currentNode = openSet.RemoveFirst();
+
+
             closedSet.Add(currentNode);
 
             //reached the goal.
             if(currentNode == targetNode)
             {
-                getPath(startNode, targetNode);
-                return;
+                sw.Stop();
+                print("Path found: " + sw.ElapsedMilliseconds + " ms");
+                finalPath = getPath(startNode, targetNode);
+                
+                break;
             }
 
             foreach (Node neighbour in grid.getNeighbours(currentNode))
@@ -83,10 +103,12 @@ public class Pathfinding : MonoBehaviour
         }
 
 
+        return finalPath;
+
     }
 
     //Getting the path from the end to the start (retracing it)
-    private void getPath(Node startNode, Node endNode)
+    private Vector2[] getPath(Node startNode, Node endNode)
     {
         List<Node> path = new List<Node>();
 
@@ -98,10 +120,34 @@ public class Pathfinding : MonoBehaviour
             currentNode = currentNode.parent;
         }
 
-        path.Reverse();
 
+
+        Vector2[] pathWaypoints = SimplifyPath(path);
+
+        Array.Reverse(pathWaypoints);
+
+        path.Reverse();
         grid.path = path;
 
+        return pathWaypoints;
+
+    }
+    //returns the transform.position of where the player/AI will be heading to after doing A*
+    Vector2[] SimplifyPath(List<Node> path)
+    {
+        List<Vector2> waypoints = new List<Vector2>();
+        Vector2 directionOld = Vector2.zero;
+
+        for (int i = 1; i < path.Count; i++)
+        {
+            Vector2 directionNew = new Vector2(path[i - 1].gridX - path[i].gridX, path[i - 1].gridY - path[i].gridY);
+            if (directionNew != directionOld)
+            {
+                waypoints.Add(path[i].worldPosition);
+            }
+            directionOld = directionNew;
+        }
+        return waypoints.ToArray();
     }
 
 

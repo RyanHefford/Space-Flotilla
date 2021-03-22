@@ -6,6 +6,8 @@ public class Grid : MonoBehaviour
 {
     public Transform player;
     public Transform obstacleTest;
+
+    public bool displayPathGizmos;
     
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
@@ -16,7 +18,7 @@ public class Grid : MonoBehaviour
     float nodeDiameter;
     int gridSizeX, gridSizeY;
 
-    private void Start()
+    private void Awake()
     {
         //nodes to fit in the grid based on the node radius
         nodeDiameter = nodeRadius * 2;
@@ -25,6 +27,13 @@ public class Grid : MonoBehaviour
 
         createGrid();
 
+    }
+    public int MaxSize
+    {
+        get
+        {
+            return gridSizeX * gridSizeY;
+        }
     }
 
     private void createGrid()
@@ -104,35 +113,52 @@ public class Grid : MonoBehaviour
     {
         Gizmos.DrawWireCube(transform.position, new Vector2(gridWorldSize.x, gridWorldSize.y));
 
-        if(grid != null)
+
+        if (displayPathGizmos)
         {
-            foreach(Node n in grid)
+            if(path != null)
             {
-                Node playerNode = getNodeFromWorldPoint((Vector2)player.position);
-                Node obstacleNode = getNodeFromWorldPoint((Vector2)obstacleTest.position);
-
-                Gizmos.color = (n.walkable) ? Color.white : Color.red;
-                if(playerNode == n)
+                foreach(Node n in path)
                 {
-                    Gizmos.color = Color.cyan;
+                    Gizmos.color = Color.green;
+                    Gizmos.DrawCube(n.worldPosition, Vector2.one * (nodeDiameter - 0.1f));
                 }
-                if(obstacleNode == n)
-                {
-                    Gizmos.color = Color.yellow;
-                }
-
-                if(path != null)
-                {
-                    //draw the path line.
-                    if (path.Contains(n))
-                    {
-                        Gizmos.color = Color.green;
-                    }
-                }
-
-                Gizmos.DrawCube(n.worldPosition, Vector2.one * (nodeDiameter - 0.1f));
             }
         }
+        else
+        {
+            if (grid != null)
+            {
+                foreach (Node n in grid)
+                {
+                    Node playerNode = getNodeFromWorldPoint((Vector2)player.position);
+                    Node obstacleNode = getNodeFromWorldPoint((Vector2)obstacleTest.position);
+
+                    Gizmos.color = (n.walkable) ? Color.white : Color.red;
+                    if (playerNode == n)
+                    {
+                        Gizmos.color = Color.cyan;
+                    }
+                    if (obstacleNode == n)
+                    {
+                        Gizmos.color = Color.yellow;
+                    }
+
+                    if (path != null)
+                    {
+                        //draw the path line.
+                        if (path.Contains(n))
+                        {
+                            Gizmos.color = Color.green;
+                        }
+                    }
+
+                    Gizmos.DrawCube(n.worldPosition, Vector2.one * (nodeDiameter - 0.1f));
+                }
+            }
+        }
+
+
     }
 
 }

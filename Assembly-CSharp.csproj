@@ -78,8 +78,10 @@
     <Compile Include="Assets\Scripts\MapScript.cs" />
     <Compile Include="Assets\Scripts\MissleMovement.cs" />
     <Compile Include="Assets\Scripts\PathFinding\Grid.cs" />
+    <Compile Include="Assets\Scripts\PathFinding\Heap.cs" />
     <Compile Include="Assets\Scripts\PathFinding\Node.cs" />
     <Compile Include="Assets\Scripts\PathFinding\Pathfinding.cs" />
+    <Compile Include="Assets\Scripts\PathFinding\TestMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
     <None Include="Assets\2D Space Kit\Backgrounds\Background Tip.txt" />
