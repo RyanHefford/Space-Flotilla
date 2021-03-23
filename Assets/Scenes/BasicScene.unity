@@ -188,7 +188,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -260,13 +260,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   singleTileObjects:
   - {fileID: 510385871005326532, guid: 1baf9e5820c6cc94b96741d59b4d67e4, type: 3}
+  - {fileID: 2871867408055513181, guid: b04a50ff35d18e946886029ede2179ed, type: 3}
   doubleHorizontalObjects:
   - {fileID: 8333761710251398835, guid: 682ad3b24db3caf4cbce4dac387e47c2, type: 3}
   - {fileID: 2985043890348525492, guid: fea98622c2873dd4985ec2ecc79c3536, type: 3}
   doubleVerticalObjects:
   - {fileID: 4257095312938528720, guid: e55277c5f64bbe948be3b25d89097584, type: 3}
+  - {fileID: 7192157686270794749, guid: e6eee610b8cff104e9223751d7040348, type: 3}
   quadTileObjects:
   - {fileID: 6751621652686077620, guid: 3cd2b441cb618b246891b644394cbc0e, type: 3}
+  - {fileID: 627359575357648003, guid: 82b72cee4f90d404786f40436b5cd15c, type: 3}
 --- !u!1001 &826693866659740588
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -297,27 +300,27 @@ PrefabInstance:
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.6200001
+      value: 4.3311152
       objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.6200001
+      value: 4.3311152
       objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.08
+      value: 2.8874102
       objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0054916
+      value: 0.12956
       objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0084847
+      value: 0.20018
       objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}

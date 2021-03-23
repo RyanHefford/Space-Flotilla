@@ -5,7 +5,7 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public GameObject player;
-    private Vector3 cameraOffset = new Vector3(0, 0, -20);
+    private Vector3 cameraOffset = new Vector3(0, 0, -10);
     private float smoothSpeed = 0.05f;
     //float positions for each edge of the map
     private float northEdge;
