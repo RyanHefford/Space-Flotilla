@@ -26,18 +26,16 @@ public class PlayerMovement : MonoBehaviour
 
         //get edges of map
         map = GameObject.FindGameObjectsWithTag("Background")[0].GetComponent<MapScript>();
+        eastEdge = map.getEastEdge();
+        westEdge = map.getWestEdge();
+        northEdge = map.getNorthEdge();
+        southEdge = map.getSouthEdge();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (northEdge == 0)
-        {
-            eastEdge = map.getEastEdge();
-            westEdge = map.getWestEdge();
-            northEdge = map.getNorthEdge();
-            southEdge = map.getSouthEdge();
-        }
+        
         CalculateMovement();
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
