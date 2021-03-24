@@ -7,13 +7,11 @@ public class AlignmentBehaviour : FlockBehaviour
 {
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-        // if no neighbours, maintain current alignment
+        //if no neighbors, maintain current alignment
         if (context.Count == 0)
-        {
             return agent.transform.up;
-        }
 
-        // add all points together and average
+        //add all points together and average
         Vector2 alignmentMove = Vector2.zero;
         foreach (Transform item in context)
         {
