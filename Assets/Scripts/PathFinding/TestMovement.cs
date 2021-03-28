@@ -36,7 +36,9 @@ public class TestMovement : MonoBehaviour
     IEnumerator FollowPath()
     {
         Vector2 currentWaypoint = path[0];
-        
+
+       
+
         while (true)
         {
            
@@ -54,7 +56,11 @@ public class TestMovement : MonoBehaviour
 
             transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
 
-            transform.LookAt(target);
+            float angle = Mathf.Atan2(currentWaypoint.y - transform.position.y, currentWaypoint.x - transform.position.x) * Mathf.Rad2Deg;
+
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, angle));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 50 * Time.deltaTime);
+
 
 
             yield return null;
