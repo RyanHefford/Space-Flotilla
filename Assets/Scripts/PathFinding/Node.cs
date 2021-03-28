@@ -54,4 +54,9 @@ public class Node : IHeapItem<Node>
         }
         return -compare;
     }
+
+    public void setWalkable(bool _walkable)
+    {
+        this.walkable = _walkable;
+    }
 }

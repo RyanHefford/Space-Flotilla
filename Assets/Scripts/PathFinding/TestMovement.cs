@@ -8,12 +8,12 @@ public class TestMovement : MonoBehaviour
 
     public Transform target;
 
-    float speed = 10f;
+    float speed = 5f;
     Vector2[] path;
     int targetIndex;
 
 
-    private void Start()
+    private void Update()
     {
 
         PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);

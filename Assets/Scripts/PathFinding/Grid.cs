@@ -156,6 +156,12 @@ public class Grid : MonoBehaviour
         createGrid();
     }
 
+    private void Update()
+    {
+        //updating the obstacle locations
+        checkNewObstacleLocation();
+    }
+
     public int MaxSize
     {
         get
@@ -182,6 +188,23 @@ public class Grid : MonoBehaviour
 
             }
         }
+    }
+
+    private void checkNewObstacleLocation()
+    {
+        Vector2 worldBottomLeft = (Vector2)transform.position - Vector2.right * gridWorldSize.x / 2 - Vector2.up * gridWorldSize.y / 2;
+        for (int x = 0; x < gridSizeX; x++)
+        {
+            for (int y = 0; y < gridSizeY; y++)
+            {
+                Vector2 worldPoint = worldBottomLeft + Vector2.right * (x * nodeDiameter + nodeRadius) + Vector2.up * (y * nodeDiameter + nodeRadius);
+
+                bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
+                grid[x, y] = new Node(walkable, worldPoint, x, y);
+
+            }
+        }
+        
     }
 
     public Node getNodeFromWorldPoint(Vector2 worldPosition)
