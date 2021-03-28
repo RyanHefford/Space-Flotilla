@@ -8,10 +8,9 @@ public class TestMovement : MonoBehaviour
 
     public Transform target;
 
-    float speed = 30f;
+    float speed = 10f;
     Vector2[] path;
     int targetIndex;
-
 
 
     private void Start()
@@ -27,7 +26,7 @@ public class TestMovement : MonoBehaviour
         {
             targetIndex = 0;
             path = newPath;
-            //StopCoroutine("FollowPath");
+            StopCoroutine("FollowPath");
             StartCoroutine("FollowPath");
         }
 
@@ -40,8 +39,8 @@ public class TestMovement : MonoBehaviour
         
         while (true)
         {
-        
-            if((Vector2)transform.position == currentWaypoint)
+           
+            if ((Vector2)transform.position == currentWaypoint)
             {
                 targetIndex++;
 
@@ -52,9 +51,10 @@ public class TestMovement : MonoBehaviour
 
                 currentWaypoint = path[targetIndex];
             }
-            
+
             transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
-            //transform.position = new Vector2(0, 0);
+
+            transform.LookAt(target);
 
 
             yield return null;

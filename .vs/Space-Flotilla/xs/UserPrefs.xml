@@ -1,10 +1,12 @@
 ﻿<Properties StartupConfiguration="{AABA97EC-6674-C180-980F-8D3E6BE04AA3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PathFinding/TestMovement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PathFinding/Pathfinding2.cs">
     <Files>
-      <File FileName="Assets/Scripts/PathFinding/Grid.cs" Line="126" Column="22" />
+      <File FileName="Assets/Scripts/PathFinding/Grid.cs" Line="51" Column="96" />
       <File FileName="Assets/Scripts/PathFinding/Pathfinding.cs" Line="5" Column="26" />
       <File FileName="Assets/Scripts/PathFinding/PathRequestManager.cs" Line="33" Column="60" />
-      <File FileName="Assets/Scripts/PathFinding/TestMovement.cs" Line="37" Column="6" />
+      <File FileName="Assets/Scripts/PathFinding/TestMovement.cs" Line="26" Column="10" />
+      <File FileName="Assets/Scripts/PathFinding/Node.cs" Line="17" Column="19" />
+      <File FileName="Assets/Scripts/PathFinding/Pathfinding2.cs" Line="51" Column="41" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\PathFinding\Node.cs" />
     <Compile Include="Assets\Scripts\PathFinding\PathRequestManager.cs" />
     <Compile Include="Assets\Scripts\PathFinding\Pathfinding.cs" />
+    <Compile Include="Assets\Scripts\PathFinding\Pathfindingg.cs" />
     <Compile Include="Assets\Scripts\PathFinding\TestMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
