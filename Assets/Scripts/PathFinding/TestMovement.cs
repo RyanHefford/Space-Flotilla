@@ -8,48 +8,79 @@ public class TestMovement : MonoBehaviour
 
     public Transform target;
 
-    float speed = 0.5f;
+    float speed = 30f;
     Vector2[] path;
-    int pathIndex = 0;
+    int targetIndex;
 
-    public Pathfinding pf;
 
 
     private void Start()
     {
 
-        path = pf.findPath((Vector2)transform.position, (Vector2)target.position);
-        
-        followPath();
+        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
     }
 
-    private void followPath()
-    {
-        Vector2 currentPoint = path[0];
+    public void OnPathFound(Vector2[] newPath, bool pathSuccessful)
+    { 
 
+        if(pathSuccessful)
+        {
+            targetIndex = 0;
+            path = newPath;
+            //StopCoroutine("FollowPath");
+            StartCoroutine("FollowPath");
+        }
+
+
+    }
+
+    IEnumerator FollowPath()
+    {
+        Vector2 currentWaypoint = path[0];
+        
         while (true)
         {
-            if((Vector2) transform.position == currentPoint)
+        
+            if((Vector2)transform.position == currentWaypoint)
             {
-                pathIndex++;
-                if(pathIndex >= path.Length)
+                targetIndex++;
+
+                if(targetIndex >= path.Length)
                 {
-                    //print("FINISHED");
-                    //print(transform.position);
-                    //print(target.position);
-                    //print(pathIndex);
-                    //print(path.Length);
-
-                    break;
+                    yield break;
                 }
-                currentPoint = path[pathIndex];
+
+                currentWaypoint = path[targetIndex];
             }
+            
+            transform.position = Vector2.MoveTowards(transform.position, currentWaypoint, speed * Time.deltaTime);
+            //transform.position = new Vector2(0, 0);
 
-            transform.position = Vector2.MoveTowards(transform.position, currentPoint, speed);
 
-        }//end of WHILE loop
-
-
+            yield return null;
+        }
     }
+
+    public void OnDrawGizmos()
+    {
+        if(path != null)
+        {
+            for(int i = targetIndex; i < path.Length; i++)
+            {
+                Gizmos.color = Color.yellow;
+                Gizmos.DrawCube(path[i], Vector2.one);
+
+                if(i == targetIndex)
+                {
+                    Gizmos.DrawLine(transform.position, path[i]);
+                }
+                else
+                {
+                    Gizmos.DrawLine(path[i - 1], path[i]);
+                }
+            }
+        }
+    }
+
 
 }

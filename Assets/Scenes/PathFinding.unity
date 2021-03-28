@@ -197,7 +197,7 @@ Transform:
   m_GameObject: {fileID: 480411839}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 10, y: 10, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -213,6 +213,7 @@ GameObject:
   - component: {fileID: 532785227}
   - component: {fileID: 532785226}
   - component: {fileID: 532785228}
+  - component: {fileID: 532785229}
   m_Layer: 0
   m_Name: A*
   m_TagString: Untagged
@@ -234,11 +235,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 983792184}
   obstacleTest: {fileID: 2145908892}
-  displayPathGizmos: 1
+  displayGridGizmos: 0
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 256
-  gridWorldSize: {x: 405, y: 400}
+  gridWorldSize: {x: 40, y: 40}
   nodeRadius: 0.5
 --- !u!4 &532785227
 Transform:
@@ -266,8 +267,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53bc1e32eb03445e393d426453b2a66b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  seeker: {fileID: 983792184}
-  target: {fileID: 1239867784}
+--- !u!114 &532785229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532785225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 120306455ace445bd87f16aec118a8f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &983792182
 GameObject:
   m_ObjectHideFlags: 0
@@ -278,9 +289,9 @@ GameObject:
   m_Component:
   - component: {fileID: 983792184}
   - component: {fileID: 983792183}
-  - component: {fileID: 983792185}
+  - component: {fileID: 983792186}
   m_Layer: 0
-  m_Name: Fighter 1
+  m_Name: Seeker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -344,13 +355,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 983792182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.92, y: -146.4, z: 0}
+  m_LocalPosition: {x: -13.92, y: -15.2, z: 0}
   m_LocalScale: {x: 4.1279, y: 4.1279, z: 4.1279}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &983792185
+--- !u!114 &983792186
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -363,7 +374,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1239867784}
-  pf: {fileID: 532785228}
 --- !u!1 &1231142498
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,7 +468,7 @@ GameObject:
   - component: {fileID: 1239867784}
   - component: {fileID: 1239867783}
   m_Layer: 0
-  m_Name: Carrier 1
+  m_Name: DestinationObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -522,7 +532,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1239867782}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.14, y: 164.4, z: 0}
+  m_LocalPosition: {x: 5.14, y: 13.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

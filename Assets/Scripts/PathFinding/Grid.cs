@@ -7,7 +7,7 @@ public class Grid : MonoBehaviour
     public Transform player;
     public Transform obstacleTest;
 
-    public bool displayPathGizmos;
+    public bool displayGridGizmos;
     
     public LayerMask unwalkableMask;
     public Vector2 gridWorldSize;
@@ -108,26 +108,13 @@ public class Grid : MonoBehaviour
 
     }
 
-    public List<Node> path;
+    
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector2(gridWorldSize.x, gridWorldSize.y));
 
 
-        if (displayPathGizmos)
-        {
-            if(path != null)
-            {
-                foreach(Node n in path)
-                {
-                    Gizmos.color = Color.green;
-                    Gizmos.DrawCube(n.worldPosition, Vector2.one * (nodeDiameter - 0.1f));
-                }
-            }
-        }
-        else
-        {
-            if (grid != null)
+            if (grid != null && displayGridGizmos)
             {
                 foreach (Node n in grid)
                 {
@@ -144,19 +131,10 @@ public class Grid : MonoBehaviour
                         Gizmos.color = Color.yellow;
                     }
 
-                    if (path != null)
-                    {
-                        //draw the path line.
-                        if (path.Contains(n))
-                        {
-                            Gizmos.color = Color.green;
-                        }
-                    }
-
                     Gizmos.DrawCube(n.worldPosition, Vector2.one * (nodeDiameter - 0.1f));
                 }
             }
-        }
+
 
 
     }
