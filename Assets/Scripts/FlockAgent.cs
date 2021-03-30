@@ -7,16 +7,21 @@ public class FlockAgent : MonoBehaviour
 {
     Collider2D agentCollider;
     public Collider2D AgentCollider { get { return agentCollider; } }
+    private Rigidbody2D rb;
 
     // Start is called before the first frame update
     void Start()
     {
         agentCollider = GetComponent<Collider2D>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void Move(Vector2 velocity)
     {
         transform.up = velocity;
-        transform.position += (Vector3)velocity * Time.deltaTime;
+        // transform.position += (Vector3)velocity * Time.deltaTime;
+
+        rb.velocity = velocity;
+        rb.angularVelocity = 0.0f;
     }
 }

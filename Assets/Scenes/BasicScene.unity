@@ -168,7 +168,7 @@ MonoBehaviour:
   behaviour: {fileID: 11400000, guid: 993b19f5913a6b14ba4e2a88e6f3fb77, type: 2}
   startingCount: 250
   driveFactor: 10
-  maxSpeed: 5
+  maxSpeed: 4
   neighborRadius: 1.5
   avoidanceRadiusMultiplier: 0.5
 --- !u!1 &519420028
