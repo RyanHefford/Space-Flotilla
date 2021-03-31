@@ -12,11 +12,22 @@ public class TestMovement : MonoBehaviour
     Vector2[] path;
     int targetIndex;
 
+    private Rigidbody2D rb;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
     private void Update()
     {
 
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        
+    }
+
+    public void moveAgent(Transform end)
+    {
+        PathRequestManager.RequestPath(rb.transform.position, end.position, OnPathFound);
     }
 
     public void OnPathFound(Vector2[] newPath, bool pathSuccessful)

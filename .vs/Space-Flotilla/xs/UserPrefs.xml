@@ -1,11 +1,13 @@
 ﻿<Properties StartupConfiguration="{AABA97EC-6674-C180-980F-8D3E6BE04AA3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PathFinding/Grid.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Pathfinding2/EnemyAI.cs">
     <Files>
-      <File FileName="Assets/Scripts/PathFinding/Grid.cs" Line="125" Column="1" />
-      <File FileName="Assets/Scripts/PathFinding/Pathfinding.cs" Line="146" Column="16" />
-      <File FileName="Assets/Scripts/PathFinding/PathRequestManager.cs" Line="33" Column="63" />
-      <File FileName="Assets/Scripts/PathFinding/TestMovement.cs" Line="55" Column="115" />
-      <File FileName="Assets/Scripts/PathFinding/Node.cs" Line="17" Column="19" />
+      <File FileName="Assets/Scripts/PathFinding/Grid.cs" Line="186" Column="40" />
+      <File FileName="Assets/Scripts/PathFinding/Node.cs" />
+      <File FileName="Assets/Scripts/PathFinding/PathRequestManager.cs" Line="3" Column="30" />
+      <File FileName="Assets/Scripts/PathFinding/TestMovement.cs" Line="30" Column="90" />
+      <File FileName="Assets/MovementManager.cs" Line="19" Column="17" />
+      <File FileName="Assets/Pathfinding2/EnemyAI.cs" Line="4" Column="19" />
+      <File FileName="Assets/Scripts/PathFinding/PathfindingAlg.cs" Line="7" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
