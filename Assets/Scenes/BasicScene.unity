@@ -439,6 +439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Overlord
       objectReference: {fileID: 0}
+    - target: {fileID: 4729039855937996587, guid: 4ceeb908325cff4448897914fceb44b8,
+        type: 3}
+      propertyPath: m_TagString
+      value: Overlord
+      objectReference: {fileID: 0}
     - target: {fileID: 4729039855937996588, guid: 4ceeb908325cff4448897914fceb44b8,
         type: 3}
       propertyPath: m_GravityScale
