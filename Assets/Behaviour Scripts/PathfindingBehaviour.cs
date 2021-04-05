@@ -20,10 +20,10 @@ public class PathfindingBehaviour : FlockBehaviour
         foreach (Transform item in context)
         {
             //adding where the agent is facing
-            pathfindingMove += agent.enemyAI.getDirection();
+            //pathfindingMove += agent.enemyAI.getDirection();
         }
         //pathfindingMove /= context.Count;
-
+        pathfindingMove = agent.enemyAI.getDirection();
 
         return pathfindingMove;
     }

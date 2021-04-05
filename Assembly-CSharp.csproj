@@ -93,6 +93,7 @@
     <Compile Include="Assets\Scripts\Pathfinding\Hit.cs" />
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
+    <Compile Include="Assets\Scripts\Score.cs" />
     <None Include="Assets\2D Space Kit\Backgrounds\Background Tip.txt" />
     <None Include="Assets\2D Space Kit\Readme.txt" />
     <None Include="Assets\2D Space Kit\Background Elements\Planets\Planet Masks\Note.txt" />
