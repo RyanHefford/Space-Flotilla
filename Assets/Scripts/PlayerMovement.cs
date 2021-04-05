@@ -26,18 +26,16 @@ public class PlayerMovement : MonoBehaviour
 
         //get edges of map
         map = GameObject.FindGameObjectsWithTag("Background")[0].GetComponent<MapScript>();
+        eastEdge = map.getEastEdge();
+        westEdge = map.getWestEdge();
+        northEdge = map.getNorthEdge();
+        southEdge = map.getSouthEdge();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (northEdge == 0)
-        {
-            eastEdge = map.getEastEdge();
-            westEdge = map.getWestEdge();
-            northEdge = map.getNorthEdge();
-            southEdge = map.getSouthEdge();
-        }
+        
         CalculateMovement();
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -60,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody.AddForce(new Vector2(movementVector.x * moveSpeed, movementVector.y * moveSpeed));
         //counter current force so that ship automaticly slows
-        rigidbody.AddForce(new Vector2(-rigidbody.velocity.x, -rigidbody.velocity.y));
+        rigidbody.AddForce(new Vector2(-rigidbody.velocity.x/2, -rigidbody.velocity.y/2));
         //check if on edge of map
 
         //east edge

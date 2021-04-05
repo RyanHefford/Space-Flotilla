@@ -10,7 +10,7 @@ public class MapScript : MonoBehaviour
     private float westEdge;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         Vector2 horizontalVector = GetHorizontalEdge();
         Vector2 verticalVector = GetVerticalEdge();
