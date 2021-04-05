@@ -23,7 +23,7 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    public Transform enemyGFX;
+    //public Transform enemyGFX;
 
     //TESTING
     private Vector2 direction;
@@ -43,6 +43,10 @@ public class EnemyAI : MonoBehaviour
         //not calculating a path then calculate a new one.
         if (seeker.IsDone())
         {
+            if(target == null)
+            {
+                print("Null");
+            }
             seeker.StartPath(rb.position, target.position, onPathCompleted);
         }
         

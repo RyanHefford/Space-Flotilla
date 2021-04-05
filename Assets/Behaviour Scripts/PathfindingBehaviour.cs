@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Flock/behavior/Pathfinding")]
+[CreateAssetMenu(menuName = "Flock/Behaviour/Pathfinding")]
 public class PathfindingBehaviour : FlockBehaviour
 {
 

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1793272330574826067}
   m_Layer: 0
   m_Name: Flock Agent
-  m_TagString: Untagged
+  m_TagString: Agent
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -130,7 +130,6 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 300
   nextWaypointDistance: 3
-  enemyGFX: {fileID: 0}
 --- !u!1 &556255929382372
 GameObject:
   m_ObjectHideFlags: 0

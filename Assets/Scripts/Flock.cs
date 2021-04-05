@@ -50,6 +50,9 @@ public class Flock : MonoBehaviour
                 );
             newAgent.name = "Agent " + i;
             agents.Add(newAgent);
+
+            //for pathfinding
+            newAgent.GetComponent<EnemyAI>().enabled = false;
         }
     }
 
