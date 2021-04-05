@@ -5,7 +5,7 @@ using UnityEngine;
 public class Flock : MonoBehaviour
 {
     public FlockAgent agentPrefab;
-    List<FlockAgent> agents = new List<FlockAgent>();
+    public List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     // populating flock values
@@ -28,6 +28,10 @@ public class Flock : MonoBehaviour
     float squareNeighborRadius;
     float squareAvoidanceRadius;
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
+
+
+    //for pathfinding:
+    private bool startPathfinding = false;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +69,45 @@ public class Flock : MonoBehaviour
             {
                 move = move.normalized * maxSpeed;
             }
-            agent.Move(move);
+
+            //enable pathfinding.
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                agent.nowPathFinding = true;
+                startPathfinding = true;
+
+            }
+            //disable the pathfinding behavior:
+            if (Input.GetKeyDown(KeyCode.B))
+            {
+                agent.nowPathFinding = false;
+                startPathfinding = false;
+
+            }
+
+
+
+            if (startPathfinding && agent.nowPathFinding)
+            {
+                //DO PATHFINDING NOW
+                agent.GetComponent<EnemyAI>().enabled = true;
+                agent.enemyAI.target = GameObject.Find("Player").transform;
+
+                //move *= agent.enemyAI.getDirection();
+                //agent.GetComponent<Rigidbody2D>().rotation += 1f;
+                agent.Move(move);
+
+
+
+            }
+            else
+            {
+                agent.GetComponent<EnemyAI>().enabled = false;
+                agent.Move(move);
+            }
+
+
+
         }
     }
 
