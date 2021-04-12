@@ -67,6 +67,9 @@ public class Flock : MonoBehaviour
         {
             corners[i] = cornersGO.transform.GetChild(i).transform;
         }
+
+        print("CHILDREN: " + corners.Length);
+
     }
 
     // Update is called once per frame
@@ -122,11 +125,7 @@ public class Flock : MonoBehaviour
                 //DO PATHFINDING NOW
                 agent.GetComponent<EnemyAI>().enabled = true;
 
-                //agent.enemyAI.target = corners[om.randomCorner];
-                agent.enemyAI.target = corners[1];
-
-                //move *= agent.enemyAI.getDirection();
-                //agent.GetComponent<Rigidbody2D>().rotation += 1f;
+                agent.enemyAI.target = corners[om.randomCorner];
                 agent.Move(move);
             }
             else
