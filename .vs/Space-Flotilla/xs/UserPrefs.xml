@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{AABA97EC-6674-C180-980F-8D3E6BE04AA3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/FlockAgent.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CornerHit.cs">
     <Files>
       <File FileName="Assets/Behaviour Scripts/PathfindingBehaviour.cs" Line="17" Column="48" />
-      <File FileName="Assets/Scripts/FlockBehaviour.cs" />
-      <File FileName="Assets/Scripts/FlockAgent.cs" Line="32" Column="21" />
-      <File FileName="Assets/Scripts/Pathfinding/EnemyAI.cs" Line="113" Column="30" />
+      <File FileName="Assets/Scripts/FlockBehaviour.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/FlockAgent.cs" Line="15" Column="36" />
+      <File FileName="Assets/Scripts/Pathfinding/EnemyAI.cs" Line="24" Column="20" />
       <File FileName="Assets/AstarPathfindingProject/Core/Path.cs" />
-      <File FileName="Assets/Behaviour Scripts/AvoidanceBehaviour.cs" Line="21" Column="26" NotebookId="1" />
-      <File FileName="Assets/Scripts/Flock.cs" NotebookId="1" />
-      <File FileName="Assets/Scripts/Pathfinding/Hit.cs" NotebookId="1" />
+      <File FileName="Assets/Behaviour Scripts/AvoidanceBehaviour.cs" Line="6" Column="26" NotebookId="1" />
+      <File FileName="Assets/Scripts/Flock.cs" Line="148" Column="14" NotebookId="1" />
+      <File FileName="Assets/Scripts/Pathfinding/Hit.cs" Line="8" Column="25" NotebookId="1" />
+      <File FileName="Assets/Scripts/CornerHit.cs" Line="14" Column="25" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

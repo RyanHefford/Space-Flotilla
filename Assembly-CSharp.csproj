@@ -83,6 +83,7 @@
     <Compile Include="Assets\Behaviour Scripts\StickToOverlordBehaviour.cs" />
     <Compile Include="Assets\Scripts\AsteroidWallRotation.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\CornerHit.cs" />
     <Compile Include="Assets\Scripts\Flock.cs" />
     <Compile Include="Assets\Scripts\FlockAgent.cs" />
     <Compile Include="Assets\Scripts\FlockBehaviour.cs" />
@@ -95,7 +96,6 @@
     <Compile Include="Assets\Scripts\PlayerMovement.cs" />
     <Compile Include="Assets\Scripts\PlayerShoot.cs" />
     <Compile Include="Assets\Scripts\Score.cs" />
-    <Compile Include="Assets\Scripts\Steering\Steering.cs" />
     <None Include="Assets\2D Space Kit\Backgrounds\Background Tip.txt" />
     <None Include="Assets\2D Space Kit\Readme.txt" />
     <None Include="Assets\2D Space Kit\Background Elements\Planets\Planet Masks\Note.txt" />

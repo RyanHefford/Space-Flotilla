@@ -12,6 +12,7 @@ public class FlockAgent : MonoBehaviour
     //Pathfinding related
     public EnemyAI enemyAI;
     public bool nowPathFinding = false;
+    public bool goToCorner = false;
 
     // Start is called before the first frame update
     void Start()

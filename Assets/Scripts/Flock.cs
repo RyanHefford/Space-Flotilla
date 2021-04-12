@@ -33,6 +33,11 @@ public class Flock : MonoBehaviour
     //for pathfinding:
     private bool startPathfinding = false;
 
+    //For corners and creating an overlord
+    private Transform[] corners = new Transform[4];
+    private GameObject cornersGO;
+    private bool findingCorner = false;
+    private int randomCorner = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,6 +58,14 @@ public class Flock : MonoBehaviour
 
             //for pathfinding
             newAgent.GetComponent<EnemyAI>().enabled = false;
+        }
+
+        //Get corners game object
+        cornersGO = GameObject.Find("Corners");
+        //Add children to array
+        for (int i = 0; i < cornersGO.transform.childCount; i++)
+        {
+            corners[i] = cornersGO.transform.GetChild(i).transform;
         }
     }
 
@@ -78,19 +91,20 @@ public class Flock : MonoBehaviour
             {
                 agent.nowPathFinding = true;
                 startPathfinding = true;
-
+                findingCorner = false;
             }
             //disable the pathfinding behavior:
             if (Input.GetKeyDown(KeyCode.B))
             {
                 agent.nowPathFinding = false;
                 startPathfinding = false;
+                findingCorner = false;
 
             }
 
 
 
-            if (startPathfinding && agent.nowPathFinding)
+            if (startPathfinding && agent.nowPathFinding && !findingCorner)
             {
                 //DO PATHFINDING NOW
                 agent.GetComponent<EnemyAI>().enabled = true;
@@ -103,10 +117,34 @@ public class Flock : MonoBehaviour
 
 
             }
+            else if(startPathfinding && agent.nowPathFinding && findingCorner && agent.goToCorner)
+            {
+                //DO PATHFINDING NOW
+                agent.GetComponent<EnemyAI>().enabled = true;
+
+                agent.enemyAI.target = corners[randomCorner];
+
+                //move *= agent.enemyAI.getDirection();
+                //agent.GetComponent<Rigidbody2D>().rotation += 1f;
+                agent.Move(move);
+            }
             else
             {
                 agent.GetComponent<EnemyAI>().enabled = false;
                 agent.Move(move);
+            }
+
+
+            //If I want random agents to go to corners
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                agent.nowPathFinding = true;
+                startPathfinding = true;
+                findingCorner = true;
+                //Selecting 5 random agents to go to a specific corner.
+                selectRandomAgents();
+                //generate a random number between 0-3 to get a random corner.
+                getRandomCorner();
             }
 
 
@@ -127,4 +165,33 @@ public class Flock : MonoBehaviour
         }
         return context;
     }
+
+    private void getRandomCorner()
+    {
+        randomCorner = Random.Range(0, 4);
+    }
+    private void selectRandomAgents()
+    {
+        //setting their goToCorner bool to true.
+        //5 random agents
+        int count = 0;
+
+        while(count < 5)
+        {
+            bool finished = false;
+            while (!finished)
+            {
+                int agentNumber = Random.Range(0, agents.Count - 1);
+                if (!agents[agentNumber].goToCorner)
+                {
+                    agents[agentNumber].goToCorner = true;
+                    finished = true;
+                }
+                
+            }
+            count += 1;
+        }
+        
+    }
+
 }
