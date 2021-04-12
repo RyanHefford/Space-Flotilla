@@ -13,7 +13,7 @@ public class EnemyAI : MonoBehaviour
     public float speed = 300f;
 
     //how close the enemy needs to be to a waypoint before moving to the next one.
-    public float nextWaypointDistance = 3f;
+    public float nextWaypointDistance = 2f;
 
     //current path we are following
     Path path;
@@ -57,10 +57,31 @@ public class EnemyAI : MonoBehaviour
         //make sure no error
         if (!p.error)
         {
+            //path smoothing.
+            //p.vectorPath = pathSmoothing(p);
+
+            
+
             //current path = the newly generated path
             path = p;
             currentWaypoint = 0;
         }
+    }
+
+    private List<Vector3> pathSmoothing(Path p)
+    {
+        Vector3 currentPosition = rb.transform.position;
+        List<Vector3> newVectorPath = new List<Vector3>();
+
+        foreach (Vector3 nextWaypoint in p.vectorPath)
+        {
+
+            
+
+
+        }
+
+        return newVectorPath;
     }
 
 

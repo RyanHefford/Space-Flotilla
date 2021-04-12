@@ -263,7 +263,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &476041702
 MonoBehaviour:
@@ -280,7 +280,7 @@ MonoBehaviour:
   agentPrefab: {fileID: 556254486794146, guid: e77a1109993c0884fb2bb85e156d4362, type: 3}
   agents: []
   behaviour: {fileID: 11400000, guid: 993b19f5913a6b14ba4e2a88e6f3fb77, type: 2}
-  startingCount: 250
+  startingCount: 10
   driveFactor: 10
   maxSpeed: 4
   neighborRadius: 1.5
@@ -869,7 +869,7 @@ PrefabInstance:
     - target: {fileID: 4729039855937996590, guid: 4ceeb908325cff4448897914fceb44b8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4729039855937996590, guid: 4ceeb908325cff4448897914fceb44b8,
         type: 3}
