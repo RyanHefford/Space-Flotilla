@@ -8,44 +8,28 @@ public class CornerHit : MonoBehaviour
 
     public static CornerHit Instance { get { return _instance; } }
 
-    private int countHit = 0;
-    public Transform overlordSpawn;
-    public GameObject overlordPrefab;
     private Flock flock;
-
-    private void Awake()
-    {
-        if (_instance != null && _instance != this)
-        {
-            Destroy(this.gameObject);
-        }
-        else
-        {
-            _instance = this;
-        }
-    }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Agent")
         {
-            countHit += 1;
+            CornerCount._instance.countHit += 1;
             flock = GameObject.Find("Flock").GetComponent<Flock>();
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
             flock.agents.Remove(agentToDelete);
             Destroy(collision.gameObject);
-            print(countHit);
+            print(CornerCount._instance.countHit);
         }
 
-        if(countHit == 5)
+        if(CornerCount._instance.countHit == 5)
         {
             //instantiate a new overlord
-            Instantiate(overlordPrefab, overlordSpawn);
+            Instantiate(CornerCount._instance.overlordPrefab, CornerCount._instance.overlordSpawn);
             //cancel all objects going to the corner
             cancelCorner();
             //resent count
-            countHit = 0;
+            CornerCount._instance.countHit = 0;
 
         }
     }

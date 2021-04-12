@@ -72,9 +72,9 @@
     <Compile Include="Assets\Behaviour Scripts\StayInRadiusBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\SteeredCohesionBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\StickToOverlordBehaviour.cs" />
-    <Compile Include="Assets\OverlordManager.cs" />
     <Compile Include="Assets\Scripts\AsteroidWallRotation.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
+    <Compile Include="Assets\Scripts\CornerCount.cs" />
     <Compile Include="Assets\Scripts\CornerHit.cs" />
     <Compile Include="Assets\Scripts\Flock.cs" />
     <Compile Include="Assets\Scripts\FlockAgent.cs" />
@@ -82,6 +82,7 @@
     <Compile Include="Assets\Scripts\MapGeneration.cs" />
     <Compile Include="Assets\Scripts\MapScript.cs" />
     <Compile Include="Assets\Scripts\MissleMovement.cs" />
+    <Compile Include="Assets\Scripts\OverlordManager.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\Hit.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\RaycastModifiers.cs.cs" />
