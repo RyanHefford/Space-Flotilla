@@ -25,16 +25,6 @@ public class CornerHit : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(countHit == 4)
-        {
-            //instantiate a new overlord
-            Instantiate(overlordPrefab, overlordSpawn);
-            //resent count
-            countHit = 0;
-        }
-    }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -45,7 +35,32 @@ public class CornerHit : MonoBehaviour
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
             flock.agents.Remove(agentToDelete);
             Destroy(collision.gameObject);
-            print("HITHITHITHIT");
+            print(countHit);
+        }
+
+        if(countHit == 5)
+        {
+            //instantiate a new overlord
+            Instantiate(overlordPrefab, overlordSpawn);
+            //cancel all objects going to the corner
+            cancelCorner();
+            //resent count
+            countHit = 0;
+
         }
     }
+
+
+
+    private void cancelCorner()
+    {
+        foreach(FlockAgent agent in flock.agents)
+        {
+            //disable pathfinding on that object.
+            agent.goToCorner = false;
+            agent.nowPathFinding = false;
+            agent.GetComponent<EnemyAI>().enabled = false;
+        }
+    }
+
 }

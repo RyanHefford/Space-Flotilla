@@ -64,15 +64,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\2D Space Kit\Scripts\AimBeam.cs" />
-    <Compile Include="Assets\2D Space Kit\Scripts\Crosshair.cs" />
-    <Compile Include="Assets\2D Space Kit\Scripts\CustomPointer.cs" />
-    <Compile Include="Assets\2D Space Kit\Scripts\ExampleShipControl.cs" />
-    <Compile Include="Assets\2D Space Kit\Scripts\PSDestroy.cs" />
-    <Compile Include="Assets\2D Space Kit\Scripts\ParallaxLayer.cs" />
-    <Compile Include="Assets\2D Space Kit\Scripts\PlayerControlledTurret.cs" />
-    <Compile Include="Assets\2D Space Kit\Scripts\Projectile.cs" />
-    <Compile Include="Assets\2D Space Kit\Scripts\ShipCamera.cs" />
     <Compile Include="Assets\Behaviour Scripts\AlignmentBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\AvoidanceBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\CohesionBehaviour.cs" />
@@ -81,6 +72,7 @@
     <Compile Include="Assets\Behaviour Scripts\StayInRadiusBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\SteeredCohesionBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\StickToOverlordBehaviour.cs" />
+    <Compile Include="Assets\OverlordManager.cs" />
     <Compile Include="Assets\Scripts\AsteroidWallRotation.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CornerHit.cs" />

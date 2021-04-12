@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{AABA97EC-6674-C180-980F-8D3E6BE04AA3}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProject", "AstarPathfindingProject.csproj", "{98F5DAB2-ACB1-7702-A023-544FA171C45A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{AABA97EC-6674-C180-980F-8D3E6BE04AA3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AstarPathfindingProjectEditor", "AstarPathfindingProjectEditor.csproj", "{4BCD8E0A-947B-B168-ACC3-51FE8D551947}"
 EndProject
@@ -15,14 +15,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AABA97EC-6674-C180-980F-8D3E6BE04AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AABA97EC-6674-C180-980F-8D3E6BE04AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AABA97EC-6674-C180-980F-8D3E6BE04AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AABA97EC-6674-C180-980F-8D3E6BE04AA3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{98F5DAB2-ACB1-7702-A023-544FA171C45A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{98F5DAB2-ACB1-7702-A023-544FA171C45A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98F5DAB2-ACB1-7702-A023-544FA171C45A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98F5DAB2-ACB1-7702-A023-544FA171C45A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AABA97EC-6674-C180-980F-8D3E6BE04AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AABA97EC-6674-C180-980F-8D3E6BE04AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AABA97EC-6674-C180-980F-8D3E6BE04AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AABA97EC-6674-C180-980F-8D3E6BE04AA3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4BCD8E0A-947B-B168-ACC3-51FE8D551947}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4BCD8E0A-947B-B168-ACC3-51FE8D551947}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4BCD8E0A-947B-B168-ACC3-51FE8D551947}.Release|Any CPU.ActiveCfg = Release|Any CPU

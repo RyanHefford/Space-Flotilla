@@ -37,7 +37,7 @@ public class Flock : MonoBehaviour
     private Transform[] corners = new Transform[4];
     private GameObject cornersGO;
     private bool findingCorner = false;
-    private int randomCorner = 0;
+    public OverlordManager om;
     // Start is called before the first frame update
     void Start()
     {
@@ -122,7 +122,8 @@ public class Flock : MonoBehaviour
                 //DO PATHFINDING NOW
                 agent.GetComponent<EnemyAI>().enabled = true;
 
-                agent.enemyAI.target = corners[randomCorner];
+                //agent.enemyAI.target = corners[om.randomCorner];
+                agent.enemyAI.target = corners[1];
 
                 //move *= agent.enemyAI.getDirection();
                 //agent.GetComponent<Rigidbody2D>().rotation += 1f;
@@ -141,10 +142,6 @@ public class Flock : MonoBehaviour
                 agent.nowPathFinding = true;
                 startPathfinding = true;
                 findingCorner = true;
-                //Selecting 5 random agents to go to a specific corner.
-                selectRandomAgents();
-                //generate a random number between 0-3 to get a random corner.
-                getRandomCorner();
             }
 
 
@@ -166,32 +163,6 @@ public class Flock : MonoBehaviour
         return context;
     }
 
-    private void getRandomCorner()
-    {
-        randomCorner = Random.Range(0, 4);
-    }
-    private void selectRandomAgents()
-    {
-        //setting their goToCorner bool to true.
-        //5 random agents
-        int count = 0;
-
-        while(count < 5)
-        {
-            bool finished = false;
-            while (!finished)
-            {
-                int agentNumber = Random.Range(0, agents.Count - 1);
-                if (!agents[agentNumber].goToCorner)
-                {
-                    agents[agentNumber].goToCorner = true;
-                    finished = true;
-                }
-                
-            }
-            count += 1;
-        }
-        
-    }
+    
 
 }
