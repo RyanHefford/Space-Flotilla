@@ -35,7 +35,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         CalculateMovement();
         mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
     }
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidbody.AddForce(new Vector2(movementVector.x * moveSpeed, movementVector.y * moveSpeed));
         //counter current force so that ship automaticly slows
-        rigidbody.AddForce(new Vector2(-rigidbody.velocity.x/2, -rigidbody.velocity.y/2));
+        rigidbody.AddForce(new Vector2(-rigidbody.velocity.x / 2, -rigidbody.velocity.y / 2));
         //check if on edge of map
 
         //east edge
@@ -70,14 +70,14 @@ public class PlayerMovement : MonoBehaviour
 
         }
         //north edge
-        if(transform.position.y + hitBoxRadius >= northEdge)
+        if (transform.position.y + hitBoxRadius >= northEdge)
         {
             transform.position = new Vector3(transform.position.x, northEdge - hitBoxRadius, 0);
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
             rigidbody.angularVelocity = 0;
         }
         //south edge
-        if(transform.position.y - hitBoxRadius <= southEdge)
+        if (transform.position.y - hitBoxRadius <= southEdge)
         {
             transform.position = new Vector3(transform.position.x, southEdge + hitBoxRadius, 0);
             rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
@@ -96,8 +96,8 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector2 lookDirection = mousePos - rigidbody.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
-        
-        rigidbody.transform.rotation = Quaternion.Slerp(Quaternion.Euler(0,0, rigidbody.rotation), 
+
+        rigidbody.transform.rotation = Quaternion.Slerp(Quaternion.Euler(0, 0, rigidbody.rotation),
                                         Quaternion.Euler(0, 0, angle), Time.deltaTime * rotationSpeed);
     }
 }

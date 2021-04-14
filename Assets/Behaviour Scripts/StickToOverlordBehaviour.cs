@@ -8,7 +8,7 @@ public class StickToOverlordBehaviour : FlockBehaviour
     private GameObject overlord;
     private Rigidbody2D rigidbody;
     private Vector2 overlordCentre;
-    public float overlordRadius = 2.0f;
+    public float overlordRadius = 5.0f;
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
@@ -19,7 +19,7 @@ public class StickToOverlordBehaviour : FlockBehaviour
         float t = overlordOffset.magnitude / overlordRadius;
         if (t < 0.9f)
         {
-            return overlordCentre;
+            return Vector2.zero;
         }
 
         return overlordOffset * t * t;
