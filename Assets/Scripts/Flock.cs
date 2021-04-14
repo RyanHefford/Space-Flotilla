@@ -38,9 +38,19 @@ public class Flock : MonoBehaviour
 
         for (int i = 0; i < startingCount; i++)
         {
+            Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+
+            // Returns true if there are any colliders overlapping the sphere defined by position and radius in world coordinates.
+            while (Physics2D.OverlapCircle(newLocation, 1.5f) != null)
+            {
+                // Keep getting new locations until one doesn't overlap.
+                newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+            }
+
+            // Then spawn the agent in that location.
             FlockAgent newAgent = Instantiate(
                 agentPrefab,
-                Random.insideUnitCircle * startingCount * AgentDensity,
+                newLocation,
                 Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                 transform
                 );
