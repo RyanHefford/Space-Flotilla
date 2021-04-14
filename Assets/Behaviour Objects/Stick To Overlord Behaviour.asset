@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f3a440d16977b4d804733da39c6c95, type: 3}
   m_Name: Stick To Overlord Behaviour
   m_EditorClassIdentifier: 
-  overlordRadius: 2
+  overlordRadius: 5
