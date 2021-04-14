@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
+
 public class MapGeneration : MonoBehaviour
 {
     //this multi dimentional array is used to check if a tile is already occupied (true = occupied)
     private bool[,] tileMap;
     //variable used to dictate spawn rate of terrain
-    private float tileSpawnChance = 0.1f;
+    private float tileSpawnChance = 1f;
     private int verticalTiles;
     private int horizontalTiles;
     public GameObject[] singleTileObjects;
@@ -16,6 +17,7 @@ public class MapGeneration : MonoBehaviour
     public GameObject[] doubleVerticalObjects;
     public GameObject[] quadTileObjects;
     private MapScript map;
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,8 +27,37 @@ public class MapGeneration : MonoBehaviour
         verticalTiles = (int)math.floor(map.getNorthEdge() * 2) / 10;
         horizontalTiles = (int)math.floor(map.getEastEdge() * 2) / 10;
 
+        verticalTiles -= 1;
+        horizontalTiles -= 1;
+
         tileMap = new bool[verticalTiles,horizontalTiles];
+
+        tileMap[0, 0] = true;
+        tileMap[0, 1] = true;
+        tileMap[1, 0] = true;
+        tileMap[1, 1] = true;
+
+        tileMap[verticalTiles-1, 0] = true;
+        tileMap[verticalTiles-1, 1] = true;
+        tileMap[verticalTiles-2, 0] = true;
+        tileMap[verticalTiles-2, 1] = true;
+
+
+        tileMap[verticalTiles - 1, horizontalTiles-1] = true;
+        tileMap[verticalTiles - 1, horizontalTiles - 2] = true;
+        tileMap[verticalTiles - 2, horizontalTiles - 1] = true;
+        tileMap[verticalTiles - 2, horizontalTiles -2] = true;
+
+        tileMap[0, horizontalTiles - 1] = true;
+        tileMap[0, horizontalTiles - 2] = true;
+        tileMap[1, horizontalTiles - 1] = true;
+        tileMap[1, horizontalTiles - 2] = true;
+
         CreateMap();
+
+        //Scanning the grid for obstacles.
+
+        DoDelayAction(0.5f);
 
     }
 
@@ -48,6 +79,7 @@ public class MapGeneration : MonoBehaviour
                             //decides what shape tile
                             int tileShape = UnityEngine.Random.Range(1, 5);
                             GameObject tempObject;
+                            
                             switch (tileShape)
                             {
                                 //single tile
@@ -58,6 +90,9 @@ public class MapGeneration : MonoBehaviour
                                     tileMap[i, j] = true;
 
                                     tileFound = true;
+
+                                    tempObject.layer = LayerMask.NameToLayer("Obstacle");
+                                    updateChildrenLayer(tempObject);
                                     break;
                                 //double horizontal
                                 case 2:
@@ -70,6 +105,8 @@ public class MapGeneration : MonoBehaviour
                                         tileMap[i, j + 1] = true;
 
                                         tileFound = true;
+                                        tempObject.layer = LayerMask.NameToLayer("Obstacle");
+                                        updateChildrenLayer(tempObject);
                                     }
                                     break;
                                 //double vertical
@@ -83,6 +120,8 @@ public class MapGeneration : MonoBehaviour
                                         tileMap[i + 1, j] = true;
 
                                         tileFound = true;
+                                        tempObject.layer = LayerMask.NameToLayer("Obstacle");
+                                        updateChildrenLayer(tempObject);
                                     }
                                     
                                     break;
@@ -99,6 +138,8 @@ public class MapGeneration : MonoBehaviour
                                         tileMap[i + 1, j + 1] = true;
 
                                         tileFound = true;
+                                        tempObject.layer = LayerMask.NameToLayer("Obstacle");
+                                        updateChildrenLayer(tempObject);
                                     }
                                     break;
                             }
@@ -108,5 +149,30 @@ public class MapGeneration : MonoBehaviour
                 }
             }
         }
+
     }
+
+    private void updateChildrenLayer(GameObject go)
+    {
+        for(int i = 0; i < go.transform.childCount; i++)
+        {
+            go.transform.GetChild(i).gameObject.layer = LayerMask.NameToLayer("Obstacle");
+        }
+    }
+
+    void DoDelayAction(float delayTime)
+    {
+        StartCoroutine(DelayAction(delayTime));
+    }
+
+    IEnumerator DelayAction(float delayTime)
+    {
+        //Wait for the specified delay time before continuing.
+        yield return new WaitForSeconds(delayTime);
+
+        //Do the action after the delay time has finished.
+        AstarPath.active.Scan();
+    }
+
+
 }

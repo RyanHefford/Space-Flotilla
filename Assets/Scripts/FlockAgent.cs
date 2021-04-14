@@ -9,11 +9,17 @@ public class FlockAgent : MonoBehaviour
     public Collider2D AgentCollider { get { return agentCollider; } }
     private Rigidbody2D rb;
 
+    //Pathfinding related
+    public EnemyAI enemyAI;
+    public bool nowPathFinding = false;
+    public bool goToCorner = false;
+
     // Start is called before the first frame update
     void Start()
     {
         agentCollider = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        enemyAI = GetComponent<EnemyAI>();
     }
 
     public void Move(Vector2 velocity)

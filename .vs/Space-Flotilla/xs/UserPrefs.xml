@@ -1,0 +1,24 @@
+﻿<Properties StartupConfiguration="{AABA97EC-6674-C180-980F-8D3E6BE04AA3}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/MapGeneration.cs">
+    <Files>
+      <File FileName="Assets/Behaviour Scripts/PathfindingBehaviour.cs" Line="17" Column="48" />
+      <File FileName="Assets/Scripts/FlockBehaviour.cs" />
+      <File FileName="Assets/Scripts/FlockAgent.cs" />
+      <File FileName="Assets/Scripts/Pathfinding/EnemyAI.cs" />
+      <File FileName="Assets/AstarPathfindingProject/Core/Path.cs" />
+      <File FileName="Assets/Scripts/OverlordManager.cs" Line="25" Column="68" />
+      <File FileName="Assets/Behaviour Scripts/AvoidanceBehaviour.cs" Line="18" Column="10" NotebookId="1" />
+      <File FileName="Assets/Scripts/Flock.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/Pathfinding/Hit.cs" NotebookId="1" />
+      <File FileName="Assets/Scripts/CornerHit.cs" Line="35" Column="6" NotebookId="1" />
+      <File FileName="Assets/Scripts/MapGeneration.cs" Line="36" Column="1" NotebookId="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6e688ef0-7e64-45f5-8fc8-d469ae067495" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
