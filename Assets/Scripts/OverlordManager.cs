@@ -39,7 +39,7 @@ public class OverlordManager : MonoBehaviour
     {
         agents = flock.agents;
         //If I want random agents to go to corners
-        if (!overlordExists && !creatingOverlord)
+        if (!overlordExists && !creatingOverlord && agents.Count >= 5)
         {
             creatingOverlord = true;
             //generate a random number between 0-3 to get a random corner.
@@ -50,7 +50,11 @@ public class OverlordManager : MonoBehaviour
             //countPlayer();
         }
         //check for if the agent which was going to the corner got destroyed or not.
-        checkingAgentsForOverlordCreation();
+        if(agents.Count >= 5)
+        {
+            checkingAgentsForOverlordCreation();
+        }
+        
     }
 
 
@@ -103,7 +107,7 @@ public class OverlordManager : MonoBehaviour
                 {
                     agents[agentNumber].goToCorner = true;
                     agents[agentNumber].GetComponent<EnemyAI>().enabled = true;
-                    agents[agentNumber].nowPathFinding = true;
+                     agents[agentNumber].nowPathFinding = true;
                     agents[agentNumber].enemyAI.target = corners[om.randomCorner];
                     finished = true;
                 }
