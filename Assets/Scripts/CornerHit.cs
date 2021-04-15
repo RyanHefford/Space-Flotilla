@@ -40,7 +40,7 @@ public class CornerHit : MonoBehaviour
 
             //set the overlord to exist.
             om.overlordExists = true;
-
+            om.creatingOverlord = false;
         }
     }
 
@@ -51,9 +51,13 @@ public class CornerHit : MonoBehaviour
         foreach(FlockAgent agent in flock.agents)
         {
             //disable pathfinding on that object.
-            agent.goToCorner = false;
-            agent.nowPathFinding = false;
-            agent.GetComponent<EnemyAI>().enabled = false;
+            if (agent.goToCorner)
+            {
+                agent.goToCorner = false;
+                agent.nowPathFinding = false;
+                agent.GetComponent<EnemyAI>().enabled = false;
+            }
+
         }
     }
 

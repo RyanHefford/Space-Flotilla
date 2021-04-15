@@ -32,7 +32,7 @@ public class StickToOverlordBehaviour : FlockBehaviour
         }
         else
         {
-            return Vector2.one;
+            return Vector2.zero;
         }
 
         

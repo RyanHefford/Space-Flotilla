@@ -118,9 +118,9 @@ public class Flock : MonoBehaviour
 
 
 
-            if (startPathfinding && agent.nowPathFinding && !findingCorner)
+            if (agent.nowPathFinding && !agent.goToCorner)
             {
-                //DO PATHFINDING NOW
+                //DO PATHFINDING NOW TO PLAYER
                 agent.GetComponent<EnemyAI>().enabled = true;
                 agent.enemyAI.target = GameObject.Find("Player").transform;
 
@@ -131,30 +131,25 @@ public class Flock : MonoBehaviour
 
 
             }
-            else if(startPathfinding && agent.nowPathFinding && findingCorner && agent.goToCorner)
+            else if(agent.nowPathFinding && agent.goToCorner)
             {
-                //DO PATHFINDING NOW
-                agent.GetComponent<EnemyAI>().enabled = true;
 
-                agent.enemyAI.target = corners[om.randomCorner];
                 agent.Move(move);
             }
             else
             {
-                agent.GetComponent<EnemyAI>().enabled = false;
+                //agent.GetComponent<EnemyAI>().enabled = false;
                 agent.Move(move);
             }
 
 
-            //If I want random agents to go to corners
+            ////If I want random agents to go to corners
             if (!om.overlordExists && !om.creatingOverlord)
             {
-                agent.nowPathFinding = true;
+                //agent.nowPathFinding = true;
                 startPathfinding = true;
                 findingCorner = true;
             }
-
-
 
         }
     }

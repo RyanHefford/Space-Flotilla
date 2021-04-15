@@ -7,6 +7,7 @@ public class AlignmentBehaviour : FlockBehaviour
 {
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+
         //if no neighbors, maintain current alignment
         if (context.Count == 0)
             return agent.transform.up;
