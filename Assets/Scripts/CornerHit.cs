@@ -10,6 +10,13 @@ public class CornerHit : MonoBehaviour
 
     private Flock flock;
 
+    private OverlordManager om;
+
+    private void Start()
+    {
+        om = GameObject.Find("Manager").GetComponent<OverlordManager>();
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.tag == "Agent")
@@ -30,6 +37,9 @@ public class CornerHit : MonoBehaviour
             cancelCorner();
             //resent count
             CornerCount._instance.countHit = 0;
+
+            //set the overlord to exist.
+            om.overlordExists = true;
 
         }
     }

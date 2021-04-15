@@ -50,7 +50,7 @@ public class Flock : MonoBehaviour
             Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
 
             // Returns true if there are any colliders overlapping the sphere defined by position and radius in world coordinates.
-            while (Physics2D.OverlapCircle(newLocation, 1.5f) != null)
+            while (Physics2D.OverlapCircle(newLocation, 1.25f) != null)
             {
                 // Keep getting new locations until one doesn't overlap.
                 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
@@ -78,7 +78,8 @@ public class Flock : MonoBehaviour
             corners[i] = cornersGO.transform.GetChild(i).transform;
         }
 
-        print("CHILDREN: " + corners.Length);
+        //initializing the overlord manager.
+        om = GameObject.Find("Manager").GetComponent<OverlordManager>();
 
     }
 
@@ -146,7 +147,7 @@ public class Flock : MonoBehaviour
 
 
             //If I want random agents to go to corners
-            if (Input.GetKeyDown(KeyCode.C))
+            if (!om.overlordExists && !om.creatingOverlord)
             {
                 agent.nowPathFinding = true;
                 startPathfinding = true;
