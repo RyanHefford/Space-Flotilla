@@ -121,26 +121,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &153506759 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4729039855937996587, guid: 4ceeb908325cff4448897914fceb44b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 4729039857667767536}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &153506763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 153506759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a7adc51cb3d14926a0d4c3c31d2f49e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wanderTime: 0
-  movementSpeed: 0
 --- !u!1 &172407026
 GameObject:
   m_ObjectHideFlags: 0
@@ -270,7 +250,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &476041701
 Transform:
   m_ObjectHideFlags: 0
@@ -298,9 +278,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   agentPrefab: {fileID: 556254486794146, guid: e77a1109993c0884fb2bb85e156d4362, type: 3}
+  overlordPrefab: {fileID: -2312271845750928536, guid: 4ceeb908325cff4448897914fceb44b8,
+    type: 3}
   agents: []
   behaviour: {fileID: 11400000, guid: 993b19f5913a6b14ba4e2a88e6f3fb77, type: 2}
-  startingCount: 204
+  startingCount: 2
   driveFactor: 10
   maxSpeed: 4
   neighborRadius: 1.5

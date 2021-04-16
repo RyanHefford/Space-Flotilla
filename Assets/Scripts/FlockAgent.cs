@@ -13,6 +13,7 @@ public class FlockAgent : MonoBehaviour
     public EnemyAI enemyAI;
     public bool nowPathFinding = false;
     public bool goToCorner = false;
+    public bool isOverlord = false;
 
     // Start is called before the first frame update
     void Start()

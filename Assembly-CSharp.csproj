@@ -77,11 +77,11 @@
     <Compile Include="Assets\Behaviour Scripts\AvoidanceBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\CohesionBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\CompositeBehaviour.cs" />
+    <Compile Include="Assets\Behaviour Scripts\OverlordBehavior.cs" />
     <Compile Include="Assets\Behaviour Scripts\PathfindingBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\StayInRadiusBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\SteeredCohesionBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\StickToOverlordBehaviour.cs" />
-    <Compile Include="Assets\OverlordBehaviors.cs" />
     <Compile Include="Assets\Scripts\AsteroidWallRotation.cs" />
     <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\CornerCount.cs" />

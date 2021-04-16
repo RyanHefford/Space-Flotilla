@@ -5,11 +5,12 @@ using UnityEngine;
 public class Flock : MonoBehaviour
 {
     public FlockAgent agentPrefab;
+    public FlockAgent overlordPrefab;
     public List<FlockAgent> agents = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     // populating flock values
-    [Range(10, 500)]
+    [Range(2, 500)]
     public int startingCount = 250;
     const float AgentDensity = 0.08f;
 
@@ -29,7 +30,7 @@ public class Flock : MonoBehaviour
     float squareAvoidanceRadius;
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
-
+    private int numOfOverlordsStart = 0;
     //for pathfinding:
     private bool startPathfinding = false;
 
@@ -55,16 +56,36 @@ public class Flock : MonoBehaviour
                 // Keep getting new locations until one doesn't overlap.
                 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
             }
+            FlockAgent newAgent = null;
+            if (numOfOverlordsStart == 0)
+            {
 
-            // Then spawn the agent in that location.
-            FlockAgent newAgent = Instantiate(
-                agentPrefab,
-                newLocation,
-                Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
-                transform
-                );
-            newAgent.name = "Agent " + i;
-            agents.Add(newAgent);
+                // Then spawn the overlord in that location.
+                 newAgent = Instantiate(
+                    agentPrefab,
+                    newLocation,
+                    Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                    transform
+                    );
+                newAgent.name = "Overlord";
+                newAgent.isOverlord = true;
+                agents.Add(newAgent);
+                numOfOverlordsStart = 1;
+            }
+            else
+            {
+                // Then spawn the agent in that location.
+                newAgent = Instantiate(
+                    agentPrefab,
+                    newLocation,
+                    Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                    transform
+                    );
+                newAgent.name = "Agent " + i;
+                agents.Add(newAgent);
+            }
+
+           
 
             //for pathfinding
             newAgent.GetComponent<EnemyAI>().enabled = false;
@@ -150,6 +171,7 @@ public class Flock : MonoBehaviour
                 startPathfinding = true;
                 findingCorner = true;
             }
+            Debug.Log(agent.name);
 
         }
     }
