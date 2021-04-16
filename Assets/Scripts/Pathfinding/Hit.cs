@@ -40,7 +40,11 @@ public class Hit : MonoBehaviour
         //If we hit an overlord with the missle.
         if(collision.gameObject.tag == "Overlord")
         {
+            //reset the agents that are sticking to the overlord
+            //and make them not STICk to the overlord
+            resetStickToOverlordAgents();
 
+            //overlord does not exist
             om.overlordExists = false;
             //more points for destroying an overlord
             //update the score when we are shooting with the missle:
@@ -59,6 +63,14 @@ public class Hit : MonoBehaviour
             Destroy(this.gameObject);
         }
 
+    }
+
+    private void resetStickToOverlordAgents()
+    {
+        foreach(FlockAgent agent in flock.agents)
+        {
+            agent.stickingToOverlord = false;
+        }
     }
 
 }

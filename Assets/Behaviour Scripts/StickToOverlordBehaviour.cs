@@ -16,8 +16,34 @@ public class StickToOverlordBehaviour : FlockBehaviour
     {
         om = GameObject.Find("Manager").GetComponent<OverlordManager>();
 
-        if (om.overlordExists)
+
+        //see if the overlord exists and is within the nearby objects inside the context variable.
+        bool overlordNearby = false;
+        foreach(Transform transform in context)
         {
+            if(transform.gameObject.tag == "Agent" || transform.gameObject.tag == "Overlord")
+            {
+                FlockAgent flockAgent = transform.gameObject.GetComponent<FlockAgent>();
+
+
+                //agent nearby IS AN OVERLORD and the agent calculating the loop IS NOT an overlord. 
+                if (flockAgent.isOverlord && !agent.isOverlord)
+                {
+                    //the current agent doing the calculation should do it
+                    overlordNearby = true;
+                }
+            }
+            
+        }
+
+        if (overlordNearby)
+        {
+            agent.stickingToOverlord = true;
+        }
+
+        if (om.overlordExists && !agent.isOverlord && agent.stickingToOverlord)
+        {
+            Debug.Log("INSIDE");
             overlord = GameObject.FindGameObjectsWithTag("Overlord")[0];
             overlordCentre = overlord.transform.position;
 

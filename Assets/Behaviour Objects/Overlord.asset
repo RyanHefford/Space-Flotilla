@@ -9,16 +9,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74b382462405da44ea70893b0adbf27b, type: 3}
+  m_Script: {fileID: 11500000, guid: 1229530f2ff6f4170859974c7644428f, type: 3}
   m_Name: Overlord
   m_EditorClassIdentifier: 
-  behaviours:
-  - {fileID: 11400000, guid: 480decea0d664ae4395356ac26942592, type: 2}
-  - {fileID: 11400000, guid: 92680a31298e93f41aeec897225966a8, type: 2}
-  - {fileID: 11400000, guid: 5e5b29914de06ef46b782e3e95b02a5f, type: 2}
-  - {fileID: 11400000, guid: 4aea38e07ce8f064aba3079a13c5846d, type: 2}
-  weights:
-  - 4
-  - 1
-  - 2
-  - 0.1

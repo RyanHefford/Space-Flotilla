@@ -14,6 +14,7 @@ public class FlockAgent : MonoBehaviour
     public bool nowPathFinding = false;
     public bool goToCorner = false;
     public bool isOverlord = false;
+    public bool stickingToOverlord = false;
 
     // Start is called before the first frame update
     void Start()

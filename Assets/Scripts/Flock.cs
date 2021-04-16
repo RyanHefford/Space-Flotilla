@@ -66,10 +66,13 @@ public class Flock : MonoBehaviour
                 Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                 transform
                 );
-                newAgent.name = "Agent " + i;
+                newAgent.name = "Overlord";
                 agents.Add(newAgent);
 
                 newAgent.isOverlord = true;
+
+                newAgent.GetComponent<EnemyAI>().enabled = false;
+
                 numOfOverlordsStart = 1;
             }
             else
@@ -147,22 +150,13 @@ public class Flock : MonoBehaviour
 
                 //move *= agent.enemyAI.getDirection();
                 //agent.GetComponent<Rigidbody2D>().rotation += 1f;
-                agent.Move(move);
+                //agent.Move(move);
 
 
 
             }
-            else if(agent.nowPathFinding && agent.goToCorner)
-            {
 
-                agent.Move(move);
-            }
-            else
-            {
-                //agent.GetComponent<EnemyAI>().enabled = false;
-                agent.Move(move);
-            }
-
+            agent.Move(move);
 
             ////If I want random agents to go to corners
             if (!om.overlordExists && !om.creatingOverlord)
@@ -171,7 +165,7 @@ public class Flock : MonoBehaviour
                 startPathfinding = true;
                 findingCorner = true;
             }
-            Debug.Log(agent.name);
+            
 
         }
     }

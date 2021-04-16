@@ -11,7 +11,11 @@ public class OverlordManager : MonoBehaviour
     public bool creatingOverlord = false;
     private int agentsToSendToCorner = 5;
     private OverlordManager om;
+    private MapScript ms;
 
+    private int timeToChangeDirection = 10;
+    public float timeRemaining = 10;
+    public Vector2 wanderLocation;
 
     //For corners and creating an overlord
     private Transform[] corners = new Transform[4];
@@ -23,7 +27,7 @@ public class OverlordManager : MonoBehaviour
         agents = flock.agents;
         overlordExists = true;
         om = GameObject.Find("Manager").GetComponent<OverlordManager>();
-
+        ms = GameObject.Find("Background").GetComponent<MapScript>();
 
         //Get corners game object
         cornersGO = GameObject.Find("Corners");
@@ -32,6 +36,10 @@ public class OverlordManager : MonoBehaviour
         {
             corners[i] = cornersGO.transform.GetChild(i).transform;
         }
+        //setup the wander location for the overlord:
+        float xDist = Random.Range(ms.getEastEdge(), ms.getWestEdge());
+        float yDist = Random.Range(ms.getSouthEdge(), ms.getNorthEdge());
+        wanderLocation = new Vector2(xDist, yDist);
     }
 
     // Update is called once per frame
@@ -54,7 +62,20 @@ public class OverlordManager : MonoBehaviour
         {
             checkingAgentsForOverlordCreation();
         }
-        
+
+        //timer:
+        timeRemaining -= Time.deltaTime;
+
+        if(timeRemaining < -0.5)
+        {
+            //reset timer
+            timeRemaining = timeToChangeDirection;
+            //new location
+            float xDist = Random.Range(ms.getEastEdge(), ms.getWestEdge());
+            float yDist = Random.Range(ms.getSouthEdge(), ms.getNorthEdge());
+            wanderLocation = new Vector2(xDist, yDist);
+        }
+
     }
 
 

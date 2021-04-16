@@ -7,22 +7,17 @@ public class OverlordBehavior : FlockBehaviour
 {
 
     private OverlordManager om;
-    private MapScript ms;
+    
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-
         om = GameObject.Find("Manager").GetComponent<OverlordManager>();
-        ms = GameObject.Find("Background").GetComponent<MapScript>();
+        
 
-        Debug.Log(ms.getNorthEdge());
-        Debug.Log(ms.getSouthEdge());
-
-
-        if (om.overlordExists)
+        if (om.overlordExists && agent.isOverlord)
         {
-
-            return Vector2.zero;
+            //Debug.Log("calling");
+            return om.wanderLocation;
 
         }
         else
