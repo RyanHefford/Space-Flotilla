@@ -43,7 +43,7 @@ public class StickToOverlordBehaviour : FlockBehaviour
 
         if (om.overlordExists && !agent.isOverlord && agent.stickingToOverlord)
         {
-            Debug.Log("INSIDE");
+            //Debug.Log("INSIDE");
             overlord = GameObject.FindGameObjectsWithTag("Overlord")[0];
             overlordCentre = overlord.transform.position;
 

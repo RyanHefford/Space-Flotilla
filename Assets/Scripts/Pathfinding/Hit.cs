@@ -40,12 +40,16 @@ public class Hit : MonoBehaviour
         //If we hit an overlord with the missle.
         if(collision.gameObject.tag == "Overlord")
         {
+            flock = GameObject.Find("Flock").GetComponent<Flock>();
             //reset the agents that are sticking to the overlord
             //and make them not STICk to the overlord
             resetStickToOverlordAgents();
-
+            //remove the Overlord.
+            FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
+            flock.agents.Remove(agentToDelete);
             //overlord does not exist
             om.overlordExists = false;
+            
             //more points for destroying an overlord
             //update the score when we are shooting with the missle:
             if (this.gameObject.tag == "Missle")
@@ -53,6 +57,7 @@ public class Hit : MonoBehaviour
                 score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
                 score.updateScore(30);
             }
+            print("HIT");
             Destroy(collision.gameObject);
         }
 
@@ -69,7 +74,11 @@ public class Hit : MonoBehaviour
     {
         foreach(FlockAgent agent in flock.agents)
         {
-            agent.stickingToOverlord = false;
+            if (!agent.isOverlord)
+            {
+                agent.stickingToOverlord = false;
+            }
+            
         }
     }
 

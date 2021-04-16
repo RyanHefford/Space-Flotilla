@@ -184,6 +184,37 @@ public class OverlordManager : MonoBehaviour
         print("Count is " + count);
     }
 
+    private int wanderRingDistance = 200;
+    private int wanderRingRadius = 50;
+
+    private Vector2 wander()
+    {
+        //get the overlord object.
+        FlockAgent overlord = null;
+
+        foreach(FlockAgent agent in flock.agents)
+        {
+            if (agent.isOverlord)
+            {
+                overlord = agent;
+                break;
+            }
+        }
+
+        //return if no overlord exists.
+        if(overlord == null)
+        {
+            return Vector2.zero;
+        }
+
+        //calculate the next waypoint for the overlord to go to.
+
+        //the circle position infront of the overlord
+        Vector2 circlePos = (Vector2)overlord.transform.position + overlord.GetComponent<Rigidbody2D>().velocity.normalized * wanderRingDistance;
+        float yDist = Random.Range(ms.getSouthEdge(), ms.getNorthEdge());
+        Vector2 target = circlePos + new Vector2(wanderRingRadius, yDist);
+        return target;
+    }
 
 
 
