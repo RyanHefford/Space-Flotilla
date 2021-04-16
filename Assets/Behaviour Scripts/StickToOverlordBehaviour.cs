@@ -36,7 +36,7 @@ public class StickToOverlordBehaviour : FlockBehaviour
             
         }
 
-        if (overlordNearby)
+        if (overlordNearby && !agent.attacking)
         {
             agent.stickingToOverlord = true;
         }

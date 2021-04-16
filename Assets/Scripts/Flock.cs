@@ -7,6 +7,7 @@ public class Flock : MonoBehaviour
     public FlockAgent agentPrefab;
     public FlockAgent overlordPrefab;
     public List<FlockAgent> agents = new List<FlockAgent>();
+    public List<FlockAgent> agentsAttacking = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     // populating flock values
@@ -39,6 +40,11 @@ public class Flock : MonoBehaviour
     private GameObject cornersGO;
     private bool findingCorner = false;
     public OverlordManager om;
+
+    public bool initiatedAnAttack = false;
+    public int timerForEachAttack = 10;
+    public float attackingTimeLeft = 10;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -165,7 +171,19 @@ public class Flock : MonoBehaviour
                 startPathfinding = true;
                 findingCorner = true;
             }
+
+            if(attackingTimeLeft > 0.0f)
+            {
+                attackingTimeLeft -= Time.deltaTime;
+            }
             
+            if(attackingTimeLeft < 0.0f)
+            {
+                //finished attacking
+                initiatedAnAttack = false;
+                //disable the pathfinding ON the player.
+                resetAgentsAttacking();
+            }
 
         }
     }
@@ -184,6 +202,15 @@ public class Flock : MonoBehaviour
         return context;
     }
 
+    private void resetAgentsAttacking()
+    {
+        foreach(FlockAgent attackingAgent in agentsAttacking)
+        {
+            attackingAgent.GetComponent<EnemyAI>().enabled = false;
+            attackingAgent.attacking = false;
+            attackingAgent.nowPathFinding = false;
+        }
+    }
     
 
 }

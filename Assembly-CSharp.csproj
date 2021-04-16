@@ -74,6 +74,7 @@
     <Compile Include="Assets\2D Space Kit\Scripts\Projectile.cs" />
     <Compile Include="Assets\2D Space Kit\Scripts\ShipCamera.cs" />
     <Compile Include="Assets\Behaviour Scripts\AlignmentBehaviour.cs" />
+    <Compile Include="Assets\Behaviour Scripts\AttackPlayer.cs" />
     <Compile Include="Assets\Behaviour Scripts\AvoidanceBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\CohesionBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\CompositeBehaviour.cs" />

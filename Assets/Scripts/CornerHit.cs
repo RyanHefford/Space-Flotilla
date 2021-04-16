@@ -31,27 +31,18 @@ public class CornerHit : MonoBehaviour
 
         if(CornerCount._instance.countHit == 5)
         {
-            //newAgent = Instantiate(
-            //   overlordPrefab,
-            //   newLocation,
-            //   Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
-            //   transform
-            //   );
-            //newAgent.name = "Overlord";
-            //agents.Add(newAgent);
 
-            //newAgent.isOverlord = true;
-
-            //newAgent.GetComponent<EnemyAI>().enabled = false;
             //instantiate a new overlord
             GameObject agentGO = Instantiate(CornerCount._instance.overlordPrefab,
                                     CornerCount._instance.overlordSpawn.position,
                                     Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)));
 
+            //convert the game object to a FlockAgent
             FlockAgent newAgent = agentGO.GetComponent<FlockAgent>();
-
+            //Get the flock agents list
             flock = GameObject.Find("Flock").GetComponent<Flock>();
             newAgent.name = "Overlord";
+            //add the newly instantiated overlord to the list of agents
             flock.agents.Add(newAgent);
 
             //cancel all objects going to the corner
