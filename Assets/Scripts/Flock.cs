@@ -51,25 +51,25 @@ public class Flock : MonoBehaviour
             Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
 
             // Returns true if there are any colliders overlapping the sphere defined by position and radius in world coordinates.
-            while (Physics2D.OverlapCircle(newLocation, 1.25f) != null)
-            {
+            //while (Physics2D.OverlapCircle(newLocation, 1.25f) != null)
+            //{
                 // Keep getting new locations until one doesn't overlap.
                 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-            }
+            //}
+
             FlockAgent newAgent = null;
             if (numOfOverlordsStart == 0)
             {
-
-                // Then spawn the overlord in that location.
-                 newAgent = Instantiate(
-                    agentPrefab,
-                    newLocation,
-                    Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
-                    transform
-                    );
-                newAgent.name = "Overlord";
-                newAgent.isOverlord = true;
+                newAgent = Instantiate(
+                overlordPrefab,
+                newLocation,
+                Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                transform
+                );
+                newAgent.name = "Agent " + i;
                 agents.Add(newAgent);
+
+                newAgent.isOverlord = true;
                 numOfOverlordsStart = 1;
             }
             else
@@ -83,12 +83,12 @@ public class Flock : MonoBehaviour
                     );
                 newAgent.name = "Agent " + i;
                 agents.Add(newAgent);
+
+                //for pathfinding
+                newAgent.GetComponent<EnemyAI>().enabled = false;
             }
 
-           
 
-            //for pathfinding
-            newAgent.GetComponent<EnemyAI>().enabled = false;
         }
 
         //Get corners game object

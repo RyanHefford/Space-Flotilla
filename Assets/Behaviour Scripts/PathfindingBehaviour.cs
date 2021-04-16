@@ -8,6 +8,11 @@ public class PathfindingBehaviour : FlockBehaviour
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+
+        if (agent.isOverlord)
+        {
+            return Vector2.zero;
+        }
         //if pathfinding is not on then just return.
         if (agent.GetComponent<EnemyAI>().enabled == false)
         {
