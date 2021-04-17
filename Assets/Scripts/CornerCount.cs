@@ -9,8 +9,9 @@ public class CornerCount : MonoBehaviour
     public static CornerCount Instance { get { return _instance; } }
 
     public int countHit = 0;
-    public Transform overlordSpawn;
-    public GameObject overlordPrefab;
+    public Transform[] overlordSpawn = new Transform[4];
+    //public GameObject overlordPrefab;
+    public FlockAgent overlordPrefab;
 
     private void Awake()
     {

@@ -13,6 +13,9 @@ public class FlockAgent : MonoBehaviour
     public EnemyAI enemyAI;
     public bool nowPathFinding = false;
     public bool goToCorner = false;
+    public bool isOverlord = false;
+    public bool stickingToOverlord = false;
+    public bool attacking = false;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,17 @@ public class FlockAgent : MonoBehaviour
 
     public void Move(Vector2 velocity)
     {
+        //increase speed when going to the corner.
+        if (goToCorner)
+        {
+            velocity *= 3;
+        }
+        //increase speed when player attacking
+        if (attacking)
+        {
+            velocity *= 2;
+        }
+
         transform.up = velocity;
         // transform.position += (Vector3)velocity * Time.deltaTime;
 

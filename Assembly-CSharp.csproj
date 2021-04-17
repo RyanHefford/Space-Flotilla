@@ -74,9 +74,11 @@
     <Compile Include="Assets\2D Space Kit\Scripts\Projectile.cs" />
     <Compile Include="Assets\2D Space Kit\Scripts\ShipCamera.cs" />
     <Compile Include="Assets\Behaviour Scripts\AlignmentBehaviour.cs" />
+    <Compile Include="Assets\Behaviour Scripts\AttackPlayer.cs" />
     <Compile Include="Assets\Behaviour Scripts\AvoidanceBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\CohesionBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\CompositeBehaviour.cs" />
+    <Compile Include="Assets\Behaviour Scripts\OverlordBehavior.cs" />
     <Compile Include="Assets\Behaviour Scripts\PathfindingBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\StayInRadiusBehaviour.cs" />
     <Compile Include="Assets\Behaviour Scripts\SteeredCohesionBehaviour.cs" />
@@ -91,6 +93,7 @@
     <Compile Include="Assets\Scripts\MapGeneration.cs" />
     <Compile Include="Assets\Scripts\MapScript.cs" />
     <Compile Include="Assets\Scripts\MissleMovement.cs" />
+    <Compile Include="Assets\Scripts\MultiRayCast.cs" />
     <Compile Include="Assets\Scripts\OverlordManager.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\EnemyAI.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\Hit.cs" />

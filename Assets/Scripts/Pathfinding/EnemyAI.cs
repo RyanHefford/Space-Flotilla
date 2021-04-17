@@ -23,9 +23,8 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    //public Transform enemyGFX;
+    private List<Vector3> smoothedPath = new List<Vector3>();
 
-    //TESTING
     private Vector2 direction;
 
     private void Start()
@@ -35,6 +34,9 @@ public class EnemyAI : MonoBehaviour
 
         //update the path every 0.5f seconds
         InvokeRepeating("updatePath", 0f, 0.5f);
+
+        //For testing path smoothing
+        //InvokeRepeating("updatePath", 0f, 5f);
 
     }
 
@@ -51,7 +53,7 @@ public class EnemyAI : MonoBehaviour
         }
         
     }
-
+    
     void onPathCompleted(Path p)
     {
         //make sure no error
@@ -60,26 +62,84 @@ public class EnemyAI : MonoBehaviour
             //path smoothing.
             //p.vectorPath = pathSmoothing(p);
 
-            
+            smoothedPath = pathSmoothing(p);
+
+
 
             //current path = the newly generated path
             path = p;
+            p.vectorPath = smoothedPath;
             currentWaypoint = 0;
         }
+    }
+
+    
+
+    void OnDrawGizmos()
+    {
+
+        // Draws a blue line from this transform to the target
+
+        for (int i = 0; i < smoothedPath.Count; i += 1)
+        {
+            Gizmos.color = Color.cyan;
+
+            if(i+1 == smoothedPath.Count)
+            {
+                Gizmos.DrawLine(smoothedPath[i-1], smoothedPath[i]);
+            }
+            else
+            {
+                Gizmos.DrawLine(smoothedPath[i], smoothedPath[i + 1]);
+            }
+            
+
+
+        }
+
+
     }
 
     private List<Vector3> pathSmoothing(Path p)
     {
         Vector3 currentPosition = rb.transform.position;
         List<Vector3> newVectorPath = new List<Vector3>();
+        Vector3 previousPosition = Vector3.zero;
 
-        foreach (Vector3 nextWaypoint in p.vectorPath)
+        //adding the start.
+        newVectorPath.Add(currentPosition);
+        previousPosition = currentPosition;
+       
+        for(int i = 0; i < p.vectorPath.Count; i++)
         {
+            Vector3 nextWaypoint = p.vectorPath[i];
 
-            
+            float distance = Vector2.Distance(currentPosition, nextWaypoint);
 
+            Vector3 to = (nextWaypoint - currentPosition);
+
+            //Debug.DrawRay(currentPosition, to, Color.red, 10.0f);
+            RaycastHit2D hit = Physics2D.Raycast(currentPosition, to, distance, 1 << LayerMask.NameToLayer("Obstacle"));
+
+            if (hit)
+            {
+                //we hit something:
+                //print("HIT HIT HIT");
+                //print(hit.transform.gameObject.name);
+                newVectorPath.Add(previousPosition);
+                currentPosition = previousPosition;
+                i -= 1;
+
+            }
+            previousPosition = nextWaypoint;
 
         }
+
+
+        // add the target at the end.
+        newVectorPath.Add(target.position);
+
+        
 
         return newVectorPath;
     }

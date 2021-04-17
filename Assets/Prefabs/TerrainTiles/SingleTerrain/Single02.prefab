@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2871867407877839227}
   - component: {fileID: 2871867407877839226}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 2871867407974654157}
   - component: {fileID: 2871867407974654163}
   - component: {fileID: 2871867407974654156}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Station 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -186,7 +186,7 @@ GameObject:
   - component: {fileID: 2871867408055513122}
   - component: {fileID: 2871867408055513123}
   - component: {fileID: 2871867408055513180}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Single02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -217,7 +217,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2871867408055513181}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 2871867408088715488}
   - component: {fileID: 2871867408088715494}
   - component: {fileID: 2871867408088715495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Station 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2871867408766450995}
   - component: {fileID: 2871867408766450994}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -523,7 +523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2871867409580715395}
   - component: {fileID: 2871867409580715394}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

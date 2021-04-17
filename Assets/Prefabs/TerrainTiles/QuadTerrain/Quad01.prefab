@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6751621652336807535}
   - component: {fileID: 6751621652336807534}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,8 +89,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6751621652686077619}
-  m_Layer: 0
-  m_Name: Terrain01
+  m_Layer: 8
+  m_Name: Quad01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,7 +121,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6751621652755843597}
   - component: {fileID: 6751621652755843596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - component: {fileID: 6751621654001123097}
   - component: {fileID: 6751621654001123098}
   - component: {fileID: 6751621654001123094}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Station 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6751621654001123101}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
