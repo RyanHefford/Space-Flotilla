@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2985043889109071338}
   - component: {fileID: 2985043889109071349}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 2985043889534791207}
   - component: {fileID: 2985043889534791200}
   - component: {fileID: 2985043889534791201}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Huge 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2985043889534791205}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -333,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2985043889686883286}
   - component: {fileID: 2985043889686883281}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -413,7 +413,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2985043889767070941}
   - component: {fileID: 2985043889767070940}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -493,7 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2985043890128121099}
   - component: {fileID: 2985043890128121098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -573,7 +573,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2985043890296049082}
   - component: {fileID: 2985043890296049029}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -653,7 +653,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2985043890322092566}
   - component: {fileID: 2985043890322092561}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -732,8 +732,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2985043890348525495}
-  m_Layer: 0
-  m_Name: Terrain05
+  m_Layer: 8
+  m_Name: DoubleHor02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -764,7 +764,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2985043890578342561}
   - component: {fileID: 2985043890578342560}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

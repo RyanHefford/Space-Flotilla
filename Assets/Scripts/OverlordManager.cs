@@ -28,7 +28,7 @@ public class OverlordManager : MonoBehaviour
         overlordExists = true;
         om = GameObject.Find("Manager").GetComponent<OverlordManager>();
         ms = GameObject.Find("Background").GetComponent<MapScript>();
-
+        
         //Get corners game object
         cornersGO = GameObject.Find("Corners");
         //Add children to array
@@ -45,6 +45,7 @@ public class OverlordManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         agents = flock.agents;
         //If I want random agents to go to corners
         if (!overlordExists && !creatingOverlord && agents.Count >= 5)
@@ -57,6 +58,7 @@ public class OverlordManager : MonoBehaviour
 
             //countPlayer();
         }
+
         //check for if the agent which was going to the corner got destroyed or not.
         if(agents.Count >= 5)
         {
