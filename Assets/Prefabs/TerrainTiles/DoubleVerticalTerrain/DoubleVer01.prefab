@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4257095312269243607}
   - component: {fileID: 4257095312269243592}
   - component: {fileID: 4257095312269243606}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Carrier 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257095312723060537}
   - component: {fileID: 4257095312723060536}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Station 1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,8 +279,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4257095312938528735}
-  m_Layer: 0
-  m_Name: Terrain02
+  m_Layer: 8
+  m_Name: DoubleVer01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -311,7 +311,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257095312964834045}
   - component: {fileID: 4257095312964834044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Station 1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -392,7 +392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257095313132335032}
   - component: {fileID: 4257095313132333127}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Station 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -473,7 +473,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4257095313175418477}
   - component: {fileID: 4257095313175418476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Debris (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

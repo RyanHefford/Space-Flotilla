@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385869482306885}
   - component: {fileID: 510385869482306890}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385869616917049}
   - component: {fileID: 510385869616917054}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385869854608110}
   - component: {fileID: 510385869854608111}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385869860975448}
   - component: {fileID: 510385869860975449}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385870301979618}
   - component: {fileID: 510385870301979619}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385870993376041}
   - component: {fileID: 510385870993376046}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret Platform (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -490,7 +490,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 510385871005326533}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Single01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +522,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385871036664761}
   - component: {fileID: 510385871036664766}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Turret Platform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -603,7 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385871094756955}
   - component: {fileID: 510385871094756952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -683,7 +683,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385871158040963}
   - component: {fileID: 510385871158040960}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -767,7 +767,7 @@ GameObject:
   - component: {fileID: 510385871339662694}
   - component: {fileID: 510385871339662689}
   - component: {fileID: 510385871339662688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Alien 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -867,7 +867,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 510385871339662684}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -988,7 +988,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385871566185314}
   - component: {fileID: 510385871566185315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Alien 3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1071,7 +1071,7 @@ GameObject:
   m_Component:
   - component: {fileID: 510385871614758823}
   - component: {fileID: 510385871614758820}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1151,7 +1151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3910182418953185677}
   - component: {fileID: 125669226331496778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

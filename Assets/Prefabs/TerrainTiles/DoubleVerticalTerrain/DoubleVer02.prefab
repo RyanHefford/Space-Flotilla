@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7192157685225035968}
   - component: {fileID: 7192157685225035969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7192157685329372667}
   - component: {fileID: 7192157685329372660}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7192157685688534092}
   - component: {fileID: 7192157685688534093}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -250,7 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7192157686270794750}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DoubleVer02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7192157686341858695}
   - component: {fileID: 7192157686341858688}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -363,7 +363,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7192157686369065456}
   - component: {fileID: 7192157686369065457}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: New Sprite Mask (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 7192157686457261935}
   - component: {fileID: 7192157686457261934}
   - component: {fileID: 7192157686457261933}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7192157686457261939}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -644,7 +644,7 @@ GameObject:
   - component: {fileID: 7192157686701709532}
   - component: {fileID: 7192157686701709347}
   - component: {fileID: 7192157686701709346}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Destroyer 2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -736,7 +736,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7192157686701709344}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
