@@ -9,6 +9,7 @@ TagManager:
   - Overlord
   - Agent
   - Missle
+  - Obstacle
   layers:
   - Default
   - TransparentFX

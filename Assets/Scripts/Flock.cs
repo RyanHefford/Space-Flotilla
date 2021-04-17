@@ -50,7 +50,7 @@ public class Flock : MonoBehaviour
             Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
 
             // Returns true if there are any colliders overlapping the sphere defined by position and radius in world coordinates.
-            while (Physics2D.OverlapCircle(newLocation, 1.5f) != null)
+            while (Physics2D.OverlapCircle(newLocation, 1.25f) != null)
             {
                 // Keep getting new locations until one doesn't overlap.
                 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
