@@ -23,9 +23,8 @@ public class EnemyAI : MonoBehaviour
     Seeker seeker;
     Rigidbody2D rb;
 
-    //public Transform enemyGFX;
+    private List<Vector3> smoothedPath = new List<Vector3>();
 
-    //TESTING
     private Vector2 direction;
 
     private void Start()
@@ -34,8 +33,10 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         //update the path every 0.5f seconds
-        //InvokeRepeating("updatePath", 0f, 0.5f);
-        InvokeRepeating("updatePath", 0f, 5f);
+        InvokeRepeating("updatePath", 0f, 0.25f);
+
+        //For testing path smoothing
+        //InvokeRepeating("updatePath", 0f, 5f);
 
     }
 
@@ -52,7 +53,7 @@ public class EnemyAI : MonoBehaviour
         }
         
     }
-    private List<Vector3> testV = new List<Vector3>();
+    
     void onPathCompleted(Path p)
     {
         //make sure no error
@@ -61,13 +62,13 @@ public class EnemyAI : MonoBehaviour
             //path smoothing.
             //p.vectorPath = pathSmoothing(p);
 
-            testV = pathSmoothing(p);
+            smoothedPath = pathSmoothing(p);
 
 
 
             //current path = the newly generated path
             path = p;
-            p.vectorPath = testV;
+            p.vectorPath = smoothedPath;
             currentWaypoint = 0;
         }
     }
@@ -79,35 +80,29 @@ public class EnemyAI : MonoBehaviour
 
         // Draws a blue line from this transform to the target
 
-        for (int i = 0; i < testV.Count; i += 2)
+        for (int i = 0; i < smoothedPath.Count; i += 2)
         {
             Gizmos.color = Color.cyan;
 
-            if(testV.Count % 2 == 0)
+            if(smoothedPath.Count % 2 == 0)
             {
-                Gizmos.DrawLine(testV[i], testV[i + 1]);
+                Gizmos.DrawLine(smoothedPath[i], smoothedPath[i + 1]);
             }
             else
             {
-                if(i+1 == testV.Count)
+                if(i+1 == smoothedPath.Count)
                 {
-                    Gizmos.DrawLine(testV[i-1], testV[i]);
+                    Gizmos.DrawLine(smoothedPath[i-1], smoothedPath[i]);
                 }
                 else
                 {
-                    Gizmos.DrawLine(testV[i], testV[i + 1]);
+                    Gizmos.DrawLine(smoothedPath[i], smoothedPath[i + 1]);
                 }
             }
             
 
         }
 
-        //for (int i = 0; i < path.vectorPath.Count; i += 2)
-        //{
-        //    Gizmos.color = Color.gray;
-        //    Gizmos.DrawLine(path.vectorPath[i], path.vectorPath[i + 1]);
-
-        //}
 
     }
 
@@ -120,39 +115,7 @@ public class EnemyAI : MonoBehaviour
         //adding the start.
         newVectorPath.Add(currentPosition);
         previousPosition = currentPosition;
-        int count = 0;
-        //print("Vector path count: " + p.vectorPath.Count);
-        //foreach (Vector2 nextWaypoint in p.vectorPath)
-        //{
-        //    //if(previousPosition == nextWaypoint && count == 0)
-        //    //{
-        //    //    count = 1;
-        //    //    continue;
-                
-        //    //}
-
-        //    float distance = Vector2.Distance(currentPosition, nextWaypoint);
-
-        //    Vector2 to = ((Vector2)nextWaypoint - currentPosition);
-
-        //    Debug.DrawRay(currentPosition, to, Color.red, 10.0f);
-        //    RaycastHit2D hit = Physics2D.Raycast(currentPosition, to, distance, 1 << LayerMask.NameToLayer("Obstacle"));
-
-        //    if (hit)
-        //    {
-        //        //we hit something:
-        //        print("HIT HIT HIT");
-        //        print(hit.transform.gameObject.name);
-        //        newVectorPath.Add(previousPosition);
-        //        currentPosition = previousPosition;
-
-        //    }
-        //    previousPosition = nextWaypoint;
-
-
-
-        //}
-
+       
         for(int i = 0; i < p.vectorPath.Count; i++)
         {
             Vector3 nextWaypoint = p.vectorPath[i];
@@ -167,8 +130,8 @@ public class EnemyAI : MonoBehaviour
             if (hit)
             {
                 //we hit something:
-                print("HIT HIT HIT");
-                print(hit.transform.gameObject.name);
+                //print("HIT HIT HIT");
+                //print(hit.transform.gameObject.name);
                 newVectorPath.Add(previousPosition);
                 currentPosition = previousPosition;
                 i -= 1;
@@ -213,7 +176,7 @@ public class EnemyAI : MonoBehaviour
 
         Vector2 force = direction * speed * Time.deltaTime;
 
-        rb.AddForce(force);
+        //rb.AddForce(force);
 
         float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
 
