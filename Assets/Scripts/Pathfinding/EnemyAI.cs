@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
 
         //update the path every 0.5f seconds
-        InvokeRepeating("updatePath", 0f, 0.25f);
+        InvokeRepeating("updatePath", 0f, 0.5f);
 
         //For testing path smoothing
         //InvokeRepeating("updatePath", 0f, 5f);
@@ -80,26 +80,20 @@ public class EnemyAI : MonoBehaviour
 
         // Draws a blue line from this transform to the target
 
-        for (int i = 0; i < smoothedPath.Count; i += 2)
+        for (int i = 0; i < smoothedPath.Count; i += 1)
         {
             Gizmos.color = Color.cyan;
 
-            if(smoothedPath.Count % 2 == 0)
+            if(i+1 == smoothedPath.Count)
             {
-                Gizmos.DrawLine(smoothedPath[i], smoothedPath[i + 1]);
+                Gizmos.DrawLine(smoothedPath[i-1], smoothedPath[i]);
             }
             else
             {
-                if(i+1 == smoothedPath.Count)
-                {
-                    Gizmos.DrawLine(smoothedPath[i-1], smoothedPath[i]);
-                }
-                else
-                {
-                    Gizmos.DrawLine(smoothedPath[i], smoothedPath[i + 1]);
-                }
+                Gizmos.DrawLine(smoothedPath[i], smoothedPath[i + 1]);
             }
             
+
 
         }
 
