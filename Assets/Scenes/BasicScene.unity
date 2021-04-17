@@ -281,13 +281,17 @@ MonoBehaviour:
   overlordPrefab: {fileID: -2312271845750928536, guid: 4ceeb908325cff4448897914fceb44b8,
     type: 3}
   agents: []
+  agentsAttacking: []
   behaviour: {fileID: 11400000, guid: 993b19f5913a6b14ba4e2a88e6f3fb77, type: 2}
-  startingCount: 25
+  startingCount: 147
   driveFactor: 10
   maxSpeed: 4
   neighborRadius: 1.5
   avoidanceRadiusMultiplier: 0.5
   om: {fileID: 787277701}
+  initiatedAnAttack: 0
+  timerForEachAttack: 10
+  attackingTimeLeft: 10
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -890,7 +894,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1191511638}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -78.7, y: 3.9, z: -464.71875}
+  m_LocalPosition: {x: -78.7, y: 3.9, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1176,7 +1180,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   countHit: 0
   overlordSpawn: {fileID: 1191511639}
-  overlordPrefab: {fileID: 4729039855937996587, guid: 4ceeb908325cff4448897914fceb44b8,
+  overlordPrefab: {fileID: -2312271845750928536, guid: 4ceeb908325cff4448897914fceb44b8,
     type: 3}
 --- !u!1 &1996481471
 GameObject:

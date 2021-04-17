@@ -13,8 +13,8 @@ public class OverlordManager : MonoBehaviour
     private OverlordManager om;
     private MapScript ms;
 
-    private int timeToChangeDirection = 10;
-    public float timeRemaining = 10;
+    private int timeToChangeDirection = 5;
+    public float timeRemaining = 5;
     public Vector2 wanderLocation;
 
     //For corners and creating an overlord

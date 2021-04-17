@@ -17,16 +17,23 @@ public class AttackPlayer : FlockBehaviour
         if (om.overlordExists && agent.isOverlord)
         {
 
-            //GET ALL OF THE GAME OBJECTS NEARBY
-            List<Transform> transforms = GetNearbyObjects(agent);
+            ////GET ALL OF THE GAME OBJECTS NEARBY
+            //List<Transform> transforms = GetNearbyObjects(agent);
 
-            //DO WE HAVE THE PLAYER VISIBLE TO US?
-            foreach(Transform t in transforms)
+            ////DO WE HAVE THE PLAYER VISIBLE TO US?
+            //foreach(Transform t in transforms)
+            //{
+            //    if(t.gameObject.tag == "Player")
+            //    {
+            //        foundPlayer = true;
+            //    }
+            //}
+
+            Transform player = GameObject.Find("Player").transform;
+
+            if(Mathf.Abs(Vector2.Distance(player.position, agent.transform.position)) < radius)
             {
-                if(t.gameObject.tag == "Player")
-                {
-                    foundPlayer = true;
-                }
+                foundPlayer = true;
             }
 
 
