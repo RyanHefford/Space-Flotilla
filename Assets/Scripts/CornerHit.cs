@@ -34,7 +34,7 @@ public class CornerHit : MonoBehaviour
 
             //instantiate a new overlord
             FlockAgent newAgent = Instantiate(CornerCount._instance.overlordPrefab,
-                                    CornerCount._instance.overlordSpawn.position,
+                                    CornerCount._instance.overlordSpawn[om.randomCorner].position,
                                     Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)));
 
             //Get the flock agents list

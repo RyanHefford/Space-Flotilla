@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{AABA97EC-6674-C180-980F-8D3E6BE04AA3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CornerHit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/CornerCount.cs">
     <Files>
       <File FileName="Assets/Scripts/FlockAgent.cs" Line="13" Column="28" />
       <File FileName="Assets/Scripts/Pathfinding/EnemyAI.cs" Line="86" Column="1" />
@@ -8,15 +8,15 @@
       <File FileName="Assets/Behaviour Scripts/AlignmentBehaviour.cs" Line="12" Column="32" />
       <File FileName="Assets/Scripts/MapScript.cs" Line="1" Column="1" />
       <File FileName="Assets/Behaviour Scripts/OverlordBehavior.cs" Line="5" Column="1" />
-      <File FileName="Assets/Behaviour Scripts/StickToOverlordBehaviour.cs" Line="34" Column="18" />
-      <File FileName="Assets/Behaviour Scripts/AttackPlayer.cs" Line="18" Column="10" />
-      <File FileName="Assets/Scripts/CornerHit.cs" Line="33" Column="10" />
+      <File FileName="Assets/Behaviour Scripts/StickToOverlordBehaviour.cs" Line="28" Column="1" />
+      <File FileName="Assets/Behaviour Scripts/AttackPlayer.cs" Line="31" Column="1" />
+      <File FileName="Assets/Scripts/CornerCount.cs" Line="12" Column="38" />
       <File FileName="Assets/Behaviour Scripts/AvoidanceBehaviour.cs" Line="18" Column="10" NotebookId="1" />
       <File FileName="Assets/Scripts/Pathfinding/Hit.cs" Line="49" Column="40" NotebookId="1" />
       <File FileName="Assets/Scripts/MapGeneration.cs" Line="23" Column="11" NotebookId="1" />
       <File FileName="Assets/Scripts/Flock.cs" Line="13" Column="31" NotebookId="1" />
-      <File FileName="Assets/Scripts/OverlordManager.cs" Line="90" Column="35" NotebookId="1" />
-      <File FileName="Assets/Scripts/CornerCount.cs" Line="14" Column="38" NotebookId="1" />
+      <File FileName="Assets/Scripts/OverlordManager.cs" Line="95" Column="14" NotebookId="1" />
+      <File FileName="Assets/Scripts/CornerHit.cs" Line="15" Column="25" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
