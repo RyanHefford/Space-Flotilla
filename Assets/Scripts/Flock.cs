@@ -42,8 +42,8 @@ public class Flock : MonoBehaviour
     public OverlordManager om;
 
     public bool initiatedAnAttack = false;
-    public int timerForEachAttack = 10;
-    public float attackingTimeLeft = 10;
+    public int timerForEachAttack = 3;
+    public float attackingTimeLeft = 3;
 
     // Start is called before the first frame update
     void Start()

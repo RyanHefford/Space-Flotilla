@@ -10,7 +10,8 @@ public class CornerCount : MonoBehaviour
 
     public int countHit = 0;
     public Transform overlordSpawn;
-    public GameObject overlordPrefab;
+    //public GameObject overlordPrefab;
+    public FlockAgent overlordPrefab;
 
     private void Awake()
     {

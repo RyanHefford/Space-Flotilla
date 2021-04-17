@@ -6,7 +6,7 @@ using UnityEngine;
 public class AttackPlayer : FlockBehaviour
 {
     private OverlordManager om;
-    private int radius = 5;
+    private int radius = 10;
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {

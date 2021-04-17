@@ -33,12 +33,10 @@ public class CornerHit : MonoBehaviour
         {
 
             //instantiate a new overlord
-            GameObject agentGO = Instantiate(CornerCount._instance.overlordPrefab,
+            FlockAgent newAgent = Instantiate(CornerCount._instance.overlordPrefab,
                                     CornerCount._instance.overlordSpawn.position,
                                     Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)));
 
-            //convert the game object to a FlockAgent
-            FlockAgent newAgent = agentGO.GetComponent<FlockAgent>();
             //Get the flock agents list
             flock = GameObject.Find("Flock").GetComponent<Flock>();
             newAgent.name = "Overlord";
