@@ -130,21 +130,21 @@ public class Flock : MonoBehaviour
                 move = move.normalized * maxSpeed;
             }
 
-            //enable pathfinding.
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                agent.nowPathFinding = true;
-                startPathfinding = true;
-                findingCorner = false;
-            }
-            //disable the pathfinding behavior:
-            if (Input.GetKeyDown(KeyCode.B))
-            {
-                agent.nowPathFinding = false;
-                startPathfinding = false;
-                findingCorner = false;
+            ////enable pathfinding.
+            //if (Input.GetKeyDown(KeyCode.Space))
+            //{
+            //    agent.nowPathFinding = true;
+            //    startPathfinding = true;
+            //    findingCorner = false;
+            //}
+            ////disable the pathfinding behavior:
+            //if (Input.GetKeyDown(KeyCode.B))
+            //{
+            //    agent.nowPathFinding = false;
+            //    startPathfinding = false;
+            //    findingCorner = false;
 
-            }
+            //}
 
 
 
