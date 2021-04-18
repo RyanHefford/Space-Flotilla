@@ -35,12 +35,13 @@ public class AttackPlayer : FlockBehaviour
             if(player != null)
             {
                 playerLocation = player.transform;
+                if (Mathf.Abs(Vector2.Distance(playerLocation.position, agent.transform.position)) < radius)
+                {
+                    foundPlayer = true;
+                }
             }
 
-            if (Mathf.Abs(Vector2.Distance(playerLocation.position, agent.transform.position)) < radius)
-            {
-                foundPlayer = true;
-            }
+            
 
 
 
