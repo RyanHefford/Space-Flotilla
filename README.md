@@ -17,4 +17,5 @@ attempt to chunk their health down, so focus fire the quick bombarding
 ships first to preserve your health. Small alien ships have a chance
 to drop a powerup for the player, allowing for a powerful laser
 beam attack. When gunned down, Overlords will respawn via small alien
-ship sacrifices from the corners of the map. Last as long as possible!
+ship sacrifices from the corners of the map. Last as long as possible
+and get your best score!
