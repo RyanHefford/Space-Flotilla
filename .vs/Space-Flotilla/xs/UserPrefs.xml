@@ -1,5 +1,5 @@
 ﻿<Properties StartupConfiguration="{AABA97EC-6674-C180-980F-8D3E6BE04AA3}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/HyperBeamScipt.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/BeamPickupScript.cs">
     <Files>
       <File FileName="Assets/Scripts/FlockAgent.cs" Line="21" Column="17" />
       <File FileName="Assets/Scripts/Pathfinding/EnemyAI.cs" />
@@ -12,10 +12,12 @@
       <File FileName="Assets/Scripts/Health.cs" Line="43" Column="6" />
       <File FileName="Assets/Scripts/HyperBeamScipt.cs" Line="1" Column="1" />
       <File FileName="Assets/Behaviour Scripts/AvoidanceBehaviour.cs" Line="18" Column="10" NotebookId="1" />
-      <File FileName="Assets/Scripts/Pathfinding/Hit.cs" Line="73" Column="120" NotebookId="1" />
+      <File FileName="Assets/Scripts/Pathfinding/Hit.cs" Line="12" Column="32" NotebookId="1" />
       <File FileName="Assets/Scripts/MapGeneration.cs" NotebookId="1" />
-      <File FileName="Assets/Scripts/Flock.cs" Line="194" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/Flock.cs" Line="219" Column="1" NotebookId="1" />
       <File FileName="Assets/Scripts/CornerHit.cs" Line="43" Column="68" NotebookId="1" />
+      <File FileName="Assets/Scripts/EnemyDieScript.cs" Line="1" Column="1" NotebookId="1" />
+      <File FileName="Assets/Scripts/BeamPickupScript.cs" Line="1" Column="1" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

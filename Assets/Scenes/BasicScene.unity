@@ -316,6 +316,7 @@ MonoBehaviour:
   agentsAttacking: []
   behaviour: {fileID: 11400000, guid: 993b19f5913a6b14ba4e2a88e6f3fb77, type: 2}
   startingCount: 71
+  replenishAmount: 30
   driveFactor: 10
   maxSpeed: 4
   neighborRadius: 1.5
@@ -1603,7 +1604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 569.6, y: 448.9}
+  m_AnchoredPosition: {x: 438.4, y: 448.9}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1728305303
@@ -2128,7 +2129,7 @@ PrefabInstance:
     - target: {fileID: 3377283471581957595, guid: 6e7c6ff5c88cd4058ba8797a4881224f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -167
+      value: -174.1
       objectReference: {fileID: 0}
     - target: {fileID: 3377283471581957595, guid: 6e7c6ff5c88cd4058ba8797a4881224f,
         type: 3}
