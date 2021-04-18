@@ -12,7 +12,8 @@ public class Flock : MonoBehaviour
 
     // populating flock values
     [Range(2, 500)]
-    public int startingCount = 250;
+    public int startingCount = 300;
+    public int replenishAmount = 30;
     const float AgentDensity = 0.08f;
 
     // variables we can change with sliders for how the flock behaves
@@ -185,6 +186,30 @@ public class Flock : MonoBehaviour
                 resetAgentsAttacking();
             }
 
+        }
+
+        if (agents.Count < (startingCount - replenishAmount))
+        {
+            for (int i = (startingCount - replenishAmount); i < startingCount; i++)
+            {
+
+                Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+                newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+
+                FlockAgent newAgent = null;
+
+                newAgent = Instantiate(
+                            agentPrefab,
+                            newLocation,
+                            Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                            transform
+                            );
+                newAgent.name = "Agent " + i;
+                agents.Add(newAgent);
+
+                //for pathfinding
+                newAgent.GetComponent<EnemyAI>().enabled = false;
+            }
         }
     }
 
