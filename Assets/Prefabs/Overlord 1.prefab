@@ -229,6 +229,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  explosion: {fileID: 0}
+  pickup: {fileID: 0}
   speed: 300
   nextWaypointDistance: 3
 --- !u!114 &4585674306783774409

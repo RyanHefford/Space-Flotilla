@@ -5,11 +5,13 @@ using UnityEngine;
 public class Flock : MonoBehaviour
 {
     public FlockAgent agentPrefab;
+    public FlockAgent overlordPrefab;
     public List<FlockAgent> agents = new List<FlockAgent>();
+    public List<FlockAgent> agentsAttacking = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
     // populating flock values
-    [Range(10, 500)]
+    [Range(2, 500)]
     public int startingCount = 250;
     const float AgentDensity = 0.08f;
 
@@ -29,7 +31,7 @@ public class Flock : MonoBehaviour
     float squareAvoidanceRadius;
     public float SquareAvoidanceRadius { get { return squareAvoidanceRadius; } }
 
-
+    private int numOfOverlordsStart = 0;
     //for pathfinding:
     private bool startPathfinding = false;
 
@@ -38,6 +40,11 @@ public class Flock : MonoBehaviour
     private GameObject cornersGO;
     private bool findingCorner = false;
     public OverlordManager om;
+
+    public bool initiatedAnAttack = false;
+    public int timerForEachAttack = 3;
+    public float attackingTimeLeft = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,24 +57,47 @@ public class Flock : MonoBehaviour
             Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
 
             // Returns true if there are any colliders overlapping the sphere defined by position and radius in world coordinates.
-            while (Physics2D.OverlapCircle(newLocation, 1.25f) != null)
-            {
-                // Keep getting new locations until one doesn't overlap.
-                newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-            }
+            //while (Physics2D.OverlapCircle(newLocation, 1.25f) != null)
+            //{
+            // Keep getting new locations until one doesn't overlap.
+            newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+            //}
 
-            // Then spawn the agent in that location.
-            FlockAgent newAgent = Instantiate(
-                agentPrefab,
+            FlockAgent newAgent = null;
+            if (numOfOverlordsStart == 0)
+            {
+                newAgent = Instantiate(
+                overlordPrefab,
                 newLocation,
                 Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                 transform
                 );
-            newAgent.name = "Agent " + i;
-            agents.Add(newAgent);
+                newAgent.name = "Overlord";
+                agents.Add(newAgent);
 
-            //for pathfinding
-            newAgent.GetComponent<EnemyAI>().enabled = false;
+                newAgent.isOverlord = true;
+
+                newAgent.GetComponent<EnemyAI>().enabled = false;
+
+                numOfOverlordsStart = 1;
+            }
+            else
+            {
+                // Then spawn the agent in that location.
+                newAgent = Instantiate(
+                    agentPrefab,
+                    newLocation,
+                    Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                    transform
+                    );
+                newAgent.name = "Agent " + i;
+                agents.Add(newAgent);
+
+                //for pathfinding
+                newAgent.GetComponent<EnemyAI>().enabled = false;
+            }
+
+
         }
 
         //Get corners game object
@@ -78,7 +108,8 @@ public class Flock : MonoBehaviour
             corners[i] = cornersGO.transform.GetChild(i).transform;
         }
 
-        print("CHILDREN: " + corners.Length);
+        //initializing the overlord manager.
+        om = GameObject.Find("Manager").GetComponent<OverlordManager>();
 
     }
 
@@ -117,43 +148,42 @@ public class Flock : MonoBehaviour
 
 
 
-            if (startPathfinding && agent.nowPathFinding && !findingCorner)
+            if (agent.nowPathFinding && !agent.goToCorner)
             {
-                //DO PATHFINDING NOW
+                //DO PATHFINDING NOW TO PLAYER
                 agent.GetComponent<EnemyAI>().enabled = true;
                 agent.enemyAI.target = GameObject.Find("Player").transform;
 
                 //move *= agent.enemyAI.getDirection();
                 //agent.GetComponent<Rigidbody2D>().rotation += 1f;
-                agent.Move(move);
+                //agent.Move(move);
 
 
 
             }
-            else if(startPathfinding && agent.nowPathFinding && findingCorner && agent.goToCorner)
-            {
-                //DO PATHFINDING NOW
-                agent.GetComponent<EnemyAI>().enabled = true;
 
-                agent.enemyAI.target = corners[om.randomCorner];
-                agent.Move(move);
-            }
-            else
-            {
-                agent.GetComponent<EnemyAI>().enabled = false;
-                agent.Move(move);
-            }
+            agent.Move(move);
 
-
-            //If I want random agents to go to corners
-            if (Input.GetKeyDown(KeyCode.C))
+            ////If I want random agents to go to corners
+            if (!om.overlordExists && !om.creatingOverlord)
             {
-                agent.nowPathFinding = true;
+                //agent.nowPathFinding = true;
                 startPathfinding = true;
                 findingCorner = true;
             }
 
+            if (attackingTimeLeft > 0.0f)
+            {
+                attackingTimeLeft -= Time.deltaTime;
+            }
 
+            if (attackingTimeLeft < 0.0f)
+            {
+                //finished attacking
+                initiatedAnAttack = false;
+                //disable the pathfinding ON the player.
+                resetAgentsAttacking();
+            }
 
         }
     }
@@ -172,6 +202,15 @@ public class Flock : MonoBehaviour
         return context;
     }
 
-    
+    private void resetAgentsAttacking()
+    {
+        foreach (FlockAgent attackingAgent in agentsAttacking)
+        {
+            attackingAgent.GetComponent<EnemyAI>().enabled = false;
+            attackingAgent.attacking = false;
+            attackingAgent.nowPathFinding = false;
+        }
+    }
+
 
 }
