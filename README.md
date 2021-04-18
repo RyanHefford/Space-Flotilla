@@ -19,3 +19,5 @@ to drop a powerup for the player, allowing for a powerful laser
 beam attack. When gunned down, Overlords will respawn via small alien
 ship sacrifices from the corners of the map. Last as long as possible
 and get your best score!
+
+Extra Scene: 'Pathfinding' scene which is meant to show the Path Smoothing functionality. Details on how to use it is in the report.
