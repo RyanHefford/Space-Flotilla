@@ -9,7 +9,8 @@ public class EnemyAI : MonoBehaviour
 
 
     public Transform target;
-
+    public GameObject explosion;
+    public GameObject pickup;
     public float speed = 300f;
 
     //how close the enemy needs to be to a waypoint before moving to the next one.
@@ -179,6 +180,20 @@ public class EnemyAI : MonoBehaviour
             currentWaypoint++;
         }
 
+    }
+
+    public void Die()
+    {
+        GameObject startExplosion = Instantiate<GameObject>(explosion);
+
+        if(Random.Range(0,100) < 1)
+        {
+            Instantiate<GameObject>(pickup).transform.SetPositionAndRotation(transform.position, transform.rotation);
+        }
+
+        startExplosion.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
+        startExplosion.transform.localScale = new Vector3(.5f,.5f,.5f);
+        Destroy(this.gameObject);
     }
 
     public Vector2 getDirection()
