@@ -21,3 +21,5 @@ ship sacrifices from the corners of the map. Last as long as possible
 and get your best score!
 
 Extra Scene: 'Pathfinding' scene which is meant to show the Path Smoothing functionality. Details on how to use it is in the report.
+
+Quick note: in case you open the project and you see a lot of compiler errors, this is because I use a mac and everyone in the group uses Windows so the way to get rid of those issues is by going to the project folder and deleting the Library folder and opening the project again. This will fix it as Unity automatically generates that folder and will ensure the meta files matches the OS you are using :). Also our main scene is called "BasicScene"
