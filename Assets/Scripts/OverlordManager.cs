@@ -40,6 +40,7 @@ public class OverlordManager : MonoBehaviour
         float xDist = Random.Range(ms.getEastEdge(), ms.getWestEdge());
         float yDist = Random.Range(ms.getSouthEdge(), ms.getNorthEdge());
         wanderLocation = new Vector2(xDist, yDist);
+
     }
 
     // Update is called once per frame
