@@ -70,7 +70,6 @@ public class Hit : MonoBehaviour
                 player.GetComponent<Health>().takeDamage(1.0f);
             }
 
-            print("HIT");
             collision.gameObject.GetComponent<EnemyDieScript>().Die();
         }
 
@@ -92,13 +91,9 @@ public class Hit : MonoBehaviour
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
             flock.agents.Remove(agentToDelete);
             collision.gameObject.GetComponent<EnemyDieScript>().Die();
-
-            //update the score when we are shooting with the missle:
-            if (this.gameObject.tag == "Missle")
-            {
-                score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
-                score.updateScore(10);
-            }
+            score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+            score.updateScore(10);
+            
 
         }
 
@@ -115,14 +110,9 @@ public class Hit : MonoBehaviour
             //overlord does not exist
             om.overlordExists = false;
 
-            //more points for destroying an overlord
-            //update the score when we are shooting with the missle:
-            if (this.gameObject.tag == "Missle")
-            {
-                score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
-                score.updateScore(30);
-            }
-            print("HIT");
+            score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+            score.updateScore(30);
+
             collision.gameObject.GetComponent<EnemyDieScript>().Die();
         }
     }
