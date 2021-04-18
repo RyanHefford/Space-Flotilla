@@ -146,7 +146,6 @@ public class Hit : MonoBehaviour
                 score.updateScore(30);
             }
             
-            //collision.gameObject.GetComponent<EnemyDieScript>().Die();
         }
     }
 
