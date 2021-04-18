@@ -68,6 +68,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAI: {fileID: 0}
   nowPathFinding: 0
+  goToCorner: 0
 --- !u!50 &-3973948384229271004
 Rigidbody2D:
   serializedVersion: 4
@@ -130,6 +131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  explosion: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+  pickup: {fileID: 5005395990528136672, guid: bf484bbe73111704cb40ee7af7ffe454, type: 3}
   speed: 300
   nextWaypointDistance: 3
 --- !u!114 &-771331762866019496

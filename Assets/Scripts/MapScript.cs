@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class MapScript : MonoBehaviour
 {
     private float northEdge;
@@ -57,5 +57,18 @@ public class MapScript : MonoBehaviour
     public float getWestEdge()
     {
         return westEdge;
+    }
+
+    public void CauseDelay(GameObject player)
+    {
+        StartCoroutine(DeathDelay(player));
+    }
+
+    public IEnumerator DeathDelay(GameObject player)
+    {
+        player.SetActive(false);
+        //yield on a new YieldInstruction that waits for 2 seconds.
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene(2);
     }
 }

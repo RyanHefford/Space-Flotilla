@@ -17,16 +17,19 @@ public class Hit : MonoBehaviour
             flock = GameObject.Find("Flock").GetComponent<Flock>();
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
             flock.agents.Remove(agentToDelete);
-            Destroy(collision.gameObject);
+            collision.gameObject.GetComponent<EnemyAI>().Die();
 
             //update the score when we are shooting with the missle:
-            if(this.gameObject.tag == "Missle")
+            if(this.gameObject.tag == "Missle" || this.gameObject.tag == "HyperBeam")
             {
                 score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
                 score.updateScore(10);
             }
-            
 
+            if (this.gameObject.tag == "Player")
+            {
+                GetComponent<Health>().takeDamage(1.0f);
+            }
 
         }
 
@@ -39,4 +42,14 @@ public class Hit : MonoBehaviour
 
     }
 
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "Agent")
+        {
+            flock = GameObject.Find("Flock").GetComponent<Flock>();
+            FlockAgent agentToDelete = other.gameObject.GetComponent<FlockAgent>();
+            flock.agents.Remove(agentToDelete);
+            other.gameObject.GetComponent<EnemyAI>().Die();
+        }
+    }
 }

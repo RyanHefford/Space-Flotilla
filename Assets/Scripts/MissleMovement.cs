@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MissleMovement : MonoBehaviour
 {
-    private float moveSpeed = 20;
+    private float moveSpeed = 50;
     private float maxLifeTime = 2.0f;
     private float lifeTime = 0f;
     // Start is called before the first frame update

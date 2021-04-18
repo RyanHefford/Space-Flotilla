@@ -8,12 +8,18 @@ public class PlayerShoot : MonoBehaviour
     private float shotDelay = 0.2f;
     private float lastShot = 0f;
     private float cannonOffset = 0.5f;
+
+    private AudioSource audioSource;
+    private AudioClip shootSound;
+
     //value used to alternate cannons
     private bool altCannon = false;
     public GameObject basicMissle;
     // Start is called before the first frame update
     void Start()
     {
+        audioSource = gameObject.GetComponent<AudioSource>();
+        shootSound = Resources.Load<AudioClip>("Sounds/PlayerShootSound");
     }
 
     // Update is called once per frame
@@ -23,6 +29,7 @@ public class PlayerShoot : MonoBehaviour
         //if left click shoot
         if (Input.GetKey(KeyCode.Mouse0) && lastShot <= 0)
         {
+            audioSource.PlayOneShot(shootSound);
             lastShot = shotDelay;
             //instantiate both missles
             GameObject tempMissle = Instantiate<GameObject>(basicMissle);

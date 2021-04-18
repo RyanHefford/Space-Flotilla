@@ -9,6 +9,11 @@ TagManager:
   - Overlord
   - Agent
   - Missle
+  - Bullet
+  - FxTemporaire
+  - Healthbar
+  - HowToPlay
+  - HyperBeam
   layers:
   - Default
   - TransparentFX
