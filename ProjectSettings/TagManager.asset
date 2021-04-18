@@ -14,6 +14,7 @@ TagManager:
   - Healthbar
   - HowToPlay
   - HyperBeam
+  - HealthbarOverlord
   layers:
   - Default
   - TransparentFX
