@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: -3973948384229271004}
   - component: {fileID: 7728029966760268390}
   - component: {fileID: 1793272330574826067}
-  - component: {fileID: -771331762866019496}
   m_Layer: 0
   m_Name: Flock Agent 1
   m_TagString: Agent
@@ -65,7 +64,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0.5
+  m_LinearDrag: 1.5
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -116,29 +115,6 @@ MonoBehaviour:
   target: {fileID: 0}
   speed: 300
   nextWaypointDistance: 3
---- !u!114 &-771331762866019496
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 556254486794145}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b090bec917bbe4c3bbc612ef13f7c4a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  version: 1
-  useRaycasting: 1
-  mask:
-    serializedVersion: 2
-    m_Bits: 256
-  thickRaycast: 1
-  thickRaycastRadius: 3
-  use2DPhysics: 0
-  raycastOffset: {x: 0, y: 0, z: 0}
-  useGraphRaycasting: 0
-  quality: 3
 --- !u!1 &556255929382372
 GameObject:
   m_ObjectHideFlags: 0

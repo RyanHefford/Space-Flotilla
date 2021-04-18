@@ -8,6 +8,11 @@ public class PathfindingBehaviour : FlockBehaviour
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
+
+        if (agent.isOverlord)
+        {
+            return Vector2.zero;
+        }
         //if pathfinding is not on then just return.
         if (agent.GetComponent<EnemyAI>().enabled == false)
         {
@@ -17,13 +22,19 @@ public class PathfindingBehaviour : FlockBehaviour
         Vector2 pathfindingMove = Vector2.zero;
         //List<Transform> filteredContext = (filter == null) ? context : filter.filter(agent, context);
         //foreach (Transform item in filteredContext)
-        foreach (Transform item in context)
-        {
+        //foreach (Transform item in context)
+        //{
             //adding where the agent is facing
-            //pathfindingMove += agent.enemyAI.getDirection();
+        if (agent.nowPathFinding)
+        {
+            pathfindingMove = agent.enemyAI.getDirection();
         }
+
+        //Debug.Log("PATHFINDING" + agent.name);
+
+        //}
         //pathfindingMove /= context.Count;
-        pathfindingMove = agent.enemyAI.getDirection();
+        //pathfindingMove = agent.enemyAI.getDirection();
 
         return pathfindingMove;
     }
