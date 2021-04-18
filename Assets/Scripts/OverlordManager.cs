@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OverlordManager : MonoBehaviour
 {
@@ -20,6 +21,7 @@ public class OverlordManager : MonoBehaviour
     //For corners and creating an overlord
     private Transform[] corners = new Transform[4];
     private GameObject cornersGO;
+
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +52,7 @@ public class OverlordManager : MonoBehaviour
         //If I want random agents to go to corners
         if (!overlordExists && !creatingOverlord && agents.Count >= 5)
         {
+
             creatingOverlord = true;
             //generate a random number between 0-3 to get a random corner.
             getRandomCorner();
