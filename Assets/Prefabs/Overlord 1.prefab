@@ -105,6 +105,7 @@ GameObject:
   - component: {fileID: 466515757474951600}
   - component: {fileID: -7843247729367324443}
   - component: {fileID: 4585674306783774409}
+  - component: {fileID: 8424682322923151771}
   m_Layer: 0
   m_Name: Overlord 1
   m_TagString: Overlord
@@ -229,8 +230,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  explosion: {fileID: 0}
-  pickup: {fileID: 0}
   speed: 300
   nextWaypointDistance: 3
 --- !u!114 &4585674306783774409
@@ -258,6 +257,20 @@ MonoBehaviour:
   sideRadius: 0.7
   isHittingObstacle: 0
   hitOutcomes: 
+--- !u!114 &8424682322923151771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4729039855937996587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850d97d35798f40b3de5de0388cced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+  pickup: {fileID: 5005395990528136672, guid: bf484bbe73111704cb40ee7af7ffe454, type: 3}
 --- !u!1 &4729039856812225143
 GameObject:
   m_ObjectHideFlags: 0

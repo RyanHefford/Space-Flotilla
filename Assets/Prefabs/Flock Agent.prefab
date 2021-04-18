@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 1793272330574826067}
   - component: {fileID: -771331762866019496}
   - component: {fileID: 3214787610255046905}
+  - component: {fileID: 2649876551270579690}
   m_Layer: 0
   m_Name: Flock Agent
   m_TagString: Agent
@@ -69,6 +70,9 @@ MonoBehaviour:
   enemyAI: {fileID: 0}
   nowPathFinding: 0
   goToCorner: 0
+  isOverlord: 0
+  stickingToOverlord: 0
+  attacking: 0
 --- !u!50 &-3973948384229271004
 Rigidbody2D:
   serializedVersion: 4
@@ -131,8 +135,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  explosion: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
-  pickup: {fileID: 5005395990528136672, guid: bf484bbe73111704cb40ee7af7ffe454, type: 3}
   speed: 300
   nextWaypointDistance: 3
 --- !u!114 &-771331762866019496
@@ -180,6 +182,20 @@ MonoBehaviour:
   bezierTangentLength: 0.4
   offset: 0.2
   factor: 0.1
+--- !u!114 &2649876551270579690
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556254486794145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b850d97d35798f40b3de5de0388cced, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explosion: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
+  pickup: {fileID: 5005395990528136672, guid: bf484bbe73111704cb40ee7af7ffe454, type: 3}
 --- !u!1 &556255929382372
 GameObject:
   m_ObjectHideFlags: 0
