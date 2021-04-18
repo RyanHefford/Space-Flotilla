@@ -8,7 +8,7 @@ public class StickToOverlordBehaviour : FlockBehaviour
     private GameObject overlord;
     private Rigidbody2D rigidbody;
     private Vector2 overlordCentre;
-    public float overlordRadius = 5.0f;
+    public float overlordRadius = 10.0f;
 
     private OverlordManager om;
 
