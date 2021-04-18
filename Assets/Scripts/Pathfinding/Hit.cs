@@ -10,7 +10,7 @@ public class Hit : MonoBehaviour
     private Score score;
 
     private OverlordManager om;
-
+    public GameObject explosion;
 
     private void Start()
     {
@@ -65,7 +65,12 @@ public class Hit : MonoBehaviour
                 flock.agents.Remove(agentToDelete);
                 //overlord does not exist
                 om.overlordExists = false;
-                Destroy(collision.gameObject);
+                //Destroy(collision.gameObject);
+                collision.gameObject.GetComponent<EnemyDieScript>().Die();
+                //GameObject tempObject = Instantiate<GameObject>(explosion);
+                //tempObject.transform.SetPositionAndRotation(collision.gameObject.transform.position, collision.gameObject.transform.rotation);
+
+                //GameObject.FindGameObjectWithTag("Background").GetComponent<MapScript>().CauseDelay(this.gameObject);
 
             }
 

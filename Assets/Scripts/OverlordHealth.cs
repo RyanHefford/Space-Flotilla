@@ -29,11 +29,7 @@ public class OverlordHealth : MonoBehaviour
         healthBar.value = playerHealth;
         lastHit = Time.time;
 
-        if (playerHealth <= 0)
-        {
-           
-            
-        }
+
     }
 
 
