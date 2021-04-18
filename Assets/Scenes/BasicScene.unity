@@ -315,7 +315,7 @@ MonoBehaviour:
   agents: []
   agentsAttacking: []
   behaviour: {fileID: 11400000, guid: 993b19f5913a6b14ba4e2a88e6f3fb77, type: 2}
-  startingCount: 71
+  startingCount: 300
   replenishAmount: 30
   driveFactor: 10
   maxSpeed: 4
