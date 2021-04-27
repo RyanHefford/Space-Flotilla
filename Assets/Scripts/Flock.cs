@@ -12,8 +12,8 @@ public class Flock : MonoBehaviour
 
     // populating flock values
     [Range(2, 500)]
-    public int startingCount = 300;
-    public int replenishAmount = 30;
+    public int startingCount = 30;
+    public int replenishAmount = 3;
     const float AgentDensity = 0.08f;
 
     // variables we can change with sliders for how the flock behaves

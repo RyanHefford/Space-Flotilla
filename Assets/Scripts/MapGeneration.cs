@@ -58,7 +58,8 @@ public class MapGeneration : MonoBehaviour
         tileMap[verticalTiles / 2 - 1, horizontalTiles / 2 - 1] = true;
         tileMap[verticalTiles / 2 - 1, horizontalTiles / 2] = true;
 
-        CreateMap();
+        // Commented out to disable procedural map generation for simplicity 
+        // CreateMap();
 
         //Scanning the grid for obstacles.
 

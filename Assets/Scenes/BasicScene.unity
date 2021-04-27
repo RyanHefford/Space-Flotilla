@@ -315,8 +315,8 @@ MonoBehaviour:
   agents: []
   agentsAttacking: []
   behaviour: {fileID: 11400000, guid: 993b19f5913a6b14ba4e2a88e6f3fb77, type: 2}
-  startingCount: 300
-  replenishAmount: 30
+  startingCount: 30
+  replenishAmount: 3
   driveFactor: 10
   maxSpeed: 4
   neighborRadius: 1.5
@@ -1960,17 +1960,17 @@ PrefabInstance:
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 4.3311152
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 4.3311152
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.8874102
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 826693867670182300, guid: 07edc39832269f44297a75c0d5309068,
         type: 3}
