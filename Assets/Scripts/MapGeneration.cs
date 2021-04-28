@@ -42,7 +42,6 @@ public class MapGeneration : MonoBehaviour
         tileMap[verticalTiles-2, 0] = true;
         tileMap[verticalTiles-2, 1] = true;
 
-
         tileMap[verticalTiles - 1, horizontalTiles-1] = true;
         tileMap[verticalTiles - 1, horizontalTiles - 2] = true;
         tileMap[verticalTiles - 2, horizontalTiles - 1] = true;
@@ -180,5 +179,21 @@ public class MapGeneration : MonoBehaviour
         AstarPath.active.Scan();
     }
 
+    public int getVerticleTiles() {
+        return verticalTiles;
+    }
 
+    public int getHorizontalTiles()
+    {
+        return horizontalTiles;
+    }
+
+    public bool checkTileMap(int vert, int horiz) {
+        return tileMap[vert, horiz];
+    }
+
+    public void setTileTrue(int vert, int horiz) {
+        tileMap[vert, horiz] = true;
+    }
 }
+

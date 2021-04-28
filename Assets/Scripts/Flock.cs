@@ -36,6 +36,9 @@ public class Flock : MonoBehaviour
     //for pathfinding:
     private bool startPathfinding = false;
 
+    // for spawn chance with tileMap
+    private float agentSpawnChance = 0.7f;
+
     //For corners and creating an overlord
     private Transform[] corners = new Transform[4];
     private GameObject cornersGO;
@@ -65,40 +68,60 @@ public class Flock : MonoBehaviour
             //}
 
             FlockAgent newAgent = null;
-            if (numOfOverlordsStart == 0)
-            {
-                newAgent = Instantiate(
-                overlordPrefab,
-                newLocation,
-                Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
-                transform
-                );
-                newAgent.name = "Overlord";
-                agents.Add(newAgent);
 
-                newAgent.isOverlord = true;
+            int verticalTiles = GameObject.Find("Background").GetComponent<MapGeneration>().getVerticleTiles();
+            int horizontalTiles = GameObject.Find("Background").GetComponent<MapGeneration>().getHorizontalTiles();
 
-                newAgent.GetComponent<EnemyAI>().enabled = false;
+            for (int j = 0; j < verticalTiles; j++) {
+                for (int k = 0; k < horizontalTiles; k++) {
+                    // Checking if space is free
+                    if (!GameObject.Find("Background").GetComponent<MapGeneration>().checkTileMap(j,k)) {
+                        // Decide if spawning an agent
+                        if (UnityEngine.Random.Range(0, 1f) < agentSpawnChance) {
 
-                numOfOverlordsStart = 1;
+                            if (numOfOverlordsStart == 0)
+                            {
+                                // setting spawn location of the current tilemap vector
+                                newLocation = new Vector3((k + 1) * 10 - (horizontalTiles / 2) * 10 - 5, (verticalTiles / 2) * 10 - 5 - (j) * 10);
+
+                                newAgent = Instantiate(
+                                overlordPrefab,
+                                newLocation,
+                                Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                                transform
+                                );
+                                newAgent.name = "Overlord";
+                                agents.Add(newAgent);
+
+                                newAgent.isOverlord = true;
+
+                                newAgent.GetComponent<EnemyAI>().enabled = false;
+
+                                numOfOverlordsStart = 1;
+                            }
+                            else
+                            {
+                                //setting spawnlocation of the current tilemap vector
+                                newLocation = new Vector3((k + 1) * 10 - (horizontalTiles / 2) * 10 - 5, (verticalTiles / 2) * 10 - 5 - (j) * 10); ;
+
+                                // Then spawn the agent in that location.
+                                newAgent = Instantiate(
+                                    agentPrefab,
+                                    newLocation,
+                                    Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                                    transform
+                                    );
+                                newAgent.name = "Agent " + i;
+                                agents.Add(newAgent);
+
+                                //for pathfinding
+                                newAgent.GetComponent<EnemyAI>().enabled = false;
+                            }
+
+                        }
+                    }
+                }
             }
-            else
-            {
-                // Then spawn the agent in that location.
-                newAgent = Instantiate(
-                    agentPrefab,
-                    newLocation,
-                    Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
-                    transform
-                    );
-                newAgent.name = "Agent " + i;
-                agents.Add(newAgent);
-
-                //for pathfinding
-                newAgent.GetComponent<EnemyAI>().enabled = false;
-            }
-
-
         }
 
         //Get corners game object
@@ -193,22 +216,40 @@ public class Flock : MonoBehaviour
             for (int i = (startingCount - replenishAmount); i < startingCount; i++)
             {
 
-                Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-                newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+                int verticalTiles = GameObject.Find("Background").GetComponent<MapGeneration>().getVerticleTiles();
+                int horizontalTiles = GameObject.Find("Background").GetComponent<MapGeneration>().getHorizontalTiles();
 
-                FlockAgent newAgent = null;
+                for (int j = 0; j < verticalTiles; j++)
+                {
+                    for (int k = 0; k < horizontalTiles; k++)
+                    {
+                        // Checking if space is free
+                        if (!GameObject.Find("Background").GetComponent<MapGeneration>().checkTileMap(j, k))
+                        {
+                            // Decide if spawning an agent
+                            if (UnityEngine.Random.Range(0, 1f) < agentSpawnChance)
+                            {
+                                Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+                                //setting spawnlocation of the current tilemap vector
+                                newLocation = new Vector3((k + 1) * 10 - (horizontalTiles / 2) * 10 - 5, (verticalTiles / 2) * 10 - 5 - (j) * 10); ;
 
-                newAgent = Instantiate(
-                            agentPrefab,
-                            newLocation,
-                            Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
-                            transform
-                            );
-                newAgent.name = "Agent " + i;
-                agents.Add(newAgent);
+                                FlockAgent newAgent = null;
 
-                //for pathfinding
-                newAgent.GetComponent<EnemyAI>().enabled = false;
+                                newAgent = Instantiate(
+                                            agentPrefab,
+                                            newLocation,
+                                            Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                                            transform
+                                            );
+                                newAgent.name = "Agent " + i;
+                                agents.Add(newAgent);
+
+                                //for pathfinding
+                                newAgent.GetComponent<EnemyAI>().enabled = false;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
