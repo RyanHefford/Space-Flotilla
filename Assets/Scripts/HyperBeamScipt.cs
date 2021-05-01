@@ -86,4 +86,9 @@ public class HyperBeamScipt : MonoBehaviour
         GetComponent<PlayerMovement>().rotationSpeed *= 4;
     }
 
+    public bool isFiring()
+    {
+        return beamCollider.enabled;
+    }
+
 }

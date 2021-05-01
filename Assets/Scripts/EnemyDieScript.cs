@@ -6,11 +6,12 @@ public class EnemyDieScript : MonoBehaviour
 {
     public GameObject explosion;
     public GameObject pickup;
+    private HyperBeamScipt playerBeam;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerBeam = GameObject.FindGameObjectWithTag("Player").GetComponent<HyperBeamScipt>();
     }
 
     // Update is called once per frame
@@ -23,7 +24,7 @@ public class EnemyDieScript : MonoBehaviour
     {
         GameObject startExplosion = Instantiate<GameObject>(explosion);
 
-        if (Random.Range(0, 100) < 1)
+        if (Random.Range(0, 100) < 1 && !playerBeam.isFiring())
         {
             Instantiate<GameObject>(pickup).transform.SetPositionAndRotation(transform.position, transform.rotation);
         }
