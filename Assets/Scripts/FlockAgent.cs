@@ -44,4 +44,13 @@ public class FlockAgent : MonoBehaviour
         rb.velocity = velocity;
         rb.angularVelocity = 0.0f;
     }
+
+    public void moveTo(Vector2 location)
+    {
+        // transform.up = velocity;
+
+        Vector2 dir = (location - (Vector2)rb.transform.position).normalized * 10;
+        rb.velocity = dir;
+        rb.angularVelocity = 0.0f;
+    }
 }

@@ -130,6 +130,12 @@ public class Flock : MonoBehaviour
             {
                 move = move.normalized * maxSpeed;
             }
+            //overlord movement
+           // if (agent.isOverlord)
+            //{
+                
+             //   move = om.wanderLocation.normalized * maxSpeed;
+            //}
 
             ////enable pathfinding.
             //if (Input.GetKeyDown(KeyCode.Space))
