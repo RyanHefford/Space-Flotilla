@@ -46,6 +46,8 @@ public class Flock : MonoBehaviour
     public int timerForEachAttack = 3;
     public float attackingTimeLeft = 3;
 
+    public bool respawning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -56,13 +58,15 @@ public class Flock : MonoBehaviour
         for (int i = 0; i < startingCount; i++)
         {
             Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-
-            // Returns true if there are any colliders overlapping the sphere defined by position and radius in world coordinates.
-            //while (Physics2D.OverlapCircle(newLocation, 1.25f) != null)
-            //{
-            // Keep getting new locations until one doesn't overlap.
             newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-            //}
+
+            // finding current position of the player object
+            Vector2 playerPosition = GameObject.Find("Player").transform.position;
+
+            // while the newlocation for an agent is too close to the player position, find a another location
+            while (Vector2.Distance(playerPosition,newLocation) < 2f) {
+                newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+            }
 
             FlockAgent newAgent = null;
             if (numOfOverlordsStart == 0)
@@ -194,27 +198,39 @@ public class Flock : MonoBehaviour
 
         }
 
-        if (agents.Count < (startingCount - replenishAmount))
-        {
-            for (int i = (startingCount - replenishAmount); i < startingCount; i++)
+        // If respawns are turned on:
+        if (respawning) {
+            if (agents.Count < (startingCount - replenishAmount))
             {
+                for (int i = (startingCount - replenishAmount); i < startingCount; i++)
+                {
 
-                Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-                newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+                    Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+                    newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
 
-                FlockAgent newAgent = null;
+                    // finding current position of the player object
+                    Vector2 playerPosition = GameObject.Find("Player").transform.position;
 
-                newAgent = Instantiate(
-                            agentPrefab,
-                            newLocation,
-                            Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
-                            transform
-                            );
-                newAgent.name = "Agent " + i;
-                agents.Add(newAgent);
+                    // while the newlocation for an agent is too close to the player position, find a another location
+                    while (Vector2.Distance(playerPosition, newLocation) < 2f)
+                    {
+                        newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+                    }
 
-                //for pathfinding
-                newAgent.GetComponent<EnemyAI>().enabled = false;
+                    FlockAgent newAgent = null;
+
+                    newAgent = Instantiate(
+                                agentPrefab,
+                                newLocation,
+                                Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
+                                transform
+                                );
+                    newAgent.name = "Agent " + i;
+                    agents.Add(newAgent);
+
+                    //for pathfinding
+                    newAgent.GetComponent<EnemyAI>().enabled = false;
+                }
             }
         }
     }
