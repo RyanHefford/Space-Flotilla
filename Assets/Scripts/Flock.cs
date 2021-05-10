@@ -62,7 +62,7 @@ public class Flock : MonoBehaviour
             newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
 
             // finding current position of the player object
-            Vector2 playerPosition = GameObject.Find("Player").transform.position;
+            Vector2 playerPosition = GameObject.Find("Player").transform.localPosition;
 
             // while the newlocation for an agent is too close to the player position, find a another location
             while (Vector2.Distance(playerPosition,newLocation) < 2f) {
@@ -96,6 +96,8 @@ public class Flock : MonoBehaviour
                     Quaternion.Euler(Vector3.forward * Random.Range(0f, 360f)),
                     transform
                     );
+                newAgent.transform.parent = transform;
+                newAgent.transform.localPosition = newLocation;
                 newAgent.name = "Agent " + i;
                 agents.Add(newAgent);
 
@@ -210,7 +212,7 @@ public class Flock : MonoBehaviour
                     newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
 
                     // finding current position of the player object
-                    Vector2 playerPosition = GameObject.Find("Player").transform.position;
+                    Vector2 playerPosition = GameObject.Find("Player").transform.localPosition;
 
                     // while the newlocation for an agent is too close to the player position, find a another location
                     while (Vector2.Distance(playerPosition, newLocation) < 2f)
@@ -239,7 +241,7 @@ public class Flock : MonoBehaviour
     List<Transform> GetNearbyObjects(FlockAgent agent)
     {
         List<Transform> context = new List<Transform>();
-        Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.position, neighborRadius);
+        Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.localPosition, neighborRadius);
         foreach (Collider2D c in contextColliders)
         {
             if (c != agent.AgentCollider)
