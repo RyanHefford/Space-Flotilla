@@ -47,6 +47,7 @@ public class Flock : MonoBehaviour
     public float attackingTimeLeft = 3;
 
     public bool respawning = false;
+    public bool overlordExistance = false;
 
     // Start is called before the first frame update
     void Start()
@@ -69,7 +70,7 @@ public class Flock : MonoBehaviour
             }
 
             FlockAgent newAgent = null;
-            if (numOfOverlordsStart == 0)
+            if (numOfOverlordsStart == 0 && overlordExistance)
             {
                 newAgent = Instantiate(
                 overlordPrefab,

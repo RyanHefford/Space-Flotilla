@@ -326,6 +326,7 @@ MonoBehaviour:
   timerForEachAttack: 3
   attackingTimeLeft: 3
   respawning: 0
+  overlordExistance: 0
 --- !u!1 &489272131
 GameObject:
   m_ObjectHideFlags: 0

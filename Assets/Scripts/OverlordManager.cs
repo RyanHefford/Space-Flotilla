@@ -50,7 +50,7 @@ public class OverlordManager : MonoBehaviour
         
         agents = flock.agents;
         //If I want random agents to go to corners
-        if (!overlordExists && !creatingOverlord && agents.Count >= 5)
+        if (!overlordExists && !creatingOverlord && agents.Count >= 5 && flock.overlordExistance)
         {
 
             creatingOverlord = true;
@@ -63,7 +63,7 @@ public class OverlordManager : MonoBehaviour
         }
 
         //check for if the agent which was going to the corner got destroyed or not.
-        if(agents.Count >= 5)
+        if(agents.Count >= 5 && flock.overlordExistance)
         {
             checkingAgentsForOverlordCreation();
         }
