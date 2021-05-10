@@ -11,14 +11,16 @@ public class AgentBehavior : Agent
     [SerializeField]
     private Transform goalTransform;
 
+    [SerializeField]
+    private Flock flock;
+
     public override void OnEpisodeBegin()
     {
-        //maybe reset the flocking behavior?
 
-
+        //reset player position
         transform.localPosition = new Vector3(-4, -6, 0);
-
-
+        //reset the flocks
+        flock.startNewEp();
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -26,8 +28,6 @@ public class AgentBehavior : Agent
         //Things the agent need to know in the world.
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(goalTransform.localPosition);
-
-
 
     }
 
@@ -53,17 +53,23 @@ public class AgentBehavior : Agent
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Obstacle")
-        {
+        if (collision.gameObject.tag == "Obstacle") { 
+
             AddReward(5f);
             EndEpisode();
+
         }
-        else
+        else if (collision.gameObject.tag == "Agent")
         {
+            AddReward(-15f);
+            EndEpisode();
+        }
+        else{ 
+        
             AddReward(-5f);
             EndEpisode();
         }
     }
 
-
+  
 }

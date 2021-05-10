@@ -22,48 +22,48 @@ public class MapGeneration : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        map = GetComponent<MapScript>();
+        //map = GetComponent<MapScript>();
 
-        verticalTiles = (int)math.floor(map.getNorthEdge() * 2) / 10;
-        horizontalTiles = (int)math.floor(map.getEastEdge() * 2) / 10;
+        //verticalTiles = (int)math.floor(map.getNorthEdge() * 2) / 10;
+        //horizontalTiles = (int)math.floor(map.getEastEdge() * 2) / 10;
 
-        verticalTiles -= 1;
-        horizontalTiles -= 1;
+        //verticalTiles -= 1;
+        //horizontalTiles -= 1;
 
-        tileMap = new bool[verticalTiles,horizontalTiles];
-        //setting corners to true to make space for portals
-        tileMap[0, 0] = true;
-        tileMap[0, 1] = true;
-        tileMap[1, 0] = true;
-        tileMap[1, 1] = true;
+        //tileMap = new bool[verticalTiles,horizontalTiles];
+        ////setting corners to true to make space for portals
+        //tileMap[0, 0] = true;
+        //tileMap[0, 1] = true;
+        //tileMap[1, 0] = true;
+        //tileMap[1, 1] = true;
 
-        tileMap[verticalTiles-1, 0] = true;
-        tileMap[verticalTiles-1, 1] = true;
-        tileMap[verticalTiles-2, 0] = true;
-        tileMap[verticalTiles-2, 1] = true;
+        //tileMap[verticalTiles-1, 0] = true;
+        //tileMap[verticalTiles-1, 1] = true;
+        //tileMap[verticalTiles-2, 0] = true;
+        //tileMap[verticalTiles-2, 1] = true;
 
 
-        tileMap[verticalTiles - 1, horizontalTiles-1] = true;
-        tileMap[verticalTiles - 1, horizontalTiles - 2] = true;
-        tileMap[verticalTiles - 2, horizontalTiles - 1] = true;
-        tileMap[verticalTiles - 2, horizontalTiles -2] = true;
+        //tileMap[verticalTiles - 1, horizontalTiles-1] = true;
+        //tileMap[verticalTiles - 1, horizontalTiles - 2] = true;
+        //tileMap[verticalTiles - 2, horizontalTiles - 1] = true;
+        //tileMap[verticalTiles - 2, horizontalTiles -2] = true;
 
-        tileMap[0, horizontalTiles - 1] = true;
-        tileMap[0, horizontalTiles - 2] = true;
-        tileMap[1, horizontalTiles - 1] = true;
-        tileMap[1, horizontalTiles - 2] = true;
+        //tileMap[0, horizontalTiles - 1] = true;
+        //tileMap[0, horizontalTiles - 2] = true;
+        //tileMap[1, horizontalTiles - 1] = true;
+        //tileMap[1, horizontalTiles - 2] = true;
 
-        tileMap[verticalTiles / 2, horizontalTiles / 2] = true;
-        tileMap[verticalTiles / 2, horizontalTiles / 2 -1] = true;
-        tileMap[verticalTiles / 2 - 1, horizontalTiles / 2 - 1] = true;
-        tileMap[verticalTiles / 2 - 1, horizontalTiles / 2] = true;
+        //tileMap[verticalTiles / 2, horizontalTiles / 2] = true;
+        //tileMap[verticalTiles / 2, horizontalTiles / 2 -1] = true;
+        //tileMap[verticalTiles / 2 - 1, horizontalTiles / 2 - 1] = true;
+        //tileMap[verticalTiles / 2 - 1, horizontalTiles / 2] = true;
 
         // Commented out to disable procedural map generation for simplicity 
         // CreateMap();
 
         //Scanning the grid for obstacles.
 
-        DoDelayAction(0.5f);
+        //DoDelayAction(0.5f);
 
     }
 

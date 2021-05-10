@@ -5,8 +5,9 @@ using UnityEngine;
 public class Hit : MonoBehaviour
 {
     //When a flock hits a player.
-    private Flock flock;
-    private GameObject player;
+    public Flock flock;
+
+    public Health health;
     private Score score;
 
     private OverlordManager om;
@@ -16,7 +17,7 @@ public class Hit : MonoBehaviour
         //getting the OverlordManager script from the Manager GameObject
         om = GameObject.Find("Manager").GetComponent<OverlordManager>();
 
-        player = GameObject.Find("Player");
+        
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -24,7 +25,7 @@ public class Hit : MonoBehaviour
         //remove from the list.
         if (collision.gameObject.tag == "Agent")
         {
-            flock = GameObject.Find("Flock").GetComponent<Flock>();
+            
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
             flock.agents.Remove(agentToDelete);
             collision.gameObject.GetComponent<EnemyDieScript>().Die();
@@ -38,7 +39,7 @@ public class Hit : MonoBehaviour
 
             if (this.gameObject.tag == "Player")
             {
-                player.GetComponent<Health>().takeDamage(1.0f);
+                health.takeDamage(1.0f);
             }
 
         }
@@ -82,7 +83,7 @@ public class Hit : MonoBehaviour
 
             if (this.gameObject.tag == "Player")
             {
-                player.GetComponent<Health>().takeDamage(1.0f);
+                health.takeDamage(1.0f);
             }
 
         }
@@ -101,7 +102,7 @@ public class Hit : MonoBehaviour
         //remove from the list.
         if (collision.gameObject.tag == "Agent")
         {
-            flock = GameObject.Find("Flock").GetComponent<Flock>();
+
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
             flock.agents.Remove(agentToDelete);
             collision.gameObject.GetComponent<EnemyDieScript>().Die();
