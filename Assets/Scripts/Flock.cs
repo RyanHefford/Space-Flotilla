@@ -324,7 +324,6 @@ public class Flock : MonoBehaviour
 
         }
 
-        Debug.Log("Count is: " + agents.Count);
 
     }
 

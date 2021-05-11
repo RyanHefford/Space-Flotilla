@@ -16,8 +16,8 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        healthBar = GameObject.FindGameObjectWithTag("Healthbar").GetComponent<Slider>();
-        healthBar.value = playerHealth;
+        //healthBar = GameObject.FindGameObjectWithTag("Healthbar").GetComponent<Slider>();
+        //healthBar.value = playerHealth;
     }
 
     private void Update()
@@ -38,7 +38,7 @@ public class Health : MonoBehaviour
         playerHealth += healing;
         //Check if overhealed
         playerHealth = playerHealth > 100 ? 100 : playerHealth;
-        healthBar.value = playerHealth;
+        //healthBar.value = playerHealth;
         lastHit = Time.time;
     }
 
@@ -48,7 +48,7 @@ public class Health : MonoBehaviour
         if(Time.time - lastHit > iFrames)
         {
             playerHealth -= damage;
-            healthBar.value = playerHealth;
+            //healthBar.value = playerHealth;
             lastHit = Time.time;
 
             if(playerHealth <= 0)

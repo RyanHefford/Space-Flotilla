@@ -16,17 +16,34 @@ public class Hit : MonoBehaviour
     {
         //getting the OverlordManager script from the Manager GameObject
         om = GameObject.Find("Manager").GetComponent<OverlordManager>();
-        flock = transform.parent.Find("Flock").GetComponent<Flock>();
-        
+        flock =  getFlock();
+    }
+
+    private Flock getFlock()
+    {
+        Flock newFlock = null;
+        if(this.transform.gameObject.tag == "Player")
+        {
+            newFlock =  this.transform.parent.Find("Flock").GetComponent<Flock>();
+        }
+        else if(this.transform.gameObject.tag == "Missle" || this.transform.gameObject.tag == "HyperBeam")
+        {
+            newFlock = this.transform.parent.transform.parent.Find("Flock").GetComponent<Flock>();
+        }
+
+        return newFlock;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        flock = getFlock();
+
         //remove from the list.
         if (collision.gameObject.tag == "Agent")
         {
-            
+
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
+
             flock.agents.Remove(agentToDelete);
             collision.gameObject.GetComponent<EnemyDieScript>().Die();
 
@@ -99,6 +116,7 @@ public class Hit : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
+        flock = getFlock();
         //remove from the list.
         if (collision.gameObject.tag == "Agent")
         {
@@ -148,6 +166,7 @@ public class Hit : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D collision)
     {
+        flock = getFlock();
         if (collision.gameObject.tag == "Overlord")
         {
             collision.gameObject.GetComponent<OverlordHealth>().takeDamage(1.0f);

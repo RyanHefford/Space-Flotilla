@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6441166703277187882}
   - component: {fileID: 6441166703277187885}
   - component: {fileID: 6441166703277187883}
-  - component: {fileID: 5874021459137790963}
   - component: {fileID: -7034490034060225966}
   - component: {fileID: 8846575701247210498}
+  - component: {fileID: -1084794215866563394}
   m_Layer: 0
   m_Name: PlayerMissle
   m_TagString: Missle
@@ -97,18 +97,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44ce84feb6aa5224f89fa07da90b02a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5874021459137790963
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6441166703277187884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34edda3ef300240cf84f1a10262e1ea8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &-7034490034060225966
 Rigidbody2D:
   serializedVersion: 4
@@ -156,3 +144,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.25}
   m_EdgeRadius: 0
+--- !u!114 &-1084794215866563394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441166703277187884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34edda3ef300240cf84f1a10262e1ea8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  flock: {fileID: 0}
+  health: {fileID: 0}
