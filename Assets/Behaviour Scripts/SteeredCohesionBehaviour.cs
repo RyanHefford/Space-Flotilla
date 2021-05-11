@@ -18,12 +18,12 @@ public class SteeredCohesionBehaviour : FlockBehaviour
         Vector2 cohesionMove = Vector2.zero;
         foreach (Transform item in context)
         {
-            cohesionMove += (Vector2)item.position;
+            cohesionMove += (Vector2)item.localPosition;
         }
         cohesionMove /= context.Count;
 
         //create offset from agent position
-        cohesionMove -= (Vector2)agent.transform.position;
+        cohesionMove -= (Vector2)agent.transform.localPosition;
         cohesionMove = Vector2.SmoothDamp(agent.transform.up, cohesionMove, ref currentVelocity, agentSmoothTime);
         return cohesionMove;
     }
