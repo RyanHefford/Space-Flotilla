@@ -33,6 +33,7 @@ public class PlayerShoot : MonoBehaviour
             lastShot = shotDelay;
             //instantiate both missles
             GameObject tempMissle = Instantiate<GameObject>(basicMissle);
+            tempMissle.transform.parent = this.transform;
 
             //adjust positions of both missles
 

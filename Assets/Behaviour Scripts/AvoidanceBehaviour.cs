@@ -16,10 +16,10 @@ public class AvoidanceBehaviour : FlockBehaviour
         int nAvoid = 0;
         foreach (Transform item in context)
         {
-            if (Vector2.SqrMagnitude(item.position - agent.transform.position) < flock.SquareAvoidanceRadius)
+            if (Vector2.SqrMagnitude(item.localPosition - agent.transform.localPosition) < flock.SquareAvoidanceRadius)
             {
                 nAvoid++;
-                avoidanceMove += (Vector2)(agent.transform.position - item.position);
+                avoidanceMove += (Vector2)(agent.transform.localPosition - item.localPosition);
             }
         }
         if (nAvoid > 0)
