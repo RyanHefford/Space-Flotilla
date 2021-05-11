@@ -5,7 +5,7 @@ using UnityEngine;
 public class Hit : MonoBehaviour
 {
     //When a flock hits a player.
-    public Flock flock;
+    private Flock flock;
 
     public Health health;
     private Score score;
@@ -16,7 +16,7 @@ public class Hit : MonoBehaviour
     {
         //getting the OverlordManager script from the Manager GameObject
         om = GameObject.Find("Manager").GetComponent<OverlordManager>();
-
+        flock = transform.parent.Find("Flock").GetComponent<Flock>();
         
     }
 

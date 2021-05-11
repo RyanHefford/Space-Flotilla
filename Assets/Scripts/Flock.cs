@@ -263,14 +263,10 @@ public class Flock : MonoBehaviour
     }
 
 
+   
+
     public void startNewEp()
     {
-        //remove all the agents
-        foreach(FlockAgent fa in agents)
-        {
-            agents.Remove(fa);
-            Destroy(fa.gameObject);
-        }
 
         //instantiate new ones.
         for (int i = 0; i < startingCount; i++)
@@ -327,6 +323,8 @@ public class Flock : MonoBehaviour
 
 
         }
+
+        Debug.Log("Count is: " + agents.Count);
 
     }
 

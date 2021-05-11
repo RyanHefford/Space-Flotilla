@@ -11,8 +11,12 @@ public class AgentBehavior : Agent
     [SerializeField]
     private Transform goalTransform;
 
-    [SerializeField]
     private Flock flock;
+
+    private void Start()
+    {
+        flock = transform.parent.Find("Flock").GetComponent<Flock>();
+    }
 
     public override void OnEpisodeBegin()
     {
@@ -20,7 +24,11 @@ public class AgentBehavior : Agent
         //reset player position
         transform.localPosition = new Vector3(-4, -6, 0);
         //reset the flocks
+        destroyAgents();
         flock.startNewEp();
+
+        
+
     }
 
     public override void CollectObservations(VectorSensor sensor)
@@ -65,11 +73,24 @@ public class AgentBehavior : Agent
             EndEpisode();
         }
         else{ 
-        
+
             AddReward(-5f);
             EndEpisode();
         }
     }
 
-  
+    private void destroyAgents()
+    {
+        for (int i = 0; i < flock.agents.Count; i++)
+        {
+            //Destroy the game objects (Agents)
+            Destroy(flock.agents[i].gameObject);
+        }
+        //clear the list.
+        flock.agents.Clear();
+
+    }
+
+
+
 }
