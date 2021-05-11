@@ -149,6 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
   pickup: {fileID: 5005395990528136672, guid: bf484bbe73111704cb40ee7af7ffe454, type: 3}
+  dropsBeamPickup: 0
 --- !u!1 &556255929382372
 GameObject:
   m_ObjectHideFlags: 0

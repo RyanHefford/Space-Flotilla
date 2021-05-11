@@ -10,6 +10,7 @@ public class Health : MonoBehaviour
     private float iFrames = 1.0f;
     private float lastHit = 0f;
     private Slider healthBar;
+    public bool shieldActive;
     public GameObject shield;
     public GameObject explosion;
 
@@ -22,7 +23,7 @@ public class Health : MonoBehaviour
 
     private void Update()
     {
-        if (Time.time - lastHit > iFrames)
+        if (Time.time - lastHit > iFrames || !shieldActive)
         {
             shield.SetActive(false);
         }
@@ -45,7 +46,7 @@ public class Health : MonoBehaviour
     public void takeDamage(float damage)
     {
         //check if iFrames are still active
-        if(Time.time - lastHit > iFrames)
+        if(Time.time - lastHit > iFrames || !shieldActive)
         {
             playerHealth -= damage;
             //healthBar.value = playerHealth;
