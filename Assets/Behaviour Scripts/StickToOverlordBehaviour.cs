@@ -14,53 +14,53 @@ public class StickToOverlordBehaviour : FlockBehaviour
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-        om = GameObject.Find("Manager").GetComponent<OverlordManager>();
+       // om = GameObject.Find("Manager").GetComponent<OverlordManager>();
 
 
-        //see if the overlord exists and is within the nearby objects inside the context variable.
-        bool overlordNearby = false;
-        foreach(Transform transform in context)
-        {
-            if(transform.gameObject.tag == "Agent" || transform.gameObject.tag == "Overlord")
-            {
-                FlockAgent flockAgent = transform.gameObject.GetComponent<FlockAgent>();
+        ////see if the overlord exists and is within the nearby objects inside the context variable.
+        //bool overlordNearby = false;
+        //foreach(Transform transform in context)
+        //{
+        //    if(transform.gameObject.tag == "Agent" || transform.gameObject.tag == "Overlord")
+        //    {
+        //        FlockAgent flockAgent = transform.gameObject.GetComponent<FlockAgent>();
 
 
-                //agent nearby IS AN OVERLORD and the agent calculating the loop IS NOT an overlord. 
-                if (flockAgent.isOverlord && !agent.isOverlord)
-                {
-                    //the current agent doing the calculation should do it
-                    overlordNearby = true;
-                }
-            }
+        //        //agent nearby IS AN OVERLORD and the agent calculating the loop IS NOT an overlord. 
+        //        if (flockAgent.isOverlord && !agent.isOverlord)
+        //        {
+        //            //the current agent doing the calculation should do it
+        //            overlordNearby = true;
+        //        }
+        //    }
             
-        }
+        //}
 
-        if (overlordNearby && !agent.attacking)
-        {
-            agent.stickingToOverlord = true;
-        }
+        //if (overlordNearby && !agent.attacking)
+        //{
+        //    agent.stickingToOverlord = true;
+        //}
 
-        if (om.overlordExists && !agent.isOverlord && agent.stickingToOverlord)
-        {
+        //if (!agent.isOverlord && agent.stickingToOverlord)
+        //{
 
-            //Debug.Log("INSIDE");
-            overlord = GameObject.FindGameObjectsWithTag("Overlord")[0];
-            overlordCentre = overlord.transform.position;
+        //    //Debug.Log("INSIDE");
+        //    overlord = GameObject.FindGameObjectsWithTag("Overlord")[0];
+        //    overlordCentre = overlord.transform.position;
 
-            Vector2 overlordOffset = overlordCentre - (Vector2)agent.transform.position;
-            float t = overlordOffset.magnitude / overlordRadius;
-            if (t < 0.9f)
-            {
-                return Vector2.zero;
-            }
+        //    Vector2 overlordOffset = overlordCentre - (Vector2)agent.transform.position;
+        //    float t = overlordOffset.magnitude / overlordRadius;
+        //    if (t < 0.9f)
+        //    {
+        //        return Vector2.zero;
+        //    }
 
-            return overlordOffset * t * t;
-        }
-        else
-        {
+        //    return overlordOffset * t * t;
+        //}
+        //else
+        //{
             return Vector2.zero;
-        }
+        //}
 
         
     }

@@ -109,15 +109,15 @@ public class Flock : MonoBehaviour
         //}
 
         //Get corners game object
-        cornersGO = GameObject.Find("Corners");
-        //Add children to array
-        for (int i = 0; i < cornersGO.transform.childCount; i++)
-        {
-            corners[i] = cornersGO.transform.GetChild(i).transform;
-        }
+        //cornersGO = GameObject.Find("Corners");
+        ////Add children to array
+        //for (int i = 0; i < cornersGO.transform.childCount; i++)
+        //{
+        //    corners[i] = cornersGO.transform.GetChild(i).transform;
+        //}
 
-        //initializing the overlord manager.
-        om = GameObject.Find("Manager").GetComponent<OverlordManager>();
+        ////initializing the overlord manager.
+        //om = GameObject.Find("Manager").GetComponent<OverlordManager>();
 
     }
 

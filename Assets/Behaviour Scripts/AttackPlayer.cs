@@ -10,79 +10,62 @@ public class AttackPlayer : FlockBehaviour
 
     public override Vector2 CalculateMove(FlockAgent agent, List<Transform> context, Flock flock)
     {
-        om = GameObject.Find("Manager").GetComponent<OverlordManager>();
+        //om = GameObject.Find("Manager").GetComponent<OverlordManager>();
 
-        bool foundPlayer = false;
-        //WHEN THE AGENT IS AN OVERLORD.
-        if (om.overlordExists && agent.isOverlord)
-        {
-
-            ////GET ALL OF THE GAME OBJECTS NEARBY
-            //List<Transform> transforms = GetNearbyObjects(agent);
-
-            ////DO WE HAVE THE PLAYER VISIBLE TO US?
-            //foreach(Transform t in transforms)
-            //{
-            //    if(t.gameObject.tag == "Player")
-            //    {
-            //        foundPlayer = true;
-            //    }
-            //}
+        //bool foundPlayer = false;
+        ////WHEN THE AGENT IS AN OVERLORD.
 
 
-            GameObject player = GameObject.Find("Player");
-            Transform playerLocation = null;
-            if(player != null)
-            {
-                playerLocation = player.transform;
-                if (Mathf.Abs(Vector2.Distance(playerLocation.position, agent.transform.position)) < radius)
-                {
-                    foundPlayer = true;
-                }
-            }
+
+        //    GameObject player = GameObject.Find("Player");
+        //    Transform playerLocation = null;
+        //    if(player != null)
+        //    {
+        //        playerLocation = player.transform;
+        //        if (Mathf.Abs(Vector2.Distance(playerLocation.position, agent.transform.position)) < radius)
+        //        {
+        //            foundPlayer = true;
+        //        }
+        //    }
 
             
 
 
 
 
-            //now all of the agents that are neighbors of this overlord should attack.
-            if (!flock.initiatedAnAttack && foundPlayer)
-            {
-                flock.initiatedAnAttack = true;
-                //have not started an attack YET.
-                flock.attackingTimeLeft = flock.timerForEachAttack;
+        //    //now all of the agents that are neighbors of this overlord should attack.
+        //    if (!flock.initiatedAnAttack && foundPlayer)
+        //    {
+        //        flock.initiatedAnAttack = true;
+        //        //have not started an attack YET.
+        //        flock.attackingTimeLeft = flock.timerForEachAttack;
 
-                foreach (Transform t in context)
-                {
-                    if (t.gameObject.tag == "Agent")
-                    {
-                        FlockAgent attackingAgent = t.gameObject.GetComponent<FlockAgent>();
-                        //if the agent is with the overlord.
-                        if (attackingAgent.stickingToOverlord)
-                        {
+        //        foreach (Transform t in context)
+        //        {
+        //            if (t.gameObject.tag == "Agent")
+        //            {
+        //                FlockAgent attackingAgent = t.gameObject.GetComponent<FlockAgent>();
+        //                //if the agent is with the overlord.
+        //                if (attackingAgent.stickingToOverlord)
+        //                {
                             
-                            attackingAgent.enemyAI.target = GameObject.Find("Player").transform;
-                            attackingAgent.GetComponent<EnemyAI>().enabled = true;
-                            attackingAgent.stickingToOverlord = false;
-                            //flock.agentsAttacking.Add(attackingAgent);
-                            attackingAgent.attacking = true;
-                            attackingAgent.nowPathFinding = true;
-                            attackingAgent.name += "  ATTACKING";
-                        }
+        //                    attackingAgent.enemyAI.target = GameObject.Find("Player").transform;
+        //                    attackingAgent.GetComponent<EnemyAI>().enabled = true;
+        //                    attackingAgent.stickingToOverlord = false;
+        //                    //flock.agentsAttacking.Add(attackingAgent);
+        //                    attackingAgent.attacking = true;
+        //                    attackingAgent.nowPathFinding = true;
+        //                    attackingAgent.name += "  ATTACKING";
+        //                }
                         
-                    }
-                }
-            }
+        //            }
+        //        }
+        //    }
             
 
             return Vector2.zero;
 
-        }
-        else
-        {
-            return Vector2.zero;
-        }
+      
 
     }
 

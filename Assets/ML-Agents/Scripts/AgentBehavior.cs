@@ -8,14 +8,13 @@ using Unity.MLAgents.Sensors;
 public class AgentBehavior : Agent
 {
 
-    [SerializeField]
-    private Transform goalTransform;
-
     private Flock flock;
+    private PlayerMovement pm;
 
     private void Start()
     {
         flock = transform.parent.Find("Flock").GetComponent<Flock>();
+        pm = GetComponent<PlayerMovement>();
     }
 
     public override void OnEpisodeBegin()
@@ -35,7 +34,7 @@ public class AgentBehavior : Agent
     {
         //Things the agent need to know in the world.
         sensor.AddObservation(transform.localPosition);
-        sensor.AddObservation(goalTransform.localPosition);
+       // sensor.AddObservation();
 
     }
 
@@ -45,8 +44,13 @@ public class AgentBehavior : Agent
     {
         float moveX = actions.ContinuousActions[0];
         float moveY = actions.ContinuousActions[1];
-
-        transform.localPosition += new Vector3(moveX, moveY, 0) * Time.deltaTime * 10;
+        float mouseX = actions.ContinuousActions[2];
+        float mouseY = actions.ContinuousActions[3];
+        //transform.localPosition += new Vector3(moveX, moveY, 0) * Time.deltaTime * 10;
+        pm.moveX = moveX;
+        pm.moveY = moveY;
+        pm.mouseX = mouseX;
+        pm.mouseY = mouseY;
     }
 
 
@@ -57,6 +61,9 @@ public class AgentBehavior : Agent
 
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         continuousActions[1] = Input.GetAxisRaw("Vertical");
+        Vector3 mousePos = Input.mousePosition;
+        continuousActions[2] = mousePos.x;
+        continuousActions[3] = mousePos.y;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -90,6 +97,7 @@ public class AgentBehavior : Agent
         flock.agents.Clear();
 
     }
+
 
 
 

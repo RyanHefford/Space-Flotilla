@@ -19,6 +19,12 @@ public class PlayerMovement : MonoBehaviour
     private float southEdge;
     private float westEdge;
 
+    //Agents script
+    public float mouseX;
+    public float mouseY;
+    public float moveX;
+    public float moveY;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +43,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         CalculateMovement();
-        mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
+        mousePos = cam.ScreenToWorldPoint(new Vector3(mouseX, mouseY, 0));
     }
 
     private void FixedUpdate()
@@ -51,45 +57,48 @@ public class PlayerMovement : MonoBehaviour
         float xMovement = Input.GetAxisRaw("Horizontal");
         float yMovement = Input.GetAxisRaw("Vertical");
 
-        movementVector = new Vector2(xMovement, yMovement).normalized;
+        //movementVector = new Vector2(xMovement, yMovement).normalized;
+        movementVector = new Vector2(moveX, moveY).normalized;
+
     }
 
     private void Move()
     {
-        rigidbody.AddForce(new Vector2(movementVector.x * moveSpeed, movementVector.y * moveSpeed));
-        //counter current force so that ship automaticly slows
-        rigidbody.AddForce(new Vector2(-rigidbody.velocity.x / 2, -rigidbody.velocity.y / 2));
-        //check if on edge of map
+        //rigidbody.AddForce(new Vector2(movementVector.x * moveSpeed, movementVector.y * moveSpeed));
+        ////counter current force so that ship automaticly slows
+        //rigidbody.AddForce(new Vector2(-rigidbody.velocity.x / 2, -rigidbody.velocity.y / 2));
+        ////check if on edge of map
 
-        //east edge
-        if (transform.position.x + hitBoxRadius >= eastEdge)
-        {
-            transform.position = new Vector3(eastEdge - hitBoxRadius, transform.position.y, 0);
-            rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
-            rigidbody.angularVelocity = 0;
+        ////east edge
+        //if (transform.position.x + hitBoxRadius >= eastEdge)
+        //{
+        //    //transform.position = new Vector3(eastEdge - hitBoxRadius, transform.position.y, 0);
+        //    rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
+        //    rigidbody.angularVelocity = 0;
 
-        }
-        //north edge
-        if (transform.position.y + hitBoxRadius >= northEdge)
-        {
-            transform.position = new Vector3(transform.position.x, northEdge - hitBoxRadius, 0);
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
-            rigidbody.angularVelocity = 0;
-        }
-        //south edge
-        if (transform.position.y - hitBoxRadius <= southEdge)
-        {
-            transform.position = new Vector3(transform.position.x, southEdge + hitBoxRadius, 0);
-            rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
-            rigidbody.angularVelocity = 0;
-        }
-        //west edge
-        if (transform.position.x - hitBoxRadius <= westEdge)
-        {
-            transform.position = new Vector3(westEdge + hitBoxRadius, transform.position.y, 0);
-            rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
-            rigidbody.angularVelocity = 0;
-        }
+        //}
+        ////north edge
+        //if (transform.position.y + hitBoxRadius >= northEdge)
+        //{
+        //   // transform.position = new Vector3(transform.position.x, northEdge - hitBoxRadius, 0);
+        //    rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
+        //    rigidbody.angularVelocity = 0;
+        //}
+        ////south edge
+        //if (transform.position.y - hitBoxRadius <= southEdge)
+        //{
+        //    //transform.position = new Vector3(transform.position.x, southEdge + hitBoxRadius, 0);
+        //    rigidbody.velocity = new Vector2(rigidbody.velocity.x, 0);
+        //    rigidbody.angularVelocity = 0;
+        //}
+        ////west edge
+        //if (transform.position.x - hitBoxRadius <= westEdge)
+        //{
+        //   // transform.position = new Vector3(westEdge + hitBoxRadius, transform.position.y, 0);
+        //    rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
+        //    rigidbody.angularVelocity = 0;
+        //}
+        transform.localPosition += new Vector3(moveX, moveY, 0) * Time.deltaTime * moveSpeed;
     }
 
     private void UpdateMousePosition()
