@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 7728029966760268390}
   - component: {fileID: 1793272330574826067}
   - component: {fileID: 2649876551270579690}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flock Agent
   m_TagString: Agent
   m_Icon: {fileID: 0}
@@ -160,7 +160,7 @@ GameObject:
   m_Component:
   - component: {fileID: 556255929382373}
   - component: {fileID: 556255929382374}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Flock Agent Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -23,15 +23,15 @@ public class EnemyDieScript : MonoBehaviour
 
     public void Die()
     {
-        GameObject startExplosion = Instantiate<GameObject>(explosion);
+       // GameObject startExplosion = Instantiate<GameObject>(explosion);
 
-        if (Random.Range(0, 100) < 1 && !playerBeam.isFiring() && dropsBeamPickup)
-        {
-            Instantiate<GameObject>(pickup).transform.SetPositionAndRotation(transform.position, transform.rotation);
-        }
+        //if (Random.Range(0, 100) < 1 && !playerBeam.isFiring() && dropsBeamPickup)
+        //{
+        //    Instantiate<GameObject>(pickup).transform.SetPositionAndRotation(transform.position, transform.rotation);
+        //}
 
-        startExplosion.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
-        startExplosion.transform.localScale = new Vector3(.5f, .5f, .5f);
-        Destroy(this.gameObject);
+        //startExplosion.transform.SetPositionAndRotation(this.transform.position, this.transform.rotation);
+        //startExplosion.transform.localScale = new Vector3(.5f, .5f, .5f);
+        
     }
 }

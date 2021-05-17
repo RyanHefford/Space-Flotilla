@@ -52,6 +52,15 @@ public class Hit : MonoBehaviour
     {
         flock = getFlock();
 
+
+        //destroying the missle. If statement because the player has the same
+        //script attached to it.
+        if (this.gameObject.tag == "Missle" && collision.gameObject.tag == "Wall")
+        {
+            Destroy(this.gameObject);
+
+        }
+
         //remove from the list.
         if (collision.gameObject.tag == "Agent")
         {
@@ -59,13 +68,14 @@ public class Hit : MonoBehaviour
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
 
             flock.agents.Remove(agentToDelete);
-            collision.gameObject.GetComponent<EnemyDieScript>().Die();
+            //collision.gameObject.GetComponent<EnemyDieScript>().Die();
+            Destroy(agentToDelete.gameObject);
 
             //update the score when we are shooting with the missle:
             if (this.gameObject.tag == "Missle")
             {
-                score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
-                score.updateScore(10);
+                //score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+                //score.updateScore(10);
 
                 //add reward for the agent
                 ab.AddReward(10);
@@ -81,42 +91,37 @@ public class Hit : MonoBehaviour
 
       
 
-        //destroying the missle. If statement because the player has the same
-        //script attached to it.
-        if (this.gameObject.tag == "Missle")
-        {
-            Destroy(this.gameObject);
-        }
+        
 
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        flock = getFlock();
-        //remove from the list.
-        if (collision.gameObject.tag == "Agent")
-        {
+    //public void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    flock = getFlock();
+    //    //remove from the list.
+    //    if (collision.gameObject.tag == "Agent")
+    //    {
 
-            FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
-            flock.agents.Remove(agentToDelete);
-            collision.gameObject.GetComponent<EnemyDieScript>().Die();
+    //        FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
+    //        flock.agents.Remove(agentToDelete);
+    //        //collision.gameObject.GetComponent<EnemyDieScript>().Die();
+    //        Destroy(collision.gameObject);
+    //        //update the score when we are shooting with the missle:
 
-            //update the score when we are shooting with the missle:
-            
-            score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
-            score.updateScore(10);
-            ab.AddReward(10);
-        }
+    //        score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+    //        score.updateScore(10);
+    //        ab.AddReward(10);
+    //    }
 
        
-    }
+    //}
 
 
-    public void OnTriggerStay2D(Collider2D collision)
-    {
-        flock = getFlock();
+    //public void OnTriggerStay2D(Collider2D collision)
+    //{
+    //    flock = getFlock();
        
-    }
+    //}
 
 
     private void resetStickToOverlordAgents(Flock flock)

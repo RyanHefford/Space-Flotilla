@@ -126,6 +126,12 @@ public class Flock : MonoBehaviour
     {
         foreach (FlockAgent agent in agents)
         {
+            if(agent == null)
+            {
+                
+                continue;
+            }
+
             List<Transform> context = GetNearbyObjects(agent);
 
             //FOR DEMO ONLY
@@ -278,10 +284,10 @@ public class Flock : MonoBehaviour
             Vector2 playerPosition = GameObject.Find("Player").transform.localPosition;
 
             // while the newlocation for an agent is too close to the player position, find a another location
-            while (Vector2.Distance(playerPosition, newLocation) < 2f)
-            {
-                newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-            }
+            //while (Vector2.Distance(playerPosition, newLocation) < 2f)
+            //{
+            //    newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+            //}
 
             FlockAgent newAgent = null;
             if (numOfOverlordsStart == 0 && overlordExistance)
@@ -326,5 +332,7 @@ public class Flock : MonoBehaviour
 
 
     }
+
+
 
 }

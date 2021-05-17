@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class MissleMovement : MonoBehaviour
 {
-    private float moveSpeed = 50;
-    private float maxLifeTime = 2.0f;
+    private float moveSpeed = 30;
+    private float maxLifeTime = 1.0f;
     private float lifeTime = 0f;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +20,14 @@ public class MissleMovement : MonoBehaviour
         lifeTime += Time.deltaTime;
         //once time limit expires destory object
         if(lifeTime >= maxLifeTime)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Wall")
         {
             Destroy(this.gameObject);
         }

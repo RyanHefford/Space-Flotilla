@@ -36,7 +36,7 @@ public class AgentBehavior : Agent
     {
 
         //reset player position
-        transform.localPosition = new Vector3(0, 0, 0);
+        transform.localPosition = new Vector3(0, -6.5f, 0);
         //reset the flocks
         destroyAgents();
         flock.startNewEp();
@@ -118,11 +118,12 @@ public class AgentBehavior : Agent
 
     private void destroyAgents()
     {
-        for (int i = 0; i < flock.agents.Count; i++)
+
+        foreach(Transform child in flock.transform)
         {
-            //Destroy the game objects (Agents)
-            Destroy(flock.agents[i].gameObject);
+            Destroy(child.gameObject);
         }
+        
         //clear the list.
         flock.agents.Clear();
 

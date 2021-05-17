@@ -64,6 +64,7 @@ public class Health : MonoBehaviour
 
                 //Big negative reward and reset everything.
                 ab.reward(-100);
+                ab.lose();
                 ab.EndEpisode();
 
                 //GameObject.FindGameObjectWithTag("Background").GetComponent<MapScript>().CauseDelay(this.gameObject);
