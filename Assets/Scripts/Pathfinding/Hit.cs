@@ -73,8 +73,8 @@ public class Hit : MonoBehaviour
 
             if (this.gameObject.tag == "Player")
             {
-                ab.AddReward(-10);
-                //health.takeDamage(1.0f);
+                ab.AddReward(-30);
+                health.takeDamage(1.0f);
             }
 
         }

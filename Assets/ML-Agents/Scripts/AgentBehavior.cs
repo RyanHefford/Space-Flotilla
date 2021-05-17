@@ -12,12 +12,14 @@ public class AgentBehavior : Agent
     private PlayerMovement pm;
     private PlayerShoot ps;
     public SpriteRenderer sr;
+    private Health health;
 
     private void Start()
     {
         flock = transform.parent.Find("Flock").GetComponent<Flock>();
         pm = GetComponent<PlayerMovement>();
         ps = GetComponent<PlayerShoot>();
+        health = GetComponent<Health>();
     }
 
     private void Update()
@@ -48,6 +50,7 @@ public class AgentBehavior : Agent
         //Things the agent need to know in the world.
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(flock.agents.Count);
+        sensor.AddObservation(health.playerHealth);
         
 
     }
@@ -101,17 +104,13 @@ public class AgentBehavior : Agent
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Agent")
+        if (collision.gameObject.tag == "Wall")
         {
             lose();
-            AddReward(-15f);
+            AddReward(-10f);
             EndEpisode();
         }
-        else{
-            lose();
-            AddReward(-5f);
-            EndEpisode();
-        }
+
     }
 
     private void destroyAgents()

@@ -460,6 +460,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 14.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4305520272241182987, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305520272402702522, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305520272562119863, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305520272633312132, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 4305520272847722713, guid: 166acc5b28d87df4fbb299bb87688d1e,
         type: 3}
       propertyPath: maxSpeed
@@ -469,6 +489,11 @@ PrefabInstance:
         type: 3}
       propertyPath: startingCount
       value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 4305520273089522761, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorObservationSize
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4305520273089522765, guid: 166acc5b28d87df4fbb299bb87688d1e,
         type: 3}
