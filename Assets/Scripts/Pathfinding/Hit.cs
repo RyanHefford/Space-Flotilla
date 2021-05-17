@@ -58,6 +58,7 @@ public class Hit : MonoBehaviour
         if (this.gameObject.tag == "Missle" && collision.gameObject.tag == "Wall")
         {
             Destroy(this.gameObject);
+            ab.reward(-10);
 
         }
 
@@ -78,7 +79,7 @@ public class Hit : MonoBehaviour
                 //score.updateScore(10);
 
                 //add reward for the agent
-                ab.AddReward(10);
+                ab.AddReward(20);
             }
 
             if (this.gameObject.tag == "Player")

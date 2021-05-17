@@ -44,9 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
         CalculateMovement();
         mousePos = cam.ScreenToWorldPoint(new Vector3(mouseX, mouseY, 0));
-       // float angle = (Mathf.Atan2(mouseY - transform.localPosition.y, mouseX - transform.localPosition.x) * Mathf.Rad2Deg);
-
-        //transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, angle), rotationSpeed * Time.deltaTime);
+        
     }
 
     private void FixedUpdate()
