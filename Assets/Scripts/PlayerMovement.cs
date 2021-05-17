@@ -43,13 +43,16 @@ public class PlayerMovement : MonoBehaviour
     {
 
         CalculateMovement();
-        mousePos = cam.ScreenToWorldPoint(new Vector3(mouseX, mouseY, 0));
+        // mousePos = cam.ScreenToWorldPoint(new Vector3(mouseX, mouseY, 0));
+        float AngleRad = Mathf.Atan2(mouseY - transform.localPosition.y, mouseX - transform.localPosition.x);
+        float AngleDeg = (180 / Mathf.PI) * AngleRad;
+        rigidbody.rotation = AngleDeg;
     }
 
     private void FixedUpdate()
     {
         Move();
-        UpdateMousePosition();
+        //UpdateMousePosition();
     }
 
     private void CalculateMovement()

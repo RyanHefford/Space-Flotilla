@@ -11,6 +11,7 @@ public class AgentBehavior : Agent
     private Flock flock;
     private PlayerMovement pm;
     private PlayerShoot ps;
+    public SpriteRenderer sr;
 
     private void Start()
     {
@@ -19,11 +20,21 @@ public class AgentBehavior : Agent
         ps = GetComponent<PlayerShoot>();
     }
 
+    private void Update()
+    {
+        if(flock.agents.Count == 0)
+        {
+            win();
+            AddReward(100);
+            EndEpisode();
+        }
+    }
+
     public override void OnEpisodeBegin()
     {
 
         //reset player position
-        transform.localPosition = new Vector3(-4, -6, 0);
+        transform.localPosition = new Vector3(0, 0, 0);
         //reset the flocks
         destroyAgents();
         flock.startNewEp();
@@ -36,6 +47,8 @@ public class AgentBehavior : Agent
     {
         //Things the agent need to know in the world.
         sensor.AddObservation(transform.localPosition);
+        sensor.AddObservation(flock.agents.Count);
+        
 
     }
 
@@ -90,11 +103,12 @@ public class AgentBehavior : Agent
     {
         if (collision.gameObject.tag == "Agent")
         {
+            lose();
             AddReward(-15f);
             EndEpisode();
         }
-        else{ 
-
+        else{
+            lose();
             AddReward(-5f);
             EndEpisode();
         }
@@ -110,6 +124,15 @@ public class AgentBehavior : Agent
         //clear the list.
         flock.agents.Clear();
 
+    }
+
+    public void lose()
+    {
+        sr.color = Color.red;
+    }
+    public void win()
+    {
+        sr.color = Color.green;
     }
 
 
