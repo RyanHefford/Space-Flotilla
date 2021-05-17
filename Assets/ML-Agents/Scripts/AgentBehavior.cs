@@ -41,6 +41,9 @@ public class AgentBehavior : Agent
         destroyAgents();
         flock.startNewEp();
 
+        //reset player health
+        health.playerHealth = 10;
+
         
 
     }
@@ -138,3 +141,5 @@ public class AgentBehavior : Agent
 
 
 }
+
+

@@ -14,9 +14,13 @@ public class Health : MonoBehaviour
     public GameObject shield;
     public GameObject explosion;
 
+    //agent script
+    private AgentBehavior ab;
+
     // Start is called before the first frame update
     void Start()
     {
+        ab = GetComponent<AgentBehavior>();
         //healthBar = GameObject.FindGameObjectWithTag("Healthbar").GetComponent<Slider>();
         //healthBar.value = playerHealth;
     }
@@ -58,7 +62,11 @@ public class Health : MonoBehaviour
                 GameObject tempObject = Instantiate<GameObject>(explosion);
                 tempObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
 
-                GameObject.FindGameObjectWithTag("Background").GetComponent<MapScript>().CauseDelay(this.gameObject);
+                //Big negative reward and reset everything.
+                ab.reward(-100);
+                ab.EndEpisode();
+
+                //GameObject.FindGameObjectWithTag("Background").GetComponent<MapScript>().CauseDelay(this.gameObject);
             }
         }
     }

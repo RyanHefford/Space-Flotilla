@@ -43,16 +43,16 @@ public class PlayerMovement : MonoBehaviour
     {
 
         CalculateMovement();
-        // mousePos = cam.ScreenToWorldPoint(new Vector3(mouseX, mouseY, 0));
-        float AngleRad = Mathf.Atan2(mouseY - transform.localPosition.y, mouseX - transform.localPosition.x);
-        float AngleDeg = (180 / Mathf.PI) * AngleRad;
-        rigidbody.rotation = AngleDeg;
+        mousePos = cam.ScreenToWorldPoint(new Vector3(mouseX, mouseY, 0));
+       // float angle = (Mathf.Atan2(mouseY - transform.localPosition.y, mouseX - transform.localPosition.x) * Mathf.Rad2Deg);
+
+        //transform.localRotation = Quaternion.Lerp(transform.localRotation, Quaternion.Euler(0, 0, angle), rotationSpeed * Time.deltaTime);
     }
 
     private void FixedUpdate()
     {
         Move();
-        //UpdateMousePosition();
+        UpdateMousePosition();
     }
 
     private void CalculateMovement()
@@ -109,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
         Vector2 lookDirection = mousePos - rigidbody.position;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
 
-        rigidbody.transform.rotation = Quaternion.Slerp(Quaternion.Euler(0, 0, rigidbody.rotation),
+        rigidbody.transform.localRotation = Quaternion.Slerp(Quaternion.Euler(0, 0, rigidbody.rotation),
                                         Quaternion.Euler(0, 0, angle), Time.deltaTime * rotationSpeed);
     }
 }
