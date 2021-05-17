@@ -59,8 +59,8 @@ public class Health : MonoBehaviour
             if(playerHealth <= 0)
             {
                 //create explosion
-                GameObject tempObject = Instantiate<GameObject>(explosion);
-                tempObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
+                //GameObject tempObject = Instantiate<GameObject>(explosion);
+                //tempObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
 
                 //Big negative reward and reset everything.
                 ab.reward(-100);
