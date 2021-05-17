@@ -15,6 +15,10 @@ public class PlayerShoot : MonoBehaviour
     //value used to alternate cannons
     private bool altCannon = false;
     public GameObject basicMissle;
+
+    //agent script
+    public int shoot = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,7 +31,7 @@ public class PlayerShoot : MonoBehaviour
     {
         lastShot -= Time.deltaTime;
         //if left click shoot
-        if (Input.GetKey(KeyCode.Mouse0) && lastShot <= 0)
+        if (shoot == 1 && lastShot <= 0)
         {
             audioSource.PlayOneShot(shootSound);
             lastShot = shotDelay;

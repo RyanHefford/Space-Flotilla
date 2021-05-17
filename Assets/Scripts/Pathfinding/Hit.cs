@@ -9,13 +9,14 @@ public class Hit : MonoBehaviour
 
     public Health health;
     private Score score;
-
+    private AgentBehavior ab;
 
     private void Start()
     {
         //getting the OverlordManager script from the Manager GameObject
        // om = GameObject.Find("Manager").GetComponent<OverlordManager>();
         flock =  getFlock();
+        ab = getAgentBehavior();
     }
 
     private Flock getFlock()
@@ -31,6 +32,20 @@ public class Hit : MonoBehaviour
         }
 
         return newFlock;
+    }
+    private AgentBehavior getAgentBehavior()
+    {
+        AgentBehavior ab = null;
+        if (this.transform.gameObject.tag == "Player")
+        {
+            ab = GetComponent<AgentBehavior>();
+        }
+        else if (this.transform.gameObject.tag == "Missle" || this.transform.gameObject.tag == "HyperBeam")
+        {
+            ab = this.transform.parent.GetComponent<AgentBehavior>();
+        }
+
+        return ab;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -51,11 +66,15 @@ public class Hit : MonoBehaviour
             {
                 score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
                 score.updateScore(10);
+
+                //add reward for the agent
+                ab.AddReward(10);
             }
 
             if (this.gameObject.tag == "Player")
             {
-                health.takeDamage(1.0f);
+                ab.AddReward(-10);
+                //health.takeDamage(1.0f);
             }
 
         }
@@ -86,7 +105,7 @@ public class Hit : MonoBehaviour
             
             score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
             score.updateScore(10);
-
+            ab.AddReward(10);
         }
 
        

@@ -10,11 +10,13 @@ public class AgentBehavior : Agent
 
     private Flock flock;
     private PlayerMovement pm;
+    private PlayerShoot ps;
 
     private void Start()
     {
         flock = transform.parent.Find("Flock").GetComponent<Flock>();
         pm = GetComponent<PlayerMovement>();
+        ps = GetComponent<PlayerShoot>();
     }
 
     public override void OnEpisodeBegin()
@@ -34,7 +36,6 @@ public class AgentBehavior : Agent
     {
         //Things the agent need to know in the world.
         sensor.AddObservation(transform.localPosition);
-       // sensor.AddObservation();
 
     }
 
@@ -51,6 +52,8 @@ public class AgentBehavior : Agent
         pm.moveY = moveY;
         pm.mouseX = mouseX;
         pm.mouseY = mouseY;
+
+        ps.shoot = actions.DiscreteActions[0];
     }
 
 
@@ -58,23 +61,34 @@ public class AgentBehavior : Agent
     public override void Heuristic(in ActionBuffers actionsOut)
     {
         ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
+        ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
 
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         continuousActions[1] = Input.GetAxisRaw("Vertical");
         Vector3 mousePos = Input.mousePosition;
         continuousActions[2] = mousePos.x;
         continuousActions[3] = mousePos.y;
+
+        if (Input.GetKey(KeyCode.Mouse0))
+        {
+            discreteActions[0] = 1;
+        }
+        else
+        {
+            discreteActions[0] = 0;
+        }
+
+        
+    }
+
+    public void reward(int r)
+    {
+        AddReward(r);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Obstacle") { 
-
-            AddReward(5f);
-            EndEpisode();
-
-        }
-        else if (collision.gameObject.tag == "Agent")
+        if (collision.gameObject.tag == "Agent")
         {
             AddReward(-15f);
             EndEpisode();
