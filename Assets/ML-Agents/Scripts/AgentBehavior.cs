@@ -84,9 +84,17 @@ public class AgentBehavior : Agent
         {
             pm.mouseX = xDiscrete * -1 + mouseX;
         }
+        else
+        {
+            pm.mouseX = xDiscrete + mouseX;
+        }
         if(mouseY < 0)
         {
             pm.mouseY = yDiscrete * -1 + mouseY;
+        }
+        else
+        {
+            pm.mouseY = yDiscrete + mouseY;
         }
         
         
