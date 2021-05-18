@@ -98,6 +98,8 @@ public class AgentBehavior : Agent
         //}
 
         float movementSpeed = 3.0f;
+        float rotationSpeed = 2.0f;
+        float rotationAngle = 20.0f;
         int movement = actions.DiscreteActions[0];
         int rotation = actions.DiscreteActions[1];
 
@@ -105,15 +107,30 @@ public class AgentBehavior : Agent
 
         //add the movement force
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-       // rb.AddForce(movementForceDirection * movementSpeed);
+        rb.AddForce(movementForceDirection * movementSpeed);
 
-       
-
-
-        var impulse = (120 * Mathf.Deg2Rad) * rb.inertia;
-        rb.AddTorque(impulse, ForceMode2D.Impulse);
-
-
+        //positive = <-
+        //negative = ->
+        switch (rotation)
+        {
+            case 0:
+                //no rotation
+                transform.Rotate(new Vector3(0, 0, 0), rotationAngle * Time.deltaTime * rotationSpeed);
+                break;
+            case 1:
+            //rotate right
+                transform.Rotate(new Vector3(0, 0, -1), rotationAngle * Time.deltaTime * rotationSpeed);
+                break;
+            case 2:
+                //rotate left
+                transform.Rotate(new Vector3(0, 0, 1), rotationAngle * Time.deltaTime * rotationSpeed);
+                break;
+            default:
+                //no rotation
+                transform.Rotate(new Vector3(0, 0, 0), rotationAngle * Time.deltaTime * rotationSpeed);
+                break;
+        }
+        
         //test.transform.localPosition = new Vector3(pm.mouseX, pm.mouseY, 0);
 
     }
