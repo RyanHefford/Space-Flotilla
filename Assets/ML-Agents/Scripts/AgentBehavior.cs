@@ -57,6 +57,26 @@ public class AgentBehavior : Agent
         sensor.AddObservation(health.playerHealth);
         sensor.AddObservation(transform.rotation);
 
+        //next 10 are reserved for agents
+        for(int i = 0; i < 10; i++)
+        {
+            if(i < flock.agents.Count)
+            {
+                if (flock.agents[i] == null)
+                {
+                    sensor.AddObservation(Vector3.zero);
+                    continue;
+                }
+                Vector3 agentPos = flock.agents[i].transform.localPosition;
+                sensor.AddObservation(agentPos);
+            }
+            else
+            {
+                sensor.AddObservation(Vector3.zero);
+                continue;
+            }
+            
+        }
 
     }
 
@@ -64,36 +84,7 @@ public class AgentBehavior : Agent
     //where the actions of the player happens.
     public override void OnActionReceived(ActionBuffers actions)
     {
-        //float moveX = actions.ContinuousActions[0];
-        //float moveY = actions.ContinuousActions[1];
-        //float mouseX = actions.ContinuousActions[2];
-        //float mouseY = actions.ContinuousActions[3];
-        ////transform.localPosition += new Vector3(moveX, moveY, 0) * Time.deltaTime * 10;
-        //pm.moveX = moveX;
-        //pm.moveY = moveY;
-
-
-        //ps.shoot = actions.DiscreteActions[0];
-
-        //int xDiscrete = actions.DiscreteActions[1];
-        //int yDiscrete = actions.DiscreteActions[2];
-
-        //if(mouseX < 0)
-        //{
-        //    pm.mouseX = xDiscrete * -1 + mouseX;
-        //}
-        //else
-        //{
-        //    pm.mouseX = xDiscrete + mouseX;
-        //}
-        //if(mouseY < 0)
-        //{
-        //    pm.mouseY = yDiscrete * -1 + mouseY;
-        //}
-        //else
-        //{
-        //    pm.mouseY = yDiscrete + mouseY;
-        //}
+        
 
         float movementSpeed = 3.0f;
         float rotationSpeed = 2.0f;
