@@ -416,13 +416,48 @@ PrefabInstance:
       objectReference: {fileID: 519420031}
     - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
         type: 3}
-      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
+      propertyPath: m_BrainParameters.VectorActionSpaceType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[0]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[1]
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
         type: 3}
-      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]
+      propertyPath: m_BrainParameters.VectorActionSize.Array.data[2]
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.m_NumContinuousActions
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[0]
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
+        type: 3}
+      propertyPath: m_BrainParameters.m_ActionSpec.BranchSizes.Array.data[1]
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 192390259746377429, guid: 166acc5b28d87df4fbb299bb87688d1e,
         type: 3}

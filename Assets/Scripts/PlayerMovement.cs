@@ -42,15 +42,15 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        CalculateMovement();
-        mousePos = new Vector3(mouseX, mouseY, 0);
+        //CalculateMovement();
+       // mousePos = new Vector3(mouseX, mouseY, 0);
 
     }
 
     private void FixedUpdate()
     {
-        Move();
-        UpdateMousePosition();
+        //Move();
+        //UpdateMousePosition();
     }
 
     private void CalculateMovement()
@@ -99,7 +99,7 @@ public class PlayerMovement : MonoBehaviour
         //    rigidbody.velocity = new Vector2(0, rigidbody.velocity.y);
         //    rigidbody.angularVelocity = 0;
         //}
-        transform.localPosition += new Vector3(moveX, moveY, 0) * Time.deltaTime * moveSpeed;
+       
     }
 
     private void UpdateMousePosition()
