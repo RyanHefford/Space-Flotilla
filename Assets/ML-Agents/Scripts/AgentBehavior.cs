@@ -56,7 +56,9 @@ public class AgentBehavior : Agent
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(flock.agents.Count);
         sensor.AddObservation(health.playerHealth);
-        
+
+        //Add player rotation?
+
 
     }
 
@@ -80,11 +82,11 @@ public class AgentBehavior : Agent
 
         if(mouseX < 0)
         {
-            pm.mouseX = xDiscrete * -1;
+            pm.mouseX = xDiscrete * -1 + mouseX;
         }
         if(mouseY < 0)
         {
-            pm.mouseY = yDiscrete * -1;
+            pm.mouseY = yDiscrete * -1 + mouseY;
         }
         
         
