@@ -14,7 +14,6 @@ public class AgentBehavior : Agent
     public SpriteRenderer sr;
     private Health health;
 
-    public SpriteRenderer test;
 
     private void Start()
     {
@@ -56,8 +55,7 @@ public class AgentBehavior : Agent
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(flock.agents.Count);
         sensor.AddObservation(health.playerHealth);
-
-        //Add player rotation?
+        sensor.AddObservation(transform.rotation);
 
 
     }
@@ -102,6 +100,7 @@ public class AgentBehavior : Agent
         float rotationAngle = 20.0f;
         int movement = actions.DiscreteActions[0];
         int rotation = actions.DiscreteActions[1];
+        int shoot = actions.DiscreteActions[2];
 
         Vector2 movementForceDirection = movementVector(movement);
 
@@ -130,8 +129,8 @@ public class AgentBehavior : Agent
                 transform.Rotate(new Vector3(0, 0, 0), rotationAngle * Time.deltaTime * rotationSpeed);
                 break;
         }
-        
-        //test.transform.localPosition = new Vector3(pm.mouseX, pm.mouseY, 0);
+
+        ps.shoot = shoot;
 
     }
 
