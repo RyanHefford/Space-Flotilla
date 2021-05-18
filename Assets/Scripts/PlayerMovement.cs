@@ -43,8 +43,8 @@ public class PlayerMovement : MonoBehaviour
     {
 
         CalculateMovement();
-        mousePos = cam.ScreenToWorldPoint(new Vector3(mouseX, mouseY, 0));
-        
+        mousePos = new Vector3(mouseX, mouseY, 0);
+
     }
 
     private void FixedUpdate()
@@ -104,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void UpdateMousePosition()
     {
-        Vector2 lookDirection = mousePos - rigidbody.position;
+        Vector2 lookDirection = mousePos - (Vector2)rigidbody.transform.localPosition;
         float angle = Mathf.Atan2(lookDirection.y, lookDirection.x) * Mathf.Rad2Deg - 90f;
 
         rigidbody.transform.localRotation = Quaternion.Slerp(Quaternion.Euler(0, 0, rigidbody.rotation),

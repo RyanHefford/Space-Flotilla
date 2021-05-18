@@ -14,6 +14,8 @@ public class AgentBehavior : Agent
     public SpriteRenderer sr;
     private Health health;
 
+    public SpriteRenderer test;
+
     private void Start()
     {
         flock = transform.parent.Find("Flock").GetComponent<Flock>();
@@ -69,10 +71,32 @@ public class AgentBehavior : Agent
         //transform.localPosition += new Vector3(moveX, moveY, 0) * Time.deltaTime * 10;
         pm.moveX = moveX;
         pm.moveY = moveY;
-        pm.mouseX = mouseX;
-        pm.mouseY = mouseY;
+
 
         ps.shoot = actions.DiscreteActions[0];
+
+        int xDiscrete = actions.DiscreteActions[1];
+        int yDiscrete = actions.DiscreteActions[2];
+
+        if(mouseX < 0)
+        {
+            pm.mouseX = xDiscrete * -1;
+        }
+        if(mouseY < 0)
+        {
+            pm.mouseY = yDiscrete * -1;
+        }
+        
+        
+
+        Debug.Log("Mouse");
+        Debug.Log(mouseX);
+        Debug.Log(mouseY);
+        Debug.Log(pm.mouseX);
+        Debug.Log(pm.mouseY);
+
+        test.transform.localPosition = new Vector3(pm.mouseX, pm.mouseY, 0);
+        
     }
 
 
@@ -85,8 +109,10 @@ public class AgentBehavior : Agent
         continuousActions[0] = Input.GetAxisRaw("Horizontal");
         continuousActions[1] = Input.GetAxisRaw("Vertical");
         Vector3 mousePos = Input.mousePosition;
+
         continuousActions[2] = mousePos.x;
         continuousActions[3] = mousePos.y;
+        
 
         if (Input.GetKey(KeyCode.Mouse0))
         {
@@ -97,7 +123,7 @@ public class AgentBehavior : Agent
             discreteActions[0] = 0;
         }
 
-        
+
     }
 
     public void reward(int r)
