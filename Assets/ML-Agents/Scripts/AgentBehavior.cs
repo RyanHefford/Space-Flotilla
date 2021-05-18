@@ -45,7 +45,9 @@ public class AgentBehavior : Agent
         //reset player health
         health.playerHealth = 10;
 
-        
+        //reset player rotation
+        transform.rotation = new Quaternion(0,0,0,0);
+
 
     }
 
@@ -56,7 +58,8 @@ public class AgentBehavior : Agent
         sensor.AddObservation(flock.agents.Count);
         sensor.AddObservation(health.playerHealth);
         sensor.AddObservation(transform.rotation);
-
+        //50 steps = 1 second
+        sensor.AddObservation((float)StepCount / MaxStep);
         //next 10 are reserved for agents
         for(int i = 0; i < 10; i++)
         {
@@ -97,7 +100,11 @@ public class AgentBehavior : Agent
 
         //add the movement force
         Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        rb.AddForce(movementForceDirection * movementSpeed);
+        //rb.AddForce(movementForceDirection * movementSpeed);
+
+
+
+        transform.position += (Vector3)movementForceDirection * movementSpeed * Time.deltaTime;
 
         //positive = <-
         //negative = ->

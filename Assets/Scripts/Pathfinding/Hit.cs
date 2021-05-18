@@ -90,51 +90,15 @@ public class Hit : MonoBehaviour
 
         }
 
-      
-
-        
-
-    }
-
-    //public void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    flock = getFlock();
-    //    //remove from the list.
-    //    if (collision.gameObject.tag == "Agent")
-    //    {
-
-    //        FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
-    //        flock.agents.Remove(agentToDelete);
-    //        //collision.gameObject.GetComponent<EnemyDieScript>().Die();
-    //        Destroy(collision.gameObject);
-    //        //update the score when we are shooting with the missle:
-
-    //        score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
-    //        score.updateScore(10);
-    //        ab.AddReward(10);
-    //    }
-
-       
-    //}
-
-
-    //public void OnTriggerStay2D(Collider2D collision)
-    //{
-    //    flock = getFlock();
-       
-    //}
-
-
-    private void resetStickToOverlordAgents(Flock flock)
-    {
-        foreach (FlockAgent agent in flock.agents)
+        if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Wall")
         {
-            if (!agent.isOverlord)
-            {
-                agent.stickingToOverlord = false;
-            }
-
+            ab.AddReward(-30);
         }
+
+
+
     }
+
+
 
 }
