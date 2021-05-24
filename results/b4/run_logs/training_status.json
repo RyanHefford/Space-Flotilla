@@ -1,0 +1,65 @@
+{
+    "SimpleBehavior": {
+        "checkpoints": [
+            {
+                "steps": 0,
+                "file_path": "results\\b4\\SimpleBehavior\\SimpleBehavior-0.onnx",
+                "reward": null,
+                "creation_time": 1621848279.7254195,
+                "auxillary_file_paths": [
+                    "results\\b4\\SimpleBehavior\\SimpleBehavior-0.pt"
+                ]
+            },
+            {
+                "steps": 413417,
+                "file_path": "results\\b4\\SimpleBehavior\\SimpleBehavior-413417.onnx",
+                "reward": 600.0,
+                "creation_time": 1621854133.9811552,
+                "auxillary_file_paths": [
+                    "results\\b4\\SimpleBehavior\\SimpleBehavior-413417.pt"
+                ]
+            },
+            {
+                "steps": 0,
+                "file_path": "results\\b4\\SimpleBehavior\\SimpleBehavior-0.onnx",
+                "reward": null,
+                "creation_time": 1621854440.6928828,
+                "auxillary_file_paths": [
+                    "results\\b4\\SimpleBehavior\\SimpleBehavior-0.pt"
+                ]
+            },
+            {
+                "steps": 499939,
+                "file_path": "results\\b4\\SimpleBehavior\\SimpleBehavior-499939.onnx",
+                "reward": 592.0,
+                "creation_time": 1621857592.3058643,
+                "auxillary_file_paths": [
+                    "results\\b4\\SimpleBehavior\\SimpleBehavior-499939.pt"
+                ]
+            },
+            {
+                "steps": 500003,
+                "file_path": "results\\b4\\SimpleBehavior\\SimpleBehavior-500003.onnx",
+                "reward": 592.0,
+                "creation_time": 1621857592.4310398,
+                "auxillary_file_paths": [
+                    "results\\b4\\SimpleBehavior\\SimpleBehavior-500003.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 500003,
+            "file_path": "results\\b4\\SimpleBehavior.onnx",
+            "reward": 592.0,
+            "creation_time": 1621857592.4310398,
+            "auxillary_file_paths": [
+                "results\\b4\\SimpleBehavior\\SimpleBehavior-500003.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

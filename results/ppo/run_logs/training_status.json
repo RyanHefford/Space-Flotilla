@@ -1,0 +1,65 @@
+{
+    "SimpleBehavior": {
+        "checkpoints": [
+            {
+                "steps": 500041,
+                "file_path": "results\\ppo\\SimpleBehavior\\SimpleBehavior-500041.onnx",
+                "reward": null,
+                "creation_time": 1621345155.098706,
+                "auxillary_file_paths": [
+                    "results\\ppo\\SimpleBehavior\\SimpleBehavior-500041.pt"
+                ]
+            },
+            {
+                "steps": 1499993,
+                "file_path": "results\\ppo\\SimpleBehavior\\SimpleBehavior-1499993.onnx",
+                "reward": null,
+                "creation_time": 1621695145.582719,
+                "auxillary_file_paths": [
+                    "results\\ppo\\SimpleBehavior\\SimpleBehavior-1499993.pt"
+                ]
+            },
+            {
+                "steps": 0,
+                "file_path": "results\\ppo\\SimpleBehavior\\SimpleBehavior-0.onnx",
+                "reward": null,
+                "creation_time": 1621695206.5903168,
+                "auxillary_file_paths": [
+                    "results\\ppo\\SimpleBehavior\\SimpleBehavior-0.pt"
+                ]
+            },
+            {
+                "steps": 1499993,
+                "file_path": "results\\ppo\\SimpleBehavior\\SimpleBehavior-1499993.onnx",
+                "reward": null,
+                "creation_time": 1621695236.4871829,
+                "auxillary_file_paths": [
+                    "results\\ppo\\SimpleBehavior\\SimpleBehavior-1499993.pt"
+                ]
+            },
+            {
+                "steps": 1499993,
+                "file_path": "results\\ppo\\SimpleBehavior\\SimpleBehavior-1499993.onnx",
+                "reward": null,
+                "creation_time": 1621842579.8807511,
+                "auxillary_file_paths": [
+                    "results\\ppo\\SimpleBehavior\\SimpleBehavior-1499993.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1499993,
+            "file_path": "results\\ppo\\SimpleBehavior.onnx",
+            "reward": null,
+            "creation_time": 1621842579.8807511,
+            "auxillary_file_paths": [
+                "results\\ppo\\SimpleBehavior\\SimpleBehavior-1499993.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}

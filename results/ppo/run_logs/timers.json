@@ -1,0 +1,54 @@
+{
+    "name": "root",
+    "metadata": {
+        "timer_format_version": "0.1.0",
+        "start_time_seconds": "1621842553",
+        "python_version": "3.7.7 (tags/v3.7.7:d7c567b08f, Mar 10 2020, 10:41:24) [MSC v.1900 64 bit (AMD64)]",
+        "command_line_arguments": "C:\\Users\\talal\\Desktop\\Uni-AI\\Space-Flotilla\\venv\\Scripts\\mlagents-learn C:\\Users\\talal\\Desktop\\Uni-AI\\Space-Flotilla\\results\\ppo\\configuration.yaml",
+        "mlagents_version": "0.26.0",
+        "mlagents_envs_version": "0.26.0",
+        "communication_protocol_version": "1.5.0",
+        "pytorch_version": "1.7.0+cu110",
+        "numpy_version": "1.20.2",
+        "end_time_seconds": "1621842579"
+    },
+    "total": 26.1644198,
+    "count": 1,
+    "self": 0.010666100000001677,
+    "children": {
+        "run_training.setup": {
+            "total": 0.1287442000000001,
+            "count": 1,
+            "self": 0.1287442000000001
+        },
+        "TrainerController.start_learning": {
+            "total": 26.0250095,
+            "count": 1,
+            "self": 0.00012129999999643815,
+            "children": {
+                "TrainerController._reset_env": {
+                    "total": 25.8108411,
+                    "count": 1,
+                    "self": 25.8108411
+                },
+                "trainer_threads": {
+                    "total": 8.999999998593466e-07,
+                    "count": 1,
+                    "self": 8.999999998593466e-07
+                },
+                "TrainerController._save_models": {
+                    "total": 0.21404620000000207,
+                    "count": 1,
+                    "self": 0.0116472000000023,
+                    "children": {
+                        "RLTrainer._checkpoint": {
+                            "total": 0.20239899999999977,
+                            "count": 1,
+                            "self": 0.20239899999999977
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

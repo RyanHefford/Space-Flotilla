@@ -1,0 +1,47 @@
+{
+    "SimpleBehavior": {
+        "checkpoints": [
+            {
+                "steps": 499955,
+                "file_path": "results\\Behavior2\\SimpleBehavior\\SimpleBehavior-499955.onnx",
+                "reward": 446.3636363636364,
+                "creation_time": 1621752121.6004736,
+                "auxillary_file_paths": [
+                    "results\\Behavior2\\SimpleBehavior\\SimpleBehavior-499955.pt"
+                ]
+            },
+            {
+                "steps": 500019,
+                "file_path": "results\\Behavior2\\SimpleBehavior\\SimpleBehavior-500019.onnx",
+                "reward": 446.3636363636364,
+                "creation_time": 1621752121.7007933,
+                "auxillary_file_paths": [
+                    "results\\Behavior2\\SimpleBehavior\\SimpleBehavior-500019.pt"
+                ]
+            },
+            {
+                "steps": 506160,
+                "file_path": "results\\Behavior2\\SimpleBehavior\\SimpleBehavior-506160.onnx",
+                "reward": 376.6666666666667,
+                "creation_time": 1621758774.0889084,
+                "auxillary_file_paths": [
+                    "results\\Behavior2\\SimpleBehavior\\SimpleBehavior-506160.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 506160,
+            "file_path": "results\\Behavior2\\SimpleBehavior.onnx",
+            "reward": 376.6666666666667,
+            "creation_time": 1621758774.0889084,
+            "auxillary_file_paths": [
+                "results\\Behavior2\\SimpleBehavior\\SimpleBehavior-506160.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.0+cu110"
+    }
+}
