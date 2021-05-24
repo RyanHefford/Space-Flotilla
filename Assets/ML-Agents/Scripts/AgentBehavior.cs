@@ -55,31 +55,34 @@ public class AgentBehavior : Agent
     {
         //Things the agent need to know in the world.
         sensor.AddObservation(transform.localPosition);
+        sensor.AddObservation(transform.localRotation);
         sensor.AddObservation(flock.agents.Count);
         sensor.AddObservation(health.playerHealth);
-        sensor.AddObservation(transform.rotation);
+        
         //50 steps = 1 second
         sensor.AddObservation((float)StepCount / MaxStep);
+        //shoot
+        sensor.AddObservation(ps.shoot);
         //next 10 are reserved for agents
-        for(int i = 0; i < 10; i++)
-        {
-            if(i < flock.agents.Count)
-            {
-                if (flock.agents[i] == null)
-                {
-                    sensor.AddObservation(Vector3.zero);
-                    continue;
-                }
-                Vector3 agentPos = flock.agents[i].transform.localPosition;
-                sensor.AddObservation(agentPos);
-            }
-            else
-            {
-                sensor.AddObservation(Vector3.zero);
-                continue;
-            }
+        //for(int i = 0; i < 10; i++)
+        //{
+        //    if(i < flock.agents.Count)
+        //    {
+        //        if (flock.agents[i] == null)
+        //        {
+        //            sensor.AddObservation(Vector3.zero);
+        //            continue;
+        //        }
+        //        Vector3 agentPos = flock.agents[i].transform.localPosition;
+        //        sensor.AddObservation(agentPos);
+        //    }
+        //    else
+        //    {
+        //        sensor.AddObservation(Vector3.zero);
+        //        continue;
+        //    }
             
-        }
+        //}
 
     }
 
@@ -104,7 +107,7 @@ public class AgentBehavior : Agent
 
 
 
-        transform.position += (Vector3)movementForceDirection * movementSpeed * Time.deltaTime;
+        transform.localPosition += (Vector3)movementForceDirection * movementSpeed * Time.deltaTime;
 
         //positive = <-
         //negative = ->
@@ -112,61 +115,35 @@ public class AgentBehavior : Agent
         {
             case 0:
                 //no rotation
-                transform.Rotate(new Vector3(0, 0, 0), rotationAngle * Time.deltaTime * rotationSpeed);
+                //transform.localRotation.Set(0, 0, 0, rotationAngle * Time.deltaTime * rotationSpeed);
+                transform.localEulerAngles += new Vector3(0, 0, 0);
+                //transform.Rotate(new Vector3(0, 0, 0), rotationAngle * Time.deltaTime * rotationSpeed);
                 break;
             case 1:
-            //rotate right
-                transform.Rotate(new Vector3(0, 0, -1), rotationAngle * Time.deltaTime * rotationSpeed);
+                //rotate right
+                //transform.localRotation.Set(0, 0, -1, rotationAngle * Time.deltaTime * rotationSpeed);
+                //transform.localRotation = Quaternion.Euler(0, 0, -1 + rotationAngle * Time.deltaTime * rotationSpeed);
+                transform.localEulerAngles += new Vector3(0, 0, -1) * rotationAngle * Time.deltaTime * rotationSpeed;
+                //transform.Rotate(new Vector3(0, 0, -1), rotationAngle * Time.deltaTime * rotationSpeed);
                 break;
             case 2:
                 //rotate left
-                transform.Rotate(new Vector3(0, 0, 1), rotationAngle * Time.deltaTime * rotationSpeed);
+                //transform.localRotation.Set(0, 0, 1, rotationAngle * Time.deltaTime * rotationSpeed);
+                //transform.localRotation = Quaternion.Euler(0, 0, 1 + rotationAngle * Time.deltaTime * rotationSpeed);
+                transform.localEulerAngles += new Vector3(0, 0, 1) * rotationAngle * Time.deltaTime * rotationSpeed;
+                //transform.Rotate(new Vector3(0, 0, 1), rotationAngle * Time.deltaTime * rotationSpeed);
                 break;
             default:
                 //no rotation
-                transform.Rotate(new Vector3(0, 0, 0), rotationAngle * Time.deltaTime * rotationSpeed);
+                //transform.localRotation.Set(0, 0, 0, rotationAngle * Time.deltaTime * rotationSpeed);
+                //transform.localRotation = Quaternion.Euler(0, 0, 0);
+                transform.localEulerAngles += new Vector3(0, 0, 0);
+                //transform.Rotate(new Vector3(0, 0, 0), rotationAngle * Time.deltaTime * rotationSpeed);
                 break;
         }
 
         ps.shoot = shoot;
 
-    }
-
-
-
-    //function to test out the game before running the trainning
-    public override void Heuristic(in ActionBuffers actionsOut)
-    {
-        //ActionSegment<float> continuousActions = actionsOut.ContinuousActions;
-        ActionSegment<int> discreteActions = actionsOut.DiscreteActions;
-
-        //continuousActions[0] = Input.GetAxisRaw("Horizontal");
-        //continuousActions[1] = Input.GetAxisRaw("Vertical");
-        //Vector3 mousePos = Input.mousePosition;
-
-        //continuousActions[2] = mousePos.x;
-        //continuousActions[3] = mousePos.y;
-        
-
-        if (Input.GetKey(KeyCode.Mouse0))
-        {
-            discreteActions[0] = 1;
-        }
-        else
-        {
-            discreteActions[0] = 0;
-        }
-
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
-        float rotationSpeed = 2;
-
-
-
-    }
-
-    public void reward(int r)
-    {
-        AddReward(r);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

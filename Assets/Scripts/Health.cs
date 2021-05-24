@@ -63,7 +63,7 @@ public class Health : MonoBehaviour
                 //tempObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
 
                 //Big negative reward and reset everything.
-                ab.reward(-100);
+                ab.AddReward(-100);
                 ab.lose();
                 ab.EndEpisode();
 

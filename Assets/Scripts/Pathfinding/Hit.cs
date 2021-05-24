@@ -57,8 +57,14 @@ public class Hit : MonoBehaviour
         //script attached to it.
         if (this.gameObject.tag == "Missle" && collision.gameObject.tag == "Wall")
         {
+            int penalty = -50;
+
             Destroy(this.gameObject);
-            ab.reward(-10);
+            
+            float scale_factor = Mathf.Min(1, ab.StepCount / 150000);
+            float scaled_penalty = penalty * scale_factor;
+
+            ab.AddReward(scaled_penalty);
 
         }
 
@@ -79,7 +85,7 @@ public class Hit : MonoBehaviour
                 //score.updateScore(10);
 
                 //add reward for the agent
-                ab.AddReward(20);
+                ab.AddReward(50);
             }
 
             if (this.gameObject.tag == "Player")
@@ -92,7 +98,7 @@ public class Hit : MonoBehaviour
 
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Wall")
         {
-            ab.AddReward(-30);
+            ab.AddReward(-50);
         }
 
 
