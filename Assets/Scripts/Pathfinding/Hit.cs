@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Unity.MLAgents;
+using Unity.MLAgents.Actuators;
+using Unity.MLAgents.Sensors;
 
 public class Hit : MonoBehaviour
 {
@@ -57,12 +60,14 @@ public class Hit : MonoBehaviour
         //script attached to it.
         if (this.gameObject.tag == "Missle" && collision.gameObject.tag == "Wall")
         {
-            int penalty = -50;
+            float penalty = -50;
 
             Destroy(this.gameObject);
             
-            float scale_factor = Mathf.Min(1, ab.StepCount / 150000);
+            float scale_factor = Mathf.Min(1, ab.getTotalCount() / 150000.0f);
             float scaled_penalty = penalty * scale_factor;
+            Debug.Log(ab.getTotalCount());
+            Debug.Log(scaled_penalty);
 
             ab.AddReward(scaled_penalty);
 

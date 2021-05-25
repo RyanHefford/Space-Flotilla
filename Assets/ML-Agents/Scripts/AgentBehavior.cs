@@ -33,6 +33,11 @@ public class AgentBehavior : Agent
         }
     }
 
+    public int getTotalCount()
+    {
+        return Academy.Instance.TotalStepCount;
+    }
+
     public override void OnEpisodeBegin()
     {
 
