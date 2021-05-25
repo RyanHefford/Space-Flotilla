@@ -28,7 +28,6 @@ public class AgentBehavior : Agent
         if(flock.agents.Count == 0)
         {
             win();
-            AddReward(100);
             EndEpisode();
         }
     }
@@ -63,26 +62,7 @@ public class AgentBehavior : Agent
         sensor.AddObservation((float)StepCount / MaxStep);
         //shoot
         sensor.AddObservation(ps.shoot);
-        //next 10 are reserved for agents
-        //for(int i = 0; i < 10; i++)
-        //{
-        //    if(i < flock.agents.Count)
-        //    {
-        //        if (flock.agents[i] == null)
-        //        {
-        //            sensor.AddObservation(Vector3.zero);
-        //            continue;
-        //        }
-        //        Vector3 agentPos = flock.agents[i].transform.localPosition;
-        //        sensor.AddObservation(agentPos);
-        //    }
-        //    else
-        //    {
-        //        sensor.AddObservation(Vector3.zero);
-        //        continue;
-        //    }
-            
-        //}
+
 
     }
 
@@ -146,16 +126,6 @@ public class AgentBehavior : Agent
 
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Wall")
-        {
-            lose();
-            AddReward(-10f);
-            EndEpisode();
-        }
-
-    }
 
     private void destroyAgents()
     {
