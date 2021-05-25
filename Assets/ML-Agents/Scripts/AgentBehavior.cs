@@ -171,11 +171,17 @@ public class AgentBehavior : Agent
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Avoid flock agents, loss and reset on collisions
+        if (collision.gameObject.tag == "Agent") {
+            lose();
+            AddReward(-15f);
+            EndEpisode();
+        }
+
+        // Avoid walls
         if (collision.gameObject.tag == "Wall")
         {
-            lose();
-            AddReward(-10f);
-            EndEpisode();
+            AddReward(-5f);
         }
 
     }
