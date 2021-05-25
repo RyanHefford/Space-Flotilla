@@ -28,7 +28,9 @@ public class AgentBehavior : Agent
         if(flock.agents.Count == 0)
         {
             win();
-            AddReward(100);
+            AddReward(1f);
+            // Debugging all agents killed
+            Debug.Log("All agents are killed");
             EndEpisode();
         }
     }
@@ -161,28 +163,6 @@ public class AgentBehavior : Agent
         float rotationSpeed = 2;
 
 
-
-    }
-
-    public void reward(int r)
-    {
-        AddReward(r);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        // Avoid flock agents, loss and reset on collisions
-        if (collision.gameObject.tag == "Agent") {
-            lose();
-            AddReward(-15f);
-            EndEpisode();
-        }
-
-        // Avoid walls
-        if (collision.gameObject.tag == "Wall")
-        {
-            AddReward(-5f);
-        }
 
     }
 

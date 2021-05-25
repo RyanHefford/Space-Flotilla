@@ -58,8 +58,9 @@ public class Hit : MonoBehaviour
         if (this.gameObject.tag == "Missle" && collision.gameObject.tag == "Wall")
         {
             Destroy(this.gameObject);
-            ab.reward(-10);
-
+            ab.AddReward(-0.10f);
+            // Debugging player shot a wall
+            Debug.Log("Player shot a wall");
         }
 
         //remove from the list.
@@ -78,21 +79,31 @@ public class Hit : MonoBehaviour
                 //score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
                 //score.updateScore(10);
 
-                //add reward for the agent
-                ab.AddReward(20);
+                //add reward for the agent destroyed via missile
+                ab.AddReward(0.30f);
+                // Debugging agent shot by missile
+                Debug.Log("Agent shot by a missile");
             }
 
+            // Losing when player and agent collide, ending episode
             if (this.gameObject.tag == "Player")
             {
-                ab.AddReward(-30);
+                ab.lose();
+                ab.AddReward(-0.40f);
+                // Debugging agent colliding with player
+                Debug.Log("Agent collided with player");
                 health.takeDamage(1.0f);
+                ab.EndEpisode();
             }
 
         }
 
+        // player collides with walls, negative reward
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Wall")
         {
-            ab.AddReward(-30);
+            ab.AddReward(-0.05f);
+            // Debugging player ran into a wall
+            Debug.Log("Player ran into a wall");
         }
 
 
