@@ -31,8 +31,10 @@ public class AgentBehavior : Agent
             AddReward(100);
             EndEpisode();
         }
-    }
 
+       
+    }
+    
     public override void OnEpisodeBegin()
     {
 
@@ -127,9 +129,9 @@ public class AgentBehavior : Agent
                 transform.Rotate(new Vector3(0, 0, 0), rotationAngle * Time.deltaTime * rotationSpeed);
                 break;
         }
-
+        
         ps.shoot = shoot;
-
+        
     }
 
 
