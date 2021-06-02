@@ -78,8 +78,8 @@ public class AgentBehavior : Agent
         
 
         float movementSpeed = 3.0f;
-        float rotationSpeed = 2.0f;
-        float rotationAngle = 20.0f;
+        float rotationSpeed = 5.0f;
+        float rotationAngle = 10.0f;
         int movement = actions.DiscreteActions[0];
         int rotation = actions.DiscreteActions[1];
         int shoot = actions.DiscreteActions[2];
