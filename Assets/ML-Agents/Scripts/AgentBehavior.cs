@@ -13,7 +13,7 @@ public class AgentBehavior : Agent
     private PlayerShoot ps;
     public SpriteRenderer sr;
     private Health health;
-
+    private Rigidbody2D rb;
 
     private void Start()
     {
@@ -21,6 +21,8 @@ public class AgentBehavior : Agent
         pm = GetComponent<PlayerMovement>();
         ps = GetComponent<PlayerShoot>();
         health = GetComponent<Health>();
+        rb = GetComponent<Rigidbody2D>();
+
     }
 
     private void Update()
@@ -30,6 +32,10 @@ public class AgentBehavior : Agent
             win();
             EndEpisode();
         }
+        wallDetection();
+        obstacleDetection();
+
+
     }
 
     public int getTotalCount()
@@ -50,13 +56,14 @@ public class AgentBehavior : Agent
         health.playerHealth = 10;
 
         //reset player rotation
-        transform.rotation = new Quaternion(0,0,0,0);
+        transform.rotation = new Quaternion(0,0, 0, 0);
 
 
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
+        
         //Things the agent need to know in the world.
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(transform.localRotation);
@@ -67,6 +74,13 @@ public class AgentBehavior : Agent
         sensor.AddObservation((float)StepCount / MaxStep);
         //shoot
         sensor.AddObservation(ps.shoot);
+        sensor.AddObservation(rb.velocity);
+
+        //getting the obstacles. ONLY IN MODEL 5
+        sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
+        //sensor.AddObservation(transform.parent.Find("DebriObs1").transform.localPosition);
+        sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
+        sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
 
 
     }
@@ -77,7 +91,7 @@ public class AgentBehavior : Agent
     {
         
 
-        float movementSpeed = 3.0f;
+        float movementSpeed = 4.0f;
         float rotationSpeed = 5.0f;
         float rotationAngle = 10.0f;
         int movement = actions.DiscreteActions[0];
@@ -87,7 +101,7 @@ public class AgentBehavior : Agent
         Vector2 movementForceDirection = movementVector(movement);
 
         //add the movement force
-        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        //Rigidbody2D rb = GetComponent<Rigidbody2D>();
         //rb.AddForce(movementForceDirection * movementSpeed);
 
 
@@ -203,6 +217,46 @@ public class AgentBehavior : Agent
                 break;
         }
         return forceDirection;
+    }
+
+
+    private void wallDetection()
+    {
+        Vector2[] positions = new Vector2[4];
+        positions[0] = this.transform.parent.Find("Background").Find("Wall1").transform.localPosition;
+        positions[1] = this.transform.parent.Find("Background").Find("Wall2").transform.localPosition;
+        positions[2] = this.transform.parent.Find("Background").Find("Wall3").transform.localPosition;
+        positions[3] = this.transform.parent.Find("Background").Find("Wall4").transform.localPosition;
+
+        for(int i = 0; i < positions.Length; i++)
+        {
+            float distance = Mathf.Abs(Vector2.Distance(transform.localPosition, positions[i]));
+
+            if(distance < 1.5f)
+            {
+                AddReward(-0.3f);
+            }
+        }
+
+    }
+    private void obstacleDetection()
+    {
+        Vector2[] positions = new Vector2[4];
+        positions[0] = this.transform.parent.Find("DebriObs").transform.localPosition;
+       // positions[1] = this.transform.parent.Find("DebriObs1").transform.localPosition;
+        positions[2] = this.transform.parent.Find("DebriObs2").transform.localPosition;
+        positions[3] = this.transform.parent.Find("DebriObs3").transform.localPosition;
+
+        for (int i = 0; i < positions.Length; i++)
+        {
+            float distance = Mathf.Abs(Vector2.Distance(transform.localPosition, positions[i]));
+
+            if (distance < 1f)
+            {
+                AddReward(-0.3f);
+            }
+        }
+
     }
 
 

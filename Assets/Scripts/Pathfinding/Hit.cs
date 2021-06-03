@@ -71,7 +71,7 @@ public class Hit : MonoBehaviour
             //Debug.Log(ab.getTotalCount());
             //Debug.Log(scaled_penalty);
 
-            ab.AddReward(scaled_penalty);
+            //ab.AddReward(scaled_penalty);
 
         }
 
@@ -97,10 +97,10 @@ public class Hit : MonoBehaviour
 
             if (this.gameObject.tag == "Player")
             {
-                ab.AddReward(-1.0f);
-                //health.takeDamage(1.0f);
-                ab.lose();
-                ab.EndEpisode();
+                ab.AddReward(-0.5f);
+                health.takeDamage(1.0f);
+                //ab.lose();
+                //ab.EndEpisode();
             }
 
         }
@@ -108,13 +108,24 @@ public class Hit : MonoBehaviour
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Wall")
         {
             //ab.AddReward(-0.1f);
-            ab.AddReward(-0.2f);
-            ab.lose();
-            ab.EndEpisode();
+            ab.AddReward(-0.5f);
+            //ab.lose();
+            //ab.EndEpisode();
         }
 
+        if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Obstacle")
+        {
+            //ab.AddReward(-0.1f);
+            ab.AddReward(-0.5f);
+            //ab.lose();
+            //ab.EndEpisode();
+        }
 
-
+        if (this.gameObject.tag == "Missle")
+        {
+            //in case two missles collide.
+            Destroy(this.gameObject);
+        }
     }
 
 
