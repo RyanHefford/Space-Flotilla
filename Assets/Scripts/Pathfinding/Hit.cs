@@ -106,7 +106,10 @@ public class Hit : MonoBehaviour
             Debug.Log("Player ran into a wall");
         }
 
-
+        // to prevent the missiles colliding against each other and causing the curve
+        if (this.gameObject.tag == "Missle") {
+            Destroy(this.gameObject);
+        }
 
     }
 
