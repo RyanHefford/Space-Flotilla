@@ -33,7 +33,7 @@ public class AgentBehavior : Agent
             EndEpisode();
         }
         wallDetection();
-        obstacleDetection();
+        //obstacleDetection();
 
 
     }
@@ -77,10 +77,10 @@ public class AgentBehavior : Agent
         sensor.AddObservation(rb.velocity);
 
         //getting the obstacles. ONLY IN MODEL 5
-        sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
+        //sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
         //sensor.AddObservation(transform.parent.Find("DebriObs1").transform.localPosition);
-        sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
-        sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
+        //sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
+        //sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
 
 
     }

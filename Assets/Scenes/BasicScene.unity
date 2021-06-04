@@ -193,11 +193,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -206,7 +241,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -282,11 +317,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -295,7 +365,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -371,11 +441,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -384,7 +489,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -460,11 +565,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -473,7 +613,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -549,11 +689,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -562,7 +737,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -638,11 +813,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -651,7 +861,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -921,11 +1131,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -934,7 +1179,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1010,11 +1255,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1023,7 +1303,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1099,11 +1379,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1112,7 +1427,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1188,11 +1503,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1201,7 +1551,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1277,11 +1627,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1290,7 +1675,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1366,11 +1751,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1379,7 +1799,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1455,11 +1875,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1468,7 +1923,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1544,11 +1999,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1557,7 +2047,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1633,11 +2123,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1646,7 +2171,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1722,11 +2247,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1735,7 +2295,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1811,11 +2371,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1824,7 +2419,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1900,11 +2495,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -1913,7 +2543,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -1989,11 +2619,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2002,7 +2667,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2078,11 +2743,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2091,7 +2791,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2167,11 +2867,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2180,7 +2915,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2256,11 +2991,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2269,7 +3039,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2345,11 +3115,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2358,7 +3163,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2434,11 +3239,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2447,7 +3287,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2523,11 +3363,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2536,7 +3411,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2612,11 +3487,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2625,7 +3535,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2701,11 +3611,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2714,7 +3659,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2790,11 +3735,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2803,7 +3783,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2879,11 +3859,46 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2892,7 +3907,7 @@ PrefabInstance:
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}
@@ -2963,6 +3978,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460331988181637, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332089561179, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332096575961, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137091884, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: cam
@@ -2983,6 +4013,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_RayLayerMask.m_Bits
+      value: 768
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[0]
+      value: Agent
+      objectReference: {fileID: 0}
+    - target: {fileID: 4455460332137092051, guid: b10a7f8dcb388354c8a42b0837a596f7,
+        type: 3}
+      propertyPath: m_DetectableTags.Array.data[1]
+      value: Obstacle
+      objectReference: {fileID: 0}
     - target: {fileID: 4455460332137092053, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: MaxStep
@@ -2992,12 +4042,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 5022602860645237092, guid: b52fad9d42e4bbb4183573c01a0155ab,
+      objectReference: {fileID: 5022602860645237092, guid: bb71c4384ed2c784caafb79d89dbb9e4,
         type: 3}
     - target: {fileID: 4455460332137092054, guid: b10a7f8dcb388354c8a42b0837a596f7,
         type: 3}
       propertyPath: m_BrainParameters.VectorObservationSize
-      value: 21
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b10a7f8dcb388354c8a42b0837a596f7, type: 3}

@@ -55,6 +55,7 @@ public class Hit : MonoBehaviour
     {
         flock = getFlock();
 
+       
 
         //destroying the missle. If statement because the player has the same
         //script attached to it.
@@ -116,7 +117,7 @@ public class Hit : MonoBehaviour
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Obstacle")
         {
             //ab.AddReward(-0.1f);
-            ab.AddReward(-0.5f);
+            ab.AddReward(-0.3f);
             //ab.lose();
             //ab.EndEpisode();
         }
