@@ -13638,7 +13638,7 @@ GameObject:
   - component: {fileID: 5242173991392954477}
   - component: {fileID: 5242173991392954474}
   - component: {fileID: 5242173991392954475}
-  - component: {fileID: 5242173991392954472}
+  - component: {fileID: 6303464959825909695}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -13969,7 +13969,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DecisionPeriod: 5
   TakeActionsBetweenDecisions: 1
---- !u!114 &5242173991392954472
+--- !u!114 &6303464959825909695
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -13982,17 +13982,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SensorName: RayPerceptionSensor
-  m_DetectableTags: []
-  m_RaysPerDirection: 14
+  m_DetectableTags:
+  - Agent
+  - Wall
+  m_RaysPerDirection: 20
   m_MaxRayDegrees: 180
-  m_SphereCastRadius: 0.5
-  m_RayLength: 9
+  m_SphereCastRadius: 3
+  m_RayLength: 18
   m_RayLayerMask:
     serializedVersion: 2
     m_Bits: 512
   m_ObservationStacks: 1
   rayHitColor: {r: 1, g: 0, b: 0, a: 1}
-  rayMissColor: {r: 1, g: 1, b: 1, a: 1}
+  rayMissColor: {r: 0.15924922, g: 0.9339623, b: 0.013216423, a: 1}
 --- !u!1 &5242173991394795439
 GameObject:
   m_ObjectHideFlags: 0

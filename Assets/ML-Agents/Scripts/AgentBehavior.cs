@@ -11,7 +11,7 @@ public class AgentBehavior : Agent
     private Flock flock;
     private PlayerMovement pm;
     private PlayerShoot ps;
-    public SpriteRenderer sr;
+    public  SpriteRenderer sr;
     private Health health;
 
 
@@ -28,11 +28,11 @@ public class AgentBehavior : Agent
         if(flock.agents.Count == 0)
         {
             win();
-            AddReward(100);
+            Debug.Log("Destroyed All Enemies");
+            AddReward(1f);
             EndEpisode();
         }
 
-       
     }
     
     public override void OnEpisodeBegin()
@@ -175,13 +175,27 @@ public class AgentBehavior : Agent
     {
         if (collision.gameObject.tag == "Wall")
         {
+            Debug.Log("HIT: Wall");
             lose();
-            AddReward(-10f);
+            AddReward(-.1f);
             EndEpisode();
         }
 
-    }
+        if (collision.gameObject.tag == "Agent")
+        {
+            Debug.Log("Collided with Agent!");
+            lose();
+            AddReward(-.5f);
+            //EndEpisode();
 
+              FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
+              flock.agents.Remove(agentToDelete);
+              //collision.gameObject.GetComponent<EnemyDieScript>().Die();
+              Destroy(agentToDelete.gameObject);
+
+
+        }
+    }
     private void destroyAgents()
     {
 

@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\kelly\Documents\Desktop\Final Semester\Game Design\Assign\Space-Flotilla\venv"
+VIRTUAL_ENV="C:\Users\kelly\Documents\Desktop\Final Semester\Game Design\ML Agents Notes\Space-Flotilla-orig\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
