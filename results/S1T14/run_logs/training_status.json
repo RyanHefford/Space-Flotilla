@@ -1,0 +1,29 @@
+{
+    "SimpleBehavior": {
+        "checkpoints": [
+            {
+                "steps": 79985,
+                "file_path": "results\\S1T14\\SimpleBehavior\\SimpleBehavior-79985.onnx",
+                "reward": -45.0,
+                "creation_time": 1622776740.1065474,
+                "auxillary_file_paths": [
+                    "results\\S1T14\\SimpleBehavior\\SimpleBehavior-79985.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 79985,
+            "file_path": "results\\S1T14\\SimpleBehavior.onnx",
+            "reward": -45.0,
+            "creation_time": 1622776740.1065474,
+            "auxillary_file_paths": [
+                "results\\S1T14\\SimpleBehavior\\SimpleBehavior-79985.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

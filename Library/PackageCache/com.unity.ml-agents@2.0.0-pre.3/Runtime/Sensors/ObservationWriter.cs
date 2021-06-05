@@ -220,11 +220,6 @@ namespace Unity.MLAgents.Sensors
                 m_Proxy.data[m_Batch, m_Offset + writeOffset + 3] = quat.w;
             }
         }
-
-        public void AddRange(float[] m_Observations)
-        {
-            throw new NotImplementedException();
-        }
     }
 
     /// <summary>

@@ -500,10 +500,5 @@ namespace Unity.MLAgents
             var ser = new DataContractJsonSerializer(typeof(RootNode), jsonSettings);
             ser.WriteObject(stream, m_RootNode);
         }
-
-        public IDisposable Scoped(string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
