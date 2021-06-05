@@ -27,7 +27,7 @@ public class AgentBehavior4 : Agent
 
     private void Update()
     {
-        if(flock.agents.Count == 0)
+        if (flock.agents.Count == 0)
         {
             win();
             EndEpisode();
@@ -56,20 +56,20 @@ public class AgentBehavior4 : Agent
         health.playerHealth = 10;
 
         //reset player rotation
-        transform.rotation = new Quaternion(0,0, 0, 0);
+        transform.rotation = new Quaternion(0, 0, 0, 0);
 
 
     }
 
     public override void CollectObservations(VectorSensor sensor)
     {
-        
+
         //Things the agent need to know in the world.
         sensor.AddObservation(transform.localPosition);
         sensor.AddObservation(transform.localRotation);
         sensor.AddObservation(flock.agents.Count);
         sensor.AddObservation(health.playerHealth);
-        
+
         //50 steps = 1 second
         sensor.AddObservation((float)StepCount / MaxStep);
         //shoot
@@ -77,10 +77,10 @@ public class AgentBehavior4 : Agent
         sensor.AddObservation(rb.velocity);
 
         //getting the obstacles. ONLY IN MODEL 5
-        //sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
+        sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
         //sensor.AddObservation(transform.parent.Find("DebriObs1").transform.localPosition);
-        //sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
-        //sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
+        sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
+        sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
 
 
     }
@@ -89,7 +89,7 @@ public class AgentBehavior4 : Agent
     //where the actions of the player happens.
     public override void OnActionReceived(ActionBuffers actions)
     {
-        
+
 
         float movementSpeed = 4.0f;
         float rotationSpeed = 5.0f;
@@ -149,11 +149,11 @@ public class AgentBehavior4 : Agent
     private void destroyAgents()
     {
 
-        foreach(Transform child in flock.transform)
+        foreach (Transform child in flock.transform)
         {
             Destroy(child.gameObject);
         }
-        
+
         //clear the list.
         flock.agents.Clear();
 
@@ -228,13 +228,13 @@ public class AgentBehavior4 : Agent
         positions[2] = this.transform.parent.Find("Background").Find("Wall3").transform.localPosition;
         positions[3] = this.transform.parent.Find("Background").Find("Wall4").transform.localPosition;
 
-        for(int i = 0; i < positions.Length; i++)
+        for (int i = 0; i < positions.Length; i++)
         {
             float distance = Mathf.Abs(Vector2.Distance(transform.localPosition, positions[i]));
 
-            if(distance < 1.5f)
+            if (distance < 1.5f)
             {
-                AddReward(-0.3f);
+                AddReward(-0.1f);
             }
         }
 
@@ -243,7 +243,7 @@ public class AgentBehavior4 : Agent
     {
         Vector2[] positions = new Vector2[4];
         positions[0] = this.transform.parent.Find("DebriObs").transform.localPosition;
-       // positions[1] = this.transform.parent.Find("DebriObs1").transform.localPosition;
+        // positions[1] = this.transform.parent.Find("DebriObs1").transform.localPosition;
         positions[2] = this.transform.parent.Find("DebriObs2").transform.localPosition;
         positions[3] = this.transform.parent.Find("DebriObs3").transform.localPosition;
 

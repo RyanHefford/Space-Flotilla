@@ -12,40 +12,40 @@ public class Hit4 : MonoBehaviour
 
     public Health health;
     private Score score;
-    private AgentBehavior ab;
+    private AgentBehavior4 ab;
 
     private void Start()
     {
         //getting the OverlordManager script from the Manager GameObject
-       // om = GameObject.Find("Manager").GetComponent<OverlordManager>();
-        flock =  getFlock();
+        // om = GameObject.Find("Manager").GetComponent<OverlordManager>();
+        flock = getFlock();
         ab = getAgentBehavior();
     }
 
     private Flock getFlock()
     {
         Flock newFlock = null;
-        if(this.transform.gameObject.tag == "Player")
+        if (this.transform.gameObject.tag == "Player")
         {
-            newFlock =  this.transform.parent.Find("Flock").GetComponent<Flock>();
+            newFlock = this.transform.parent.Find("Flock").GetComponent<Flock>();
         }
-        else if(this.transform.gameObject.tag == "Missle" || this.transform.gameObject.tag == "HyperBeam")
+        else if (this.transform.gameObject.tag == "Missle" || this.transform.gameObject.tag == "HyperBeam")
         {
             newFlock = this.transform.parent.transform.parent.Find("Flock").GetComponent<Flock>();
         }
 
         return newFlock;
     }
-    private AgentBehavior getAgentBehavior()
+    private AgentBehavior4 getAgentBehavior()
     {
-        AgentBehavior ab = null;
+        AgentBehavior4 ab = null;
         if (this.transform.gameObject.tag == "Player")
         {
-            ab = GetComponent<AgentBehavior>();
+            ab = GetComponent<AgentBehavior4>();
         }
         else if (this.transform.gameObject.tag == "Missle" || this.transform.gameObject.tag == "HyperBeam")
         {
-            ab = this.transform.parent.GetComponent<AgentBehavior>();
+            ab = this.transform.parent.GetComponent<AgentBehavior4>();
         }
 
         return ab;
@@ -55,7 +55,7 @@ public class Hit4 : MonoBehaviour
     {
         flock = getFlock();
 
-       
+
 
         //destroying the missle. If statement because the player has the same
         //script attached to it.
@@ -65,7 +65,7 @@ public class Hit4 : MonoBehaviour
             float penalty = -0.3f;
 
             Destroy(this.gameObject);
-            
+
             float scale_factor = Mathf.Min(1, ab.StepCount / 200000);
 
             float scaled_penalty = penalty * scale_factor;
@@ -109,7 +109,7 @@ public class Hit4 : MonoBehaviour
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Wall")
         {
             //ab.AddReward(-0.1f);
-            ab.AddReward(-0.5f);
+            ab.AddReward(-0.3f);
             //ab.lose();
             //ab.EndEpisode();
         }
@@ -117,7 +117,7 @@ public class Hit4 : MonoBehaviour
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Obstacle")
         {
             //ab.AddReward(-0.1f);
-            ab.AddReward(-0.3f);
+            ab.AddReward(-0.1f);
             //ab.lose();
             //ab.EndEpisode();
         }
