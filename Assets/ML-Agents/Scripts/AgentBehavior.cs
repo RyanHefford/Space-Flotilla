@@ -76,12 +76,13 @@ public class AgentBehavior : Agent
         sensor.AddObservation(ps.shoot);
         sensor.AddObservation(rb.velocity);
 
-        //getting the obstacles. ONLY IN MODEL 5
-        sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
-        //sensor.AddObservation(transform.parent.Find("DebriObs1").transform.localPosition);
-        sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
-        sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
-
+        //getting obstacles
+        Transform obstacles = transform.parent.Find("Obstacles").transform;
+        foreach(Transform c in obstacles)
+        {
+            //Adding all the obstacle locations
+            sensor.AddObservation(c.localPosition);
+        }
 
     }
 

@@ -59,7 +59,8 @@ public class Hit : MonoBehaviour
 
         //destroying the missle. If statement because the player has the same
         //script attached to it.
-        if (this.gameObject.tag == "Missle" && collision.gameObject.tag == "Wall")
+        if ((this.gameObject.tag == "Missle" && collision.gameObject.tag == "Wall") ||
+            (this.gameObject.tag == "Missle" && collision.gameObject.tag == "Obstacle"))
         {
 
             float penalty = -0.3f;
@@ -72,7 +73,7 @@ public class Hit : MonoBehaviour
             //Debug.Log(ab.getTotalCount());
             //Debug.Log(scaled_penalty);
 
-            //ab.AddReward(scaled_penalty);
+            ab.AddReward(scaled_penalty);
 
         }
 
