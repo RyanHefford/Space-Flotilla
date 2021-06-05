@@ -220,11 +220,7 @@ public class Flock : MonoBehaviour
                     // finding current position of the player object
                     Vector2 playerPosition = GameObject.Find("Player").transform.localPosition;
 
-                    // while the newlocation for an agent is too close to the player position, find a another location
-                    while (Vector2.Distance(playerPosition, newLocation) < 2f)
-                    {
-                        newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-                    }
+                   
 
                     FlockAgent newAgent = null;
 
