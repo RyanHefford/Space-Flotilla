@@ -77,10 +77,10 @@ public class AgentBehavior : Agent
         sensor.AddObservation(rb.velocity);
 
         //getting the obstacles. ONLY IN MODEL 5
-        //sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
+        sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
         //sensor.AddObservation(transform.parent.Find("DebriObs1").transform.localPosition);
-        //sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
-        //sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
+        sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
+        sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
 
 
     }
@@ -234,7 +234,7 @@ public class AgentBehavior : Agent
 
             if(distance < 1.5f)
             {
-                AddReward(-0.3f);
+                AddReward(-0.1f);
             }
         }
 

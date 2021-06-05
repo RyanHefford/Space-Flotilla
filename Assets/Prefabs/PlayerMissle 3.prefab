@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6441166703277187883}
   - component: {fileID: -7034490034060225966}
   - component: {fileID: 8846575701247210498}
-  - component: {fileID: -1084794215866563394}
+  - component: {fileID: 7450162627924184209}
   m_Layer: 0
-  m_Name: PlayerMissle
+  m_Name: PlayerMissle 3
   m_TagString: Missle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.08, y: 0.25}
   m_EdgeRadius: 0
---- !u!114 &-1084794215866563394
+--- !u!114 &7450162627924184209
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -153,8 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6441166703277187884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34edda3ef300240cf84f1a10262e1ea8, type: 3}
+  m_Script: {fileID: 11500000, guid: e9dfb740fd5c7fa4db34b73ca5385a87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flock: {fileID: 0}
   health: {fileID: 0}

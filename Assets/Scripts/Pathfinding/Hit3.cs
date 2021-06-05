@@ -12,7 +12,7 @@ public class Hit3 : MonoBehaviour
 
     public Health health;
     private Score score;
-    private AgentBehavior ab;
+    private AgentBehavior3 ab;
 
     private void Start()
     {
@@ -36,16 +36,16 @@ public class Hit3 : MonoBehaviour
 
         return newFlock;
     }
-    private AgentBehavior getAgentBehavior()
+    private AgentBehavior3 getAgentBehavior()
     {
-        AgentBehavior ab = null;
+        AgentBehavior3 ab = null;
         if (this.transform.gameObject.tag == "Player")
         {
-            ab = GetComponent<AgentBehavior>();
+            ab = GetComponent<AgentBehavior3>();
         }
         else if (this.transform.gameObject.tag == "Missle" || this.transform.gameObject.tag == "HyperBeam")
         {
-            ab = this.transform.parent.GetComponent<AgentBehavior>();
+            ab = this.transform.parent.GetComponent<AgentBehavior3>();
         }
 
         return ab;
@@ -74,6 +74,8 @@ public class Hit3 : MonoBehaviour
 
             //ab.AddReward(scaled_penalty);
 
+           //NOT USED
+
         }
 
         //remove from the list.
@@ -98,7 +100,7 @@ public class Hit3 : MonoBehaviour
 
             if (this.gameObject.tag == "Player")
             {
-                ab.AddReward(-0.5f);
+                ab.AddReward(-1.0f);
                 health.takeDamage(1.0f);
                 //ab.lose();
                 //ab.EndEpisode();
@@ -109,18 +111,11 @@ public class Hit3 : MonoBehaviour
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Wall")
         {
             //ab.AddReward(-0.1f);
-            ab.AddReward(-0.5f);
+            ab.AddReward(-1.0f);
             //ab.lose();
             //ab.EndEpisode();
         }
-
-        if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Obstacle")
-        {
-            //ab.AddReward(-0.1f);
-            ab.AddReward(-0.3f);
-            //ab.lose();
-            //ab.EndEpisode();
-        }
+    
 
         if (this.gameObject.tag == "Missle")
         {

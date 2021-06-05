@@ -109,7 +109,7 @@ public class Hit : MonoBehaviour
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Wall")
         {
             //ab.AddReward(-0.1f);
-            ab.AddReward(-0.5f);
+            ab.AddReward(-0.3f);
             //ab.lose();
             //ab.EndEpisode();
         }
@@ -117,7 +117,7 @@ public class Hit : MonoBehaviour
         if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Obstacle")
         {
             //ab.AddReward(-0.1f);
-            ab.AddReward(-0.3f);
+            ab.AddReward(-0.1f);
             //ab.lose();
             //ab.EndEpisode();
         }

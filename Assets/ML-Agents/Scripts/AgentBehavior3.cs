@@ -32,8 +32,7 @@ public class AgentBehavior3 : Agent
             win();
             EndEpisode();
         }
-        wallDetection();
-        //obstacleDetection();
+ 
 
 
     }
@@ -75,13 +74,7 @@ public class AgentBehavior3 : Agent
         //shoot
         sensor.AddObservation(ps.shoot);
         sensor.AddObservation(rb.velocity);
-
-        //getting the obstacles. ONLY IN MODEL 5
-        //sensor.AddObservation(transform.parent.Find("DebriObs").transform.localPosition);
-        //sensor.AddObservation(transform.parent.Find("DebriObs1").transform.localPosition);
-        //sensor.AddObservation(transform.parent.Find("DebriObs2").transform.localPosition);
-        //sensor.AddObservation(transform.parent.Find("DebriObs3").transform.localPosition);
-
+        
 
     }
 
@@ -217,46 +210,6 @@ public class AgentBehavior3 : Agent
                 break;
         }
         return forceDirection;
-    }
-
-
-    private void wallDetection()
-    {
-        Vector2[] positions = new Vector2[4];
-        positions[0] = this.transform.parent.Find("Background").Find("Wall1").transform.localPosition;
-        positions[1] = this.transform.parent.Find("Background").Find("Wall2").transform.localPosition;
-        positions[2] = this.transform.parent.Find("Background").Find("Wall3").transform.localPosition;
-        positions[3] = this.transform.parent.Find("Background").Find("Wall4").transform.localPosition;
-
-        for(int i = 0; i < positions.Length; i++)
-        {
-            float distance = Mathf.Abs(Vector2.Distance(transform.localPosition, positions[i]));
-
-            if(distance < 1.5f)
-            {
-                AddReward(-0.3f);
-            }
-        }
-
-    }
-    private void obstacleDetection()
-    {
-        Vector2[] positions = new Vector2[4];
-        positions[0] = this.transform.parent.Find("DebriObs").transform.localPosition;
-       // positions[1] = this.transform.parent.Find("DebriObs1").transform.localPosition;
-        positions[2] = this.transform.parent.Find("DebriObs2").transform.localPosition;
-        positions[3] = this.transform.parent.Find("DebriObs3").transform.localPosition;
-
-        for (int i = 0; i < positions.Length; i++)
-        {
-            float distance = Mathf.Abs(Vector2.Distance(transform.localPosition, positions[i]));
-
-            if (distance < 1f)
-            {
-                AddReward(-0.3f);
-            }
-        }
-
     }
 
 
