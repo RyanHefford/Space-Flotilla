@@ -1,0 +1,53 @@
+{
+    "num_enemies": {
+        "lesson_num": 2
+    },
+    "shot_cooldown": {
+        "lesson_num": 2
+    },
+    "SimpleBehavior": {
+        "checkpoints": [
+            {
+                "steps": 499969,
+                "file_path": "results\\FinalModel\\SimpleBehavior\\SimpleBehavior-499969.onnx",
+                "reward": -0.62142857962421,
+                "creation_time": 1622966039.6382117,
+                "auxillary_file_paths": [
+                    "results\\FinalModel\\SimpleBehavior\\SimpleBehavior-499969.pt"
+                ]
+            },
+            {
+                "steps": 999949,
+                "file_path": "results\\FinalModel\\SimpleBehavior\\SimpleBehavior-999949.onnx",
+                "reward": -1.1833333584169548,
+                "creation_time": 1622969886.3162677,
+                "auxillary_file_paths": [
+                    "results\\FinalModel\\SimpleBehavior\\SimpleBehavior-999949.pt"
+                ]
+            },
+            {
+                "steps": 1065893,
+                "file_path": "results\\FinalModel\\SimpleBehavior\\SimpleBehavior-1065893.onnx",
+                "reward": -0.9842105343153602,
+                "creation_time": 1622970392.4857407,
+                "auxillary_file_paths": [
+                    "results\\FinalModel\\SimpleBehavior\\SimpleBehavior-1065893.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 1065893,
+            "file_path": "results\\FinalModel\\SimpleBehavior.onnx",
+            "reward": -0.9842105343153602,
+            "creation_time": 1622970392.4857407,
+            "auxillary_file_paths": [
+                "results\\FinalModel\\SimpleBehavior\\SimpleBehavior-1065893.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

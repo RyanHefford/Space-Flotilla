@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.MLAgents;
 using UnityEngine;
 
 public class Flock : MonoBehaviour
@@ -250,7 +251,7 @@ public class Flock : MonoBehaviour
         Collider2D[] contextColliders = Physics2D.OverlapCircleAll(agent.transform.localPosition, neighborRadius);
         foreach (Collider2D c in contextColliders)
         {
-            if (c != agent.AgentCollider)
+            if (c != agent.AgentCollider && agent.CompareTag("Agent"))
             {
                 context.Add(c.transform);
             }
@@ -273,12 +274,14 @@ public class Flock : MonoBehaviour
 
     public void startNewEp()
     {
+        //Check for curriculum change
+        startingCount = (int)Academy.Instance.EnvironmentParameters.GetWithDefault("num_enemies", startingCount);
 
         //instantiate new ones.
         for (int i = 0; i < startingCount; i++)
         {
             Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-            newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+            //newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
 
             // finding current position of the player object
             Vector2 playerPosition = GameObject.Find("Player").transform.localPosition;
@@ -332,7 +335,6 @@ public class Flock : MonoBehaviour
 
 
     }
-
 
 
 }

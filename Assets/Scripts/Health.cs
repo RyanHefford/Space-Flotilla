@@ -15,12 +15,12 @@ public class Health : MonoBehaviour
     public GameObject explosion;
 
     //agent script
-    private AgentBehavior ab;
+    private ShipBehavior ab;
 
     // Start is called before the first frame update
     void Start()
     {
-        ab = GetComponent<AgentBehavior>();
+        ab = GetComponent<ShipBehavior>();
         //healthBar = GameObject.FindGameObjectWithTag("Healthbar").GetComponent<Slider>();
         //healthBar.value = playerHealth;
     }
@@ -63,7 +63,7 @@ public class Health : MonoBehaviour
                 //tempObject.transform.SetPositionAndRotation(transform.position, transform.rotation);
 
                 //Big negative reward and reset everything.
-                ab.reward(-100);
+                ab.Reward(-1);
                 ab.lose();
                 ab.EndEpisode();
 

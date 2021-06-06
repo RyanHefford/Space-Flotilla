@@ -109,6 +109,10 @@ MonoBehaviour:
   moveSpeed: 10
   rotationSpeed: 3
   cam: {fileID: 0}
+  mouseX: 0
+  mouseY: 0
+  moveX: 0
+  moveY: 0
 --- !u!50 &4751408144573417688
 Rigidbody2D:
   serializedVersion: 4
@@ -142,8 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24e7a021172c34c4098e6bf640c72f83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sound: 0
   basicMissle: {fileID: 6441166703277187884, guid: 846885322f3472945bbe58d56318701d,
     type: 3}
+  shoot: 0
 --- !u!82 &4067061723375002194
 AudioSource:
   m_ObjectHideFlags: 0
@@ -159,7 +165,7 @@ AudioSource:
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
-  Mute: 0
+  Mute: 1
   Spatialize: 0
   SpatializePostEffects: 0
   Priority: 125
@@ -282,6 +288,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 10
+  shieldActive: 0
   shield: {fileID: 4751408144851863431}
   explosion: {fileID: 1134129239631916, guid: 7e48ba6b1b968764490bbc70b66e3fe1, type: 3}
 --- !u!114 &6797296816289867948
@@ -342,7 +349,7 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 0
-  goalTransform: {fileID: 0}
+  successIndicator: {fileID: 0}
 --- !u!114 &7785355345442063433
 MonoBehaviour:
   m_ObjectHideFlags: 0

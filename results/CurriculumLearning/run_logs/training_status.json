@@ -1,0 +1,41 @@
+{
+    "num_enemies": {
+        "lesson_num": 0
+    },
+    "SimpleBehavior": {
+        "checkpoints": [
+            {
+                "steps": 499955,
+                "file_path": "results\\CurriculumLearning\\SimpleBehavior\\SimpleBehavior-499955.onnx",
+                "reward": -0.375,
+                "creation_time": 1622881443.9238672,
+                "auxillary_file_paths": [
+                    "results\\CurriculumLearning\\SimpleBehavior\\SimpleBehavior-499955.pt"
+                ]
+            },
+            {
+                "steps": 501877,
+                "file_path": "results\\CurriculumLearning\\SimpleBehavior\\SimpleBehavior-501877.onnx",
+                "reward": -0.14285714285714285,
+                "creation_time": 1622881459.993286,
+                "auxillary_file_paths": [
+                    "results\\CurriculumLearning\\SimpleBehavior\\SimpleBehavior-501877.pt"
+                ]
+            }
+        ],
+        "final_checkpoint": {
+            "steps": 501877,
+            "file_path": "results\\CurriculumLearning\\SimpleBehavior.onnx",
+            "reward": -0.14285714285714285,
+            "creation_time": 1622881459.993286,
+            "auxillary_file_paths": [
+                "results\\CurriculumLearning\\SimpleBehavior\\SimpleBehavior-501877.pt"
+            ]
+        }
+    },
+    "metadata": {
+        "stats_format_version": "0.3.0",
+        "mlagents_version": "0.26.0",
+        "torch_version": "1.7.1+cu110"
+    }
+}

@@ -6,10 +6,10 @@ public class Hit : MonoBehaviour
 {
     //When a flock hits a player.
     private Flock flock;
-
     public Health health;
     private Score score;
-    private AgentBehavior ab;
+    private ShipBehavior ab;
+    private GameObject placeHolderParent;
 
     private void Start()
     {
@@ -28,21 +28,21 @@ public class Hit : MonoBehaviour
         }
         else if(this.transform.gameObject.tag == "Missle" || this.transform.gameObject.tag == "HyperBeam")
         {
-            newFlock = this.transform.parent.transform.parent.Find("Flock").GetComponent<Flock>();
+            newFlock = placeHolderParent.transform.parent.Find("Flock").GetComponent<Flock>();
         }
 
         return newFlock;
     }
-    private AgentBehavior getAgentBehavior()
+    private ShipBehavior getAgentBehavior()
     {
-        AgentBehavior ab = null;
+        ShipBehavior ab = null;
         if (this.transform.gameObject.tag == "Player")
         {
-            ab = GetComponent<AgentBehavior>();
+            ab = GetComponent<ShipBehavior>();
         }
         else if (this.transform.gameObject.tag == "Missle" || this.transform.gameObject.tag == "HyperBeam")
         {
-            ab = this.transform.parent.GetComponent<AgentBehavior>();
+            ab = placeHolderParent.GetComponent<ShipBehavior>();
         }
 
         return ab;
@@ -58,8 +58,7 @@ public class Hit : MonoBehaviour
         if (this.gameObject.tag == "Missle" && collision.gameObject.tag == "Wall")
         {
             Destroy(this.gameObject);
-            ab.reward(-10);
-
+            ab.Reward(-(1 / flock.startingCount) * 0.2f);
         }
 
         //remove from the list.
@@ -79,26 +78,26 @@ public class Hit : MonoBehaviour
                 //score.updateScore(10);
 
                 //add reward for the agent
-                ab.AddReward(20);
+                ab.Reward(1 / flock.startingCount);
             }
 
             if (this.gameObject.tag == "Player")
             {
-                ab.AddReward(-30);
-                health.takeDamage(1.0f);
+                ab.Reward(-1);
+                ab.lose();
+                ab.EndEpisode();
             }
 
-        }
-
-        if (this.gameObject.tag == "Player" && collision.gameObject.tag == "Wall")
-        {
-            ab.AddReward(-30);
         }
 
 
 
     }
 
-
+    //For missles so that rotation isnt applied to it
+    public void AddParent(GameObject parent)
+    {
+        placeHolderParent = parent;
+    }
 
 }

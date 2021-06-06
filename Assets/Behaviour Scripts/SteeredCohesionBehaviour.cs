@@ -18,7 +18,10 @@ public class SteeredCohesionBehaviour : FlockBehaviour
         Vector2 cohesionMove = Vector2.zero;
         foreach (Transform item in context)
         {
-            cohesionMove += (Vector2)item.localPosition;
+            if (item.CompareTag("Agent"))
+            {
+                cohesionMove += (Vector2)item.localPosition;
+            }
         }
         cohesionMove /= context.Count;
 

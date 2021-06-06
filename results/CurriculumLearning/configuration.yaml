@@ -1,0 +1,227 @@
+default_settings: null
+behaviors:
+  SimpleBehavior:
+    trainer_type: ppo
+    hyperparameters:
+      batch_size: 40
+      buffer_size: 3060
+      learning_rate: 0.0003
+      beta: 0.0005
+      epsilon: 0.2
+      lambd: 0.95
+      num_epoch: 10
+      learning_rate_schedule: linear
+    network_settings:
+      normalize: false
+      hidden_units: 832
+      num_layers: 3
+      vis_encode_type: simple
+      memory: null
+      goal_conditioning_type: hyper
+    reward_signals:
+      extrinsic:
+        gamma: 0.99
+        strength: 1.0
+        network_settings:
+          normalize: false
+          hidden_units: 128
+          num_layers: 2
+          vis_encode_type: simple
+          memory: null
+          goal_conditioning_type: hyper
+    init_path: null
+    keep_checkpoints: 5
+    checkpoint_interval: 500000
+    max_steps: 500000
+    time_horizon: 64
+    summary_freq: 10000
+    threaded: false
+    self_play: null
+    behavioral_cloning: null
+env_settings:
+  env_path: null
+  env_args: null
+  base_port: 5005
+  num_envs: 1
+  seed: -1
+engine_settings:
+  width: 84
+  height: 84
+  quality_level: 5
+  time_scale: 20.0
+  target_frame_rate: -1
+  capture_frame_rate: 60
+  no_graphics: false
+environment_parameters:
+  num_enemies:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1616
+          value: 8.0
+      name: Lesson0
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: -0.5
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1617
+          value: 10.0
+      name: Lesson1
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: -0.2
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1618
+          value: 12.0
+      name: Lesson2
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: 0.00
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1616
+          value: 14.0
+      name: Lesson3
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: 0.3
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1617
+          value: 16.0
+      name: Lesson4
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: 0.6
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1618
+          value: 20.0
+      name: Lesson5
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: 0.80
+        require_reset: false
+  shot_cooldown:
+    curriculum:
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1616
+          value: 0.25
+      name: Lesson0
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: -0.5
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1617
+          value: 0.35
+      name: Lesson1
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: -0.2
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1618
+          value: 0.5
+      name: Lesson2
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: 0.00
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1616
+          value: 0.6
+      name: Lesson3
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: 0.3
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1617
+          value: 0.7
+      name: Lesson4
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: 0.6
+        require_reset: false
+    - value:
+        sampler_type: constant
+        sampler_parameters:
+          seed: 1618
+          value: 0.8
+      name: Lesson5
+      completion_criteria:
+        behavior: SimpleBehavior
+        measure: reward
+        min_lesson_length: 10
+        signal_smoothing: true
+        threshold: 0.80
+        require_reset: false
+checkpoint_settings:
+  run_id: CurriculumLearning
+  initialize_from: null
+  load_model: false
+  resume: false
+  force: true
+  train_model: false
+  inference: false
+  results_dir: results
+torch_settings:
+  device: null
+debug: false

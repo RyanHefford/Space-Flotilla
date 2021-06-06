@@ -36,6 +36,7 @@ public class PlayerMovement : MonoBehaviour
         westEdge = map.getWestEdge();
         northEdge = map.getNorthEdge();
         southEdge = map.getSouthEdge();
+
     }
 
     // Update is called once per frame

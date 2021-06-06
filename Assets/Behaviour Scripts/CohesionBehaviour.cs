@@ -15,7 +15,10 @@ public class CohesionBehaviour : FlockBehaviour
         Vector2 cohesionMove = Vector2.zero;
         foreach (Transform item in context)
         {
-            cohesionMove += (Vector2)item.position;
+            if (item.CompareTag("Agent"))
+            {
+                cohesionMove += (Vector2)item.position;
+            }
         }
         cohesionMove /= context.Count;
 
