@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\MapScript.cs" />
     <Compile Include="Assets\Scripts\MapGeneration.cs" />
+    <Compile Include="Assets\QuestPointer\Scripts\Window_QuestPointer.cs" />
     <Compile Include="Assets\Scripts\MainMenuScript.cs" />
     <Compile Include="Assets\Scripts\MultiRayCast.cs" />
     <Compile Include="Assets\Scripts\Pathfinding\Hit.cs" />
@@ -118,7 +119,8 @@
     <Compile Include="Assets\Scripts\BeamPickupScript.cs" />
     <Compile Include="Assets\Scripts\DeathScreenScript.cs" />
     <Compile Include="Assets\Scripts\HyperBeamScipt.cs" />
-    <Compile Include="Assets\QuestPointer\Scripts\Window_QuestPointer.cs" />
+    <Compile Include="Assets\PauseMenu.cs" />
+    <Compile Include="Assets\PauseScore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

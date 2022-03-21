@@ -32,7 +32,7 @@ public class Hit : MonoBehaviour
             //update the score when we are shooting with the missle:
             if (this.gameObject.tag == "Missle")
             {
-                score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+                score = GameObject.Find("GameUI").GetComponent<Canvas>().GetComponent<Score>();
                 score.updateScore(10);
             }
 
@@ -74,7 +74,7 @@ public class Hit : MonoBehaviour
             //update the score when we are shooting with the missle:
             if (this.gameObject.tag == "Missle")
             {
-                score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+                score = GameObject.Find("GameUI").GetComponent<Canvas>().GetComponent<Score>();
                 score.updateScore(30);
             }
 
@@ -109,7 +109,7 @@ public class Hit : MonoBehaviour
             //update the score when we are shooting with the missle:
             if (this.gameObject.tag == "Missle")
             {
-                score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+                score = GameObject.Find("GameUI").GetComponent<Canvas>().GetComponent<Score>();
                 score.updateScore(10);
             }
 
@@ -142,7 +142,7 @@ public class Hit : MonoBehaviour
             //update the score when we are shooting with the missle:
             if (this.gameObject.tag == "Missle")
             {
-                score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+                score = GameObject.Find("GameUI").GetComponent<Canvas>().GetComponent<Score>();
                 score.updateScore(30);
             }
             
@@ -180,7 +180,7 @@ public class Hit : MonoBehaviour
             //update the score when we are shooting with the missle:
             if (this.gameObject.tag == "Missle")
             {
-                score = GameObject.Find("Canvas").GetComponent<Canvas>().GetComponent<Score>();
+                score = GameObject.Find("GameUI").GetComponent<Canvas>().GetComponent<Score>();
                 score.updateScore(30);
             }
 
