@@ -10,6 +10,10 @@ public class Flock : MonoBehaviour
     public List<FlockAgent> agentsAttacking = new List<FlockAgent>();
     public FlockBehaviour behaviour;
 
+    private GameObject player;
+    private MapGeneration mapGen;
+    private MapScript mapScript;
+
     // populating flock values
     [Range(2, 500)]
     public int startingCount = 300;
@@ -46,23 +50,48 @@ public class Flock : MonoBehaviour
     public int timerForEachAttack = 3;
     public float attackingTimeLeft = 3;
 
+    public float spawnDistFromPlayer = 30f;
+
     // Start is called before the first frame update
     void Start()
     {
         squareMaxSpeed = maxSpeed * maxSpeed;
         squareNeighborRadius = neighborRadius * neighborRadius;
         squareAvoidanceRadius = squareNeighborRadius * avoidanceRadiusMultiplier * avoidanceRadiusMultiplier;
+        player = GameObject.FindGameObjectWithTag("Player").gameObject;
+        mapGen = GameObject.FindGameObjectWithTag("Background").GetComponent<MapGeneration>();
+        mapScript = GameObject.FindGameObjectWithTag("Background").GetComponent<MapScript>();
 
         for (int i = 0; i < startingCount; i++)
         {
-            Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+            Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity * 2;
 
             // Returns true if there are any colliders overlapping the sphere defined by position and radius in world coordinates.
-            //while (Physics2D.OverlapCircle(newLocation, 1.25f) != null)
-            //{
-            // Keep getting new locations until one doesn't overlap.
-            newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
-            //}
+            bool poorSpawnLocation = true;
+
+            while (poorSpawnLocation)
+            {
+                poorSpawnLocation = false;
+
+                if (newLocation.x >= mapScript.getEastEdge() || newLocation.y <= mapScript.getSouthEdge() ||
+                    newLocation.x <= mapScript.getWestEdge() || newLocation.y >= mapScript.getNorthEdge())
+                {
+                    poorSpawnLocation = true;
+                    newLocation = Random.insideUnitCircle * startingCount * AgentDensity * 2;
+                }
+                else
+                {
+                    Collider2D obstacleCollision = Physics2D.OverlapCircle(newLocation, 1f);
+                    float distFromPlayer = Vector2.Distance(newLocation, player.transform.position);
+
+                    if (obstacleCollision != null || distFromPlayer < spawnDistFromPlayer)
+                    {
+                        poorSpawnLocation = true;
+                        newLocation = Random.insideUnitCircle * startingCount * AgentDensity * 2;
+                    }
+                }
+
+            }
 
             FlockAgent newAgent = null;
             if (numOfOverlordsStart == 0)
@@ -190,11 +219,39 @@ public class Flock : MonoBehaviour
 
         if (agents.Count < (startingCount - replenishAmount))
         {
+            int layer = LayerMask.NameToLayer("Obstacle");
             for (int i = (startingCount - replenishAmount); i < startingCount; i++)
             {
 
                 Vector2 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
                 newLocation = Random.insideUnitCircle * startingCount * AgentDensity;
+
+                // Returns true if there are any colliders overlapping the sphere defined by position and radius in world coordinates.
+                bool poorSpawnLocation = true;
+
+                while (poorSpawnLocation)
+                {
+                    poorSpawnLocation = false;
+
+                    if (newLocation.x >= mapScript.getEastEdge() || newLocation.y <= mapScript.getSouthEdge() ||
+                        newLocation.x <= mapScript.getWestEdge() || newLocation.y >= mapScript.getNorthEdge())
+                    {
+                        poorSpawnLocation = true;
+                        newLocation = Random.insideUnitCircle * startingCount * AgentDensity * 2;
+                    }
+                    else
+                    {
+                        Collider2D obstacleCollision = Physics2D.OverlapCircle(newLocation, 1f);
+                        float distFromPlayer = Vector2.Distance(newLocation, player.transform.position);
+
+                        if (obstacleCollision != null || distFromPlayer < spawnDistFromPlayer)
+                        {
+                            poorSpawnLocation = true;
+                            newLocation = Random.insideUnitCircle * startingCount * AgentDensity * 2;
+                        }
+                    }
+
+                }
 
                 FlockAgent newAgent = null;
 

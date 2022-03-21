@@ -26,7 +26,6 @@ public class CornerHit : MonoBehaviour
             FlockAgent agentToDelete = collision.gameObject.GetComponent<FlockAgent>();
             flock.agents.Remove(agentToDelete);
             Destroy(collision.gameObject);
-            print(CornerCount._instance.countHit);
         }
 
         if(CornerCount._instance.countHit == 5)

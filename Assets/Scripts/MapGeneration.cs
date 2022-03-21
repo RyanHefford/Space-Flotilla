@@ -9,7 +9,7 @@ public class MapGeneration : MonoBehaviour
     //this multi dimentional array is used to check if a tile is already occupied (true = occupied)
     private bool[,] tileMap;
     //variable used to dictate spawn rate of terrain
-    private float tileSpawnChance = 0.2f;
+    private float tileSpawnChance = 0.05f;
     private int verticalTiles;
     private int horizontalTiles;
     public GameObject[] singleTileObjects;
@@ -17,6 +17,7 @@ public class MapGeneration : MonoBehaviour
     public GameObject[] doubleVerticalObjects;
     public GameObject[] quadTileObjects;
     private MapScript map;
+    private GameObject[] currObstacles;
 
 
     // Start is called before the first frame update
@@ -59,7 +60,7 @@ public class MapGeneration : MonoBehaviour
         tileMap[verticalTiles / 2 - 1, horizontalTiles / 2] = true;
 
         CreateMap();
-
+        currObstacles = CreateCurrObstacleList();
         //Scanning the grid for obstacles.
 
         DoDelayAction(0.5f);
@@ -179,5 +180,27 @@ public class MapGeneration : MonoBehaviour
         AstarPath.active.Scan();
     }
 
+    private GameObject[] CreateCurrObstacleList()
+    {
+        int targetLayer = LayerMask.NameToLayer("Obstacle");
+        List<GameObject> goList = new System.Collections.Generic.List<GameObject>();
+        GameObject[] goArray = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        for(int i = 0; i < goArray.Length; i++)
+        {
+            if (goArray[i].GetComponent<PolygonCollider2D>() != null && goArray[i].layer == targetLayer)
+            {
+                goList.Add(goArray[i]);
+            }
+        }
+        if (goList.Count == 0)
+        {
+            return null;
+        }
+        return goList.ToArray();
+    }
 
+    public GameObject[] getObstacleList()
+    {
+        return currObstacles;
+    }
 }

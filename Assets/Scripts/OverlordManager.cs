@@ -121,7 +121,6 @@ public class OverlordManager : MonoBehaviour
         //setting their goToCorner bool to true.
         //5 random agents
         int count = 0;
-        print("USED");
 
         while (count < numOfAgents)
         {
@@ -150,7 +149,6 @@ public class OverlordManager : MonoBehaviour
         //setting their goToCorner bool to true.
         //5 random agents
         int count = 0;
-        print("Selected agents");
   
         while (count < agentsToSendToCorner)
         {
@@ -170,7 +168,6 @@ public class OverlordManager : MonoBehaviour
             }
             count += 1;
         }
-        print("FINISHED SELECTING AGENTS");
         print(count);
 
 
