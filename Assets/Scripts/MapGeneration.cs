@@ -9,7 +9,7 @@ public class MapGeneration : MonoBehaviour
     //this multi dimentional array is used to check if a tile is already occupied (true = occupied)
     private bool[,] tileMap;
     //variable used to dictate spawn rate of terrain
-    private float tileSpawnChance = 0.05f;
+    public float tileSpawnChance = 0.05f;
     private int verticalTiles;
     private int horizontalTiles;
     public GameObject[] singleTileObjects;

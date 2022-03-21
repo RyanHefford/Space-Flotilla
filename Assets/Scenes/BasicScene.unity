@@ -1934,6 +1934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e01f36090514dc4bb5f64c2d5f7d937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileSpawnChance: 0.2
   singleTileObjects:
   - {fileID: 510385871005326532, guid: 1baf9e5820c6cc94b96741d59b4d67e4, type: 3}
   - {fileID: 2871867408055513181, guid: b04a50ff35d18e946886029ede2179ed, type: 3}
